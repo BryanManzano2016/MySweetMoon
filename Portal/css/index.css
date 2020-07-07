@@ -7,3 +7,11 @@
 .contenedorIndex {
     z-index: 2;
 }
+
+#formBusqueda > *{
+    margin: 0 auto;
+}
+
+.botonRedondo {
+    border-radius: 15px;
+}
