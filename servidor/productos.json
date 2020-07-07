@@ -1,0 +1,37 @@
+[ {
+    "nombre": "Torta mojada", 
+    "valor": 5.2,
+    "description": "La mejor torta para compartir en familia",
+    "elementos": ["uvas", "fresas"]
+  },
+  {
+    "nombre": "Torta con relleno de chocolate", 
+    "valor": 30.2,
+    "description": "Chocolate con manjar",
+    "elementos": ["peras", "fresas", "sandias"]
+  },
+  {
+    "nombre": "Cake de banano", 
+    "valor": 12,
+    "description": "Banano con puro sabor nacional",
+    "elementos": ["uvas", "fresas", "banano"]
+  },
+  {
+    "nombre": "Tarta de pasas", 
+    "valor": 30,
+    "description": "Pasas mexicanas",
+    "elementos": ["pasas", "fresas"]
+  },
+  {
+    "nombre": "Torta con relleno de mora", 
+    "valor": 20,
+    "description": "Economica y deliciosa torta",
+    "elementos": ["uvas", "mora", "majar"]
+  },
+  {
+    "nombre": "Cake con sandia", 
+    "valor": 30,
+    "description": "Una indiscutible combinacion",
+    "elementos": ["uvas", "fresas"]
+  }
+]

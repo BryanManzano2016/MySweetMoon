@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-	<title>My Sweet Moon</title>
+	<title>Energen - Free Bootstrap 4 Template by Colorlib</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="../img/logo.png">
+
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
@@ -29,14 +29,15 @@
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
 
+
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" href="css/index.css">
-
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light ftco-navbar-light-2"
+		id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="index.html">
 				<img></img>
@@ -59,94 +60,56 @@
 			<form id="buscadorInterno">
 				<div class="input-group">
 					<button class="input-group-text"> <i class="fa fa-search" aria-hidden="true">
-					</i></button>
+						</i></button>
 					<input type="text" class="form-control divRadial" aria-label="Busqueda"
 						aria-describedby="basic-addon2" id="busquedaTexto">
 				</div>
 			</form>
-
 		</div>
 	</nav>
 	<!-- END nav -->
 
-	<section class="hero-wrap js-fullheight" style="background-image: url('img/portada.jpg');"
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-				<div class="col-md-10 ftco-animate text-center">
-					<div class="icon">
-						<span class="flaticon-lotus"></span>
-					</div>
-					<h1>Pastelería Creativa</h1>
-					<div class="row justify-content-center">
-						<div class="col-md-7 mb-3">
-							<p>Traemos una variedad de tortas de todas las formas y tamaños. Crea la torta de tus sueños
-								y fantasías con nosotros.</p>
-						</div>
-					</div>
-					<p>
-						<a href="#" class="btn btn-primary p-3 px-5 py-4 mr-md-2">Crea tu torta</a>
-						<a href="#" class="btn btn-outline-primary p-3 px-5 py-4 ml-md-2">Ponte en Contacto</a>
-					</p>
+				<div class="col-md-9 ftco-animate text-center">
+					<h1 class="mb-3 bread">Treatments</h1>
+					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span>
+						<span>Treatments</span></p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="sectionOferta" class="ftco-section ftco-intro" style="background-image: url(img/portada.jpg);">
-		<div class="container">
-			<div class="row justify-content-end">
-				<div class="col-md-6">
-					<div class="heading-section ftco-animate">
-						<h2 class="mb-4">Tenemos las mejores ofertas del mercado</h2>
-					</div>
-					<p class="ftco-animate">Ademas contamos con diferentes tipos de bocadillos y productos</p>
-					<ul class="mt-5 do-list">
-						<li class="ftco-animate"><a href="#"><span
-									class="ion-ios-checkmark-circle mr-3"></span>Manjares</a></li>
-						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>Queso de
-								3 leches</a></li>
-						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>Helado a
-								la paila</a></li>
-						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>Entre
-								muchas más</a></li>
-					</ul>
+	<section class="ftco-section">
+		<div class="container-fluid px-md-5">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-12 heading-section ftco-animate text-center">
+					<h3 class="subheading">Services</h3>
+					<h2 class="mb-1">Treatments</h2>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- 
-	<section id="busquedaSeccion" class="hero-wrap js-fullheight" data-stellar-background-ratio="0.5"
-		style="background-image: url(img/portada1.png);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-				<div class="col-md-10 ftco-animate text-center">
-					<h2 class="subheading">Busqueda</h3>
-						<h4 class="mb-1">Ingrese el nombre del producto</h4>
-						<br>
-						<div>
-							<form id="formBusqueda" action="#" class="contact-form form-inline">
-								<div class="row">
-									<div class="col">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Nombre de producto">
-										</div>
-									</div>
-									<div class="col">
-										<div class="form-group">
-											<button class="btn btn-primary py-3 px-5 botonRedondo">Buscar</button>
-										</div>
-									</div>
-								</div>
-							</form>
+			<div id="productosResultado" class="row align-items-center">
+
+				<div v-for="elemento in resultados" class="col-md-4 d-flex align-items-stretch">
+					<div class="treatment w-100 text-center ftco-animate border p-3 py-4">
+						<div class="icon d-flex justify-content-center align-items-center">
+							<span class="flaticon-beauty-treatment"></span>
 						</div>
+						<div class="text mt-2">
+							<p>hola</p>
+							<h3> {{ elemento.nombre }}</h3>
+							<p> {{ elemento.description }} </p>
+						</div>
+					</div>
 				</div>
+
+
 			</div>
 		</div>
 	</section>
- -->
 
 	<footer class="ftco-footer ftco-section">
 		<div class="container">
@@ -220,6 +183,8 @@
 		</div>
 	</footer>
 
+
+
 	<!-- loader -->
 	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
 			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
@@ -228,7 +193,10 @@
 
 
 	<script src="js/jquery.min.js"></script>
+
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+
+
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.easing.1.3.js"></script>
@@ -241,11 +209,13 @@
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/jquery.timepicker.min.js"></script>
 	<script src="js/scrollax.min.js"></script>
+
 	<script src="js/main.js"></script>
+	<script src="js/vue.js"></script>
 
 	<script src="js/general.js"></script>
-	<script src="js/index.js"></script>
-	
+	<script src="js/productos.js"></script>
+
 </body>
 
 </html>

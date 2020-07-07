@@ -8,10 +8,10 @@
     z-index: 2;
 }
 
-#formBusqueda > *{
-    margin: 0 auto;
+/* boton de busqueda */
+ 
+.divRadial{
+	border-radius: 15px;	
 }
-
-.botonRedondo {
-    border-radius: 15px;
-}
+ 
+ 
