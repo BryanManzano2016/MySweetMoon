@@ -1,0 +1,10 @@
+/* boton de busqueda */
+.seccion_busqueda {
+    background-color: antiquewhite;
+}
+
+.seccion_entrada {
+    border-radius: 5px;
+    background-color: aquamarine;
+    opacity: 0.95;
+}

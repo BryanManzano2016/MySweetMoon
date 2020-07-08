@@ -4,6 +4,7 @@ let data = require('./productos.json')
 
 crearCors(app)
 
+// restful GET y POST
 app.get('/productos/:nombre', (solicitud, respuesta) => {
     console.log(new Date());
     let respuestaArreglo = []
@@ -19,12 +20,10 @@ app.post("/", function (solicitud, respuesta) {
     respuesta.send("POST request to the homepage")
 });
 
+
 app.listen(3000, () => console.log('Listening on port 3000!'))
 
-
-
-
-
+// cruzar informacion entre dominios diferentes
 function crearCors(app) {
 	app.use((solicitud, respuesta, next) => {
 		respuesta.header('Access-Control-Allow-Origin', '*');

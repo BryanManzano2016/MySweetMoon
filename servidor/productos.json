@@ -2,36 +2,42 @@
     "nombre": "Torta mojada", 
     "valor": 5.2,
     "description": "La mejor torta para compartir en familia",
-    "elementos": ["uvas", "fresas"]
+    "elementos": ["uvas", "fresas"],
+    "archivo": "torta_sirenita.jpg"
   },
   {
     "nombre": "Torta con relleno de chocolate", 
     "valor": 30.2,
     "description": "Chocolate con manjar",
-    "elementos": ["peras", "fresas", "sandias"]
+    "elementos": ["peras", "fresas", "sandias"],
+    "archivo": "dulce_coco.jpg"
   },
   {
     "nombre": "Cake de banano", 
     "valor": 12,
     "description": "Banano con puro sabor nacional",
-    "elementos": ["uvas", "fresas", "banano"]
+    "elementos": ["uvas", "fresas", "banano"],
+    "archivo": "dulce_coco.jpg"
   },
   {
     "nombre": "Tarta de pasas", 
     "valor": 30,
     "description": "Pasas mexicanas",
-    "elementos": ["pasas", "fresas"]
+    "elementos": ["pasas", "fresas"],
+    "archivo": "alfajor1.jpg"
   },
   {
     "nombre": "Torta con relleno de mora", 
     "valor": 20,
     "description": "Economica y deliciosa torta",
-    "elementos": ["uvas", "mora", "majar"]
+    "elementos": ["uvas", "mora", "majar"],
+    "archivo": "bolitas_chocolate.jpg"
   },
   {
     "nombre": "Cake con sandia", 
     "valor": 30,
     "description": "Una indiscutible combinacion",
-    "elementos": ["uvas", "fresas"]
+    "elementos": ["uvas", "fresas"],
+    "archivo": "torta_flores.jpg"
   }
 ]

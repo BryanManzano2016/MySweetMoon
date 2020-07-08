@@ -1,7 +1,4 @@
-$("#buscadorInterno").submit(function (e){
-  e.preventDefault();
-})
-
+// instancia de clase VUE
 var productosSeccion = new Vue({
   el: "#productosResultado",
   data: {
@@ -16,6 +13,7 @@ var productosSeccion = new Vue({
   },
 });
 
+// funcion asincrona que conecta con servidor express
 async function cargarProductosFetch() {
   var busqueda = $("#busquedaTexto").val()
   let response = await fetch(
@@ -26,6 +24,10 @@ async function cargarProductosFetch() {
   return data;
 }
 
-$("#buscar").click(function (){
+/* 
+  Jquery para evento click, el cual usa la instancia de Vue y 
+  ejecuta un metodo de este ultimo 
+*/
+$("#buscarBoton").click(function (){
   productosSeccion.cargarProductos();
 });
