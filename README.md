@@ -7,11 +7,15 @@
 
 # Instalar servidor
 
-- Dentro de la carpeta servidor y teniendo instalado NodeJs escribir en el cmd: npm install
+- Ingresar al cmd o consola
+
+- Dentro de la carpeta servidor y teniendo instalado NodeJs escribir: npm install
 
 - Instalar nodemon para que cada vez que actualice el servidor, este se recarge automaticamente: npm install --save-dev nodemon
 
-- Ejecutar servidor desde cmd: nodemon index.js
+- Ejecutar servidor: nodemon index.js
+
+- Para probar el servidor(puerto 3000), se puede colocar http://localhost:3000/productos/ta en el navegador.
 
 # Uso de Portal
 

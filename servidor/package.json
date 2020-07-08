@@ -23,7 +23,9 @@
     "nodemon": "^2.0.4"
   },
   "nodemonConfig": {
-    "ignore": ["test/*"],
+    "ignore": [
+      "test/*"
+    ],
     "delay": "2500"
   }
 }
