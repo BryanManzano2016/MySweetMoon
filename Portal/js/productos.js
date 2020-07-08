@@ -1,74 +1,31 @@
-var resultadosProductos = null;
-/* 
-new Vue({
+$("#buscadorInterno").submit(function (e){
+  e.preventDefault();
+})
+
+var productosSeccion = new Vue({
   el: "#productosResultado",
   data: {
-    resultados: resultadosProductos,
+    resultados: [],
+  },
+  methods: {
+    cargarProductos: function () {    
+      cargarProductosFetch().then( data => {
+        this.resultados = JSON.parse(data)
+      } );
+    },
   },
 });
 
-function obtenerProductosServidor() {
-  let resultado = sessionStorage.getItem("productoBuscado");
-  alert(resultado)
-  if (resultado != "") {
-    $.ajax({
-      type: "GET",
-      url: "http://localhost:3000/productos/" + resultado,
-      success: function (res) {
-        resultadosProductos = res;
-      },
-      dataType: "json",
-    });
-  }
+async function cargarProductosFetch() {
+  var busqueda = $("#busquedaTexto").val()
+  let response = await fetch(
+    "http://localhost:3000/productos/" + busqueda,
+    { method: "GET" }
+  );
+  var data = await response.text();
+  return data;
 }
 
-obtenerProductosServidor();
- */
-var app = new Vue({
-  el: "#productosResultado",
-  data() {
-    return {
-      resultados: []
-    };
-  },
-  created() {
-    // let resultado = sessionStorage.getItem("productoBuscado");
-    // if (resultado != "") {
-    $.ajax({
-      type: "GET",
-      url: "http://localhost:3000/productos/" + "or",
-      success: function (res) {
-        console.log(this.resultados);
-        this.resultados = res;
-        console.log(this.resultados);
-      },
-      dataType: "json",
-    });
-    // }
-  },
+$("#buscar").click(function (){
+  productosSeccion.cargarProductos();
 });
-
-var app2 = new Vue({
-  el: "#productosResultado2",
-  data() {
-    return {
-      resultados: null
-    };
-  }, 
-  methods: {
-    cargarProductos(){
-      $.ajax({
-        type: "GET",
-        url: "http://localhost:3000/productos/" + "or",
-        success: function (res) {
-          console.log(this.resultados);
-          this.resultados = res;
-          console.log(this.resultados);
-        },
-        dataType: "json",
-      });
-    }
-  }
-});
-
-/* sessionStorage.setItem("productoBuscado", ""); */

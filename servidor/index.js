@@ -12,7 +12,7 @@ app.get('/productos/:nombre', (solicitud, respuesta) => {
             respuestaArreglo.push(elemento)
         }        
     })
-    respuesta.send(respuestaArreglo)
+    respuesta.send(JSON.stringify(respuestaArreglo))
 });
 
 app.post("/", function (solicitud, respuesta) {

@@ -55,79 +55,64 @@
 					<li class="nav-item"><a href="blog.html" class="nav-link">Noticias</a></li>
 					<li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
 				</ul>
-			</div>
-
-			<form id="buscadorInterno">
-				<div class="input-group">
-					<input type="text" class="form-control divRadial" aria-label="Busqueda"
-						aria-describedby="basic-addon2" id="busquedaTexto">
-					<button class="input-group-text" v-on:click="cargarProductos()"> <i class="fa fa-search"
-							aria-hidden="true">
-						</i></button>
-				</div>
-			</form>
-
+			</div>	
 		</div>
 	</nav>
 	<!-- END nav -->
 
-	<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('img/portada1.png');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
-					<h1 class="mb-3 bread">Treatments</h1>
-					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span>
-						<span>Treatments</span></p>
+					<h1 class="mb-3 bread">Productos</h1>
+					<p class="breadcrumbs"> <span>Tenemos una amplia gama para ofrecer</span></p>
 				</div>
 			</div>
 		</div>
 	</section>
-
-	<section class="ftco-section">
+ 
+	<section id="productosResultado" class="ftco-section">
 		<div class="container-fluid px-md-5">
 			<div class="row justify-content-center mb-5 pb-3">
 				<div class="col-md-12 heading-section ftco-animate text-center">
-					<h3 class="subheading">Services</h3>
-					<h2 class="mb-1">Treatments</h2>
+					<h3 class="subheading">Busqueda</h3>
+					<h4 class="mb-1">Ingrese el nombre de un producto</h4>
 				</div>
 			</div>
-			<div id="productosResultado" class="row align-items-center">
 
-				<div v-for="elemento in resultados" class="col-md-4 d-flex align-items-stretch">
-					<div class="treatment w-100 text-center ftco-animate border p-3 py-4">
-						<div class="icon d-flex justify-content-center align-items-center">
-							<span class="flaticon-beauty-treatment"></span>
-						</div>
-						<div class="text mt-2">
-							<h3> {{ elemento.nombre }}</h3>
-							<p> {{ elemento.description }} </p>
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-4 heading-section ftco-animate text-center">
+						<div class="input-group">
+							<input type="text" class="form-control divRadial" aria-label="Busqueda"
+								aria-describedby="basic-addon2" id="busquedaTexto">
+							<button id="buscar" class="input-group-text"> <i class="fa fa-search" aria-hidden="true"></i></button>
+						</div>				
+				</div>
+			</div>		
+
+			<div id="productosResultado" class="row align-items-center">
+				<div v-for="elemento in resultados" class="col-sm-4 d-flex align-items-stretch">
+					<div class="offer-deal text-center px-2 px-sm-5">
+						<div class="img" style="background-image: url(images/offer-deal-1.jpg);"></div>
+						<div class="text mt-4">
+							<h3 class="mb-4">{{ elemento.nombre }}</h3>
+							<p class="mb-5">{{ elemento.description }}.</p>
 						</div>
 					</div>
 				</div>
-
-
 			</div>
 		</div>
 	</section>
-
-	<div id="productosResultado2">
-		<div v-for="elemento in resultados">
-			<p>{{ elemento.nombre }}</p>
-			<p>{{ elemento.description }}</p>
-		</div>
-	</div>
-
 
 	<footer class="ftco-footer ftco-section">
 		<div class="container">
 			<div class="row d-flex">
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Energen</h2>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-							there live the blind texts.</p>
+						<h2 class="ftco-heading-2">MySweetMoon</h2>
+						<p>Los mejores bocadillos para nuestra gran cliente.</p>
 						<ul class="ftco-footer-social list-unstyled float-lft mt-3">
 							<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
 							<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -137,42 +122,22 @@
 				</div>
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4 ml-md-4">
-						<h2 class="ftco-heading-2">Popular Links</h2>
+						<h2 class="ftco-heading-2">Contacto</h2>
 						<ul class="list-unstyled">
-							<li><a href="#">Aromatheraphy</a></li>
-							<li><a href="#">Skin Care</a></li>
-							<li><a href="#">Herbal Spa</a></li>
-							<li><a href="#">Body Massage</a></li>
+							<li><a href="#">Ubicanos</a></li>
+							<li><a href="#">Correos</a></li> 
 						</ul>
 					</div>
 				</div>
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Quick Links</h2>
+						<h2 class="ftco-heading-2">Empresa</h2>
 						<ul class="list-unstyled">
-							<li><a href="#">About</a></li>
-							<li><a href="#">Our Spa</a></li>
-							<li><a href="#">Treatments</a></li>
-							<li><a href="#">Specialists</a></li>
-							<li><a href="#">Contact</a></li>
+							<li><a href="#">Acerca de nosotros</a></li>
+							<li><a href="#">Trabaja con nosotros</a></li> 
 						</ul>
 					</div>
-				</div>
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Have a Questions?</h2>
-						<div class="block-23 mb-3">
-							<ul>
-								<li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain
-										View, San Francisco, California, USA</span></li>
-								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929
-											210</span></a></li>
-								<li><a href="#"><span class="icon icon-envelope"></span><span
-											class="text">info@yourdomain.com</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				</div> 
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
@@ -204,6 +169,8 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/vue.js"></script>
 
+	<script src="js/productos.js"></script>
+
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>
 
 	<script src="js/popper.min.js"></script>
@@ -220,9 +187,6 @@
 	<script src="js/scrollax.min.js"></script>
 
 	<script src="js/main.js"></script>
-
-	<script src="js/general.js"></script>
-	<script src="js/productos.js"></script>
 
 </body>
 
