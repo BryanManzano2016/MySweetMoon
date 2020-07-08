@@ -59,12 +59,14 @@
 
 			<form id="buscadorInterno">
 				<div class="input-group">
-					<button class="input-group-text"> <i class="fa fa-search" aria-hidden="true">
-						</i></button>
 					<input type="text" class="form-control divRadial" aria-label="Busqueda"
 						aria-describedby="basic-addon2" id="busquedaTexto">
+					<button class="input-group-text" v-on:click="cargarProductos()"> <i class="fa fa-search"
+							aria-hidden="true">
+						</i></button>
 				</div>
 			</form>
+
 		</div>
 	</nav>
 	<!-- END nav -->
@@ -99,7 +101,6 @@
 							<span class="flaticon-beauty-treatment"></span>
 						</div>
 						<div class="text mt-2">
-							<p>hola</p>
 							<h3> {{ elemento.nombre }}</h3>
 							<p> {{ elemento.description }} </p>
 						</div>
@@ -110,6 +111,14 @@
 			</div>
 		</div>
 	</section>
+
+	<div id="productosResultado2">
+		<div v-for="elemento in resultados">
+			<p>{{ elemento.nombre }}</p>
+			<p>{{ elemento.description }}</p>
+		</div>
+	</div>
+
 
 	<footer class="ftco-footer ftco-section">
 		<div class="container">
@@ -193,9 +202,9 @@
 
 
 	<script src="js/jquery.min.js"></script>
+	<script src="js/vue.js"></script>
 
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-
 
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -211,7 +220,6 @@
 	<script src="js/scrollax.min.js"></script>
 
 	<script src="js/main.js"></script>
-	<script src="js/vue.js"></script>
 
 	<script src="js/general.js"></script>
 	<script src="js/productos.js"></script>
