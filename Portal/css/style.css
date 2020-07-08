@@ -42,6 +42,8 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -8139,7 +8141,7 @@ body {
   font-size: 18px;
   line-height: 1.8;
   font-weight: 300;
-  color: #a6a6a6; }
+  color: var(--dark) }
   body.menu-show {
     overflow: hidden;
     position: fixed;
