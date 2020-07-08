@@ -7,9 +7,11 @@
 
 # Instalar servidor
 
-- Ingresar al cmd o consola
+- Instalar NodeJs
 
-- Dentro de la carpeta servidor y teniendo instalado NodeJs escribir: npm install
+- Ingresar al cmd/consola y ubicarse en la carpeta servidor del proyecto
+
+- Teniendo instalado NodeJs escribir: npm install
 
 - Instalar nodemon para que cada vez que actualice el servidor, este se recarge automaticamente: npm install --save-dev nodemon
 
