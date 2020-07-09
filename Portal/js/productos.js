@@ -15,9 +15,9 @@ var productosSeccion = new Vue({
 
 // funcion asincrona que conecta con servidor express
 async function cargarProductosFetch() {
-  var busqueda = $("#busquedaTexto").val()
+  var busqueda = $("#busquedaTexto").val() == "" ? "" : "/" + $("#busquedaTexto").val()
   let response = await fetch(
-    "http://localhost:3000/productos/" + busqueda,
+    "http://localhost:3000/productos" + busqueda,
     { method: "GET" }
   );
   var data = await response.text();
