@@ -1,0 +1,27 @@
+[
+    {
+        "nombre": "Bryan",
+        "telefono": "07043452",
+        "correo": "Bryan@com"
+    },
+    {
+        "nombre": "David",
+        "telefono": "07052132",
+        "correo": "David@com"
+    },
+    {
+        "nombre": "Dario",
+        "telefono": "0701231252",
+        "correo": "Dario@com"
+    },
+    {
+        "nombre": "Mafer",
+        "telefono": "0743413052",
+        "correo": "Mafer@com"
+    },
+    {
+        "nombre": "Jocellyn",
+        "telefono": "21312",
+        "correo": "Jocellyn@com"
+    }
+]

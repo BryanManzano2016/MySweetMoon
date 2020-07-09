@@ -1,14 +1,15 @@
 const express = require('express')
 const app = express()
-let data = require('./productos.json')
+let dataProductos = require('./recursos/productos.json')
+let dataContactos = require('./recursos/contactos.json')
 
 crearCors(app)
 
-// restful GET y POST
+/* restful GET y POST */
 app.get('/productos/:nombre', (solicitud, respuesta) => {
     console.log(new Date());
     let respuestaArreglo = []
-    data.forEach((elemento, _) => {
+    dataProductos.forEach((elemento, _) => {
         if (elemento.nombre.includes(solicitud.params.nombre)) {
             respuestaArreglo.push(elemento)
         }        
@@ -16,12 +17,24 @@ app.get('/productos/:nombre', (solicitud, respuesta) => {
     respuesta.send(JSON.stringify(respuestaArreglo))
 });
 
+app.get('/contactos', (solicitud, respuesta) => {
+    console.log(new Date());
+    respuesta.send(JSON.stringify(dataContactos))
+});
+
+app.get('/productos', (solicitud, respuesta) => {
+    console.log(new Date());
+    respuesta.send(JSON.stringify(dataProductos))
+});
+
+// Post
 app.post("/", function (solicitud, respuesta) {
     respuesta.send("POST request to the homepage")
 });
 
-
+// Ejecutar servidor
 app.listen(3000, () => console.log('Listening on port 3000!'))
+
 
 // cruzar informacion entre dominios diferentes
 function crearCors(app) {
