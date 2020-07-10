@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 let dataProductos = require('./recursos/productos.json')
 let dataContactos = require('./recursos/contactos.json')
+const fs = require('fs');
 
 crearCors(app)
 
@@ -30,7 +31,22 @@ app.get('/productos', (solicitud, respuesta) => {
 
 // Post
 app.post("/", function (solicitud, respuesta) {
+    console.log(solicitud.body);
     respuesta.send("POST request to the homepage")
+})
+
+app.post('/contactos',function (solicitud, respuesta) {
+    console.log(solicitud.body);
+
+    let rawdata = fs.readFileSync('./recursos/contactos.json');
+    let contactoFile = JSON.parse(rawdata);
+    console.log(contactoFile);
+    contactoFile.push(solicitud.body);
+    console.log(contactoFile);
+
+    let data = JSON.stringify(contactoFile);
+    fs.writeFileSync('./recursos/contactos.json', data);
+    respuesta.send("Success!");
 })
 
 // Ejecutar servidor
@@ -46,7 +62,8 @@ function crearCors(app) {
 		respuesta.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
 		respuesta.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE')
 		next()
-	});
+    });
+    app.use(express.json());
 }
 
 function imprimirRuta(valor){

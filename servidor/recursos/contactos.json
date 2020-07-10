@@ -1,27 +1,42 @@
 [
     {
         "nombre": "Bryan",
-        "telefono": "07043452",
-        "correo": "Bryan@com"
+        "apellido": "Manzano",
+        "telefono": "0704345267",
+        "correo": "Bryan@gmail.com",
+        "fecha": "1999-09-07",
+        "mensaje": "Hola! quería conocer más de sus pasteles y si puede hacer pedidos más grandes y personalizados."
     },
     {
-        "nombre": "David",
-        "telefono": "07052132",
-        "correo": "David@com"
+        "nombre": "David",        
+        "apellido": "Guerrero",
+        "telefono": "0984343467",
+        "correo": "david99@gmail.com",
+        "fecha": "1999-10-10",
+        "mensaje": "Buenos días, quería felicitarle por el pedido que realicé, fue perfecto el pastel."
     },
     {
         "nombre": "Dario",
-        "telefono": "0701231252",
-        "correo": "Dario@com"
+        "apellido": "Gomez",
+        "telefono": "0995646244",
+        "correo": "dar406_3@gmail.com",
+        "fecha": "1998-10-03",
+        "mensaje": "Hola, quería decir que el pastel de chocolate le falta más glaseado para mi gusto."
     },
     {
         "nombre": "Mafer",
-        "telefono": "0743413052",
-        "correo": "Mafer@com"
+        "apellido": "Diaz",
+        "telefono": "0737663292",
+        "correo": "maDias99@gmail.com",
+        "fecha": "1976-02-10",
+        "mensaje": "Soy muy fan de su pastelería!!."
     },
     {
         "nombre": "Jocellyn",
-        "telefono": "21312",
-        "correo": "Jocellyn@com"
+        "apellido": "Luna",
+        "telefono": "0704328267",
+        "correo": "jmluna@gmail.com",
+        "fecha": "1999-06-03",
+        "mensaje": "Me costó diseñar esto :c"
     }
 ]

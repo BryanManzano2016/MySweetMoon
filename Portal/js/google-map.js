@@ -3,8 +3,6 @@ var googleMap;
 var googleServicioDirecciones;
 //-2.242921, -79.894424
 var posicionInicial = { lat: -2.242921, lng: -79.894424};
-var marcadoresActuales = [];
-var rutasActuales = [];
 var mensajesError = "";
 var mensajesAdvertencia = "";
 var infoWindow;
@@ -36,12 +34,29 @@ function init() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, googleMap.getCenter());
     }
+
+    var marker1 = new google.maps.Marker({
+        position: { lat: posicionInicial.lat, lng: posicionInicial.lng },
+        map: googleMap,
+        label: "🍰"
+    });
+
+    var Stringcontent = 
+    '<h6>My Sweet Moon</h6>'+
+    '<div>Cdla. Las Terrazas</div><div>mz. b villa 15</div>'+
+    '<a href="https://www.google.com/maps/place/My+Sweet+Moon/@-2.2428145,-79.8944305,15z/data=!4m5!3m4!1s0x0:0x9c6ad13b9a17193!8m2!3d-2.2428145!4d-79.8944305">Ver en Google Maps'+
+    '</a>'
+
+    var infoMSM = new google.maps.InfoWindow({
+        content: Stringcontent
+      });
+
+    marker1.addListener('click', function() {
+        infoMSM.open(googleMap, marker1);
+      });
 }
 
 function createRoute(pos){
-    console.log(pos);
-    console.log(posicionInicial);
-
     if (pos !== null) {
         // Solicitar las indicaciones para viajar entre las rutas indicadas
         googleServicioDirecciones.route({
@@ -62,20 +77,12 @@ function createRoute(pos){
                     suppressMarkers: true
                 });
                 renderizadorDirecciones.setDirections(response);
-                rutasActuales.push(renderizadorDirecciones);
             } else {
                 mensajesError += 'Solicitud de direcciones falló: ' + status + "\r\n";
             }
         });
     }
 
-    // Dibujar un marcador en la ruta actual...
-    var marker1 = new google.maps.Marker({
-        position: { lat: posicionInicial.lat, lng: posicionInicial.lng },
-        map: googleMap,
-        title: "MySweetMoon"
-    });
-    marcadoresActuales.push(marker1);
 
     if(pos!== null){
         var marker2 = new google.maps.Marker({
@@ -83,15 +90,14 @@ function createRoute(pos){
             map: googleMap,
             title: "Tu ubicación"
         });
-        marcadoresActuales.push(marker2);
     }
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
-                          'Error: The Geolocation service failed.' :
-                          'Error: Your browser doesn\'t support geolocation.');
+                          'Error: No se ha podido encontrar tu ubicación.' :
+                          'Error: El navegador no acepta geolocalización.');
     infoWindow.open(googleMap);
   }
 

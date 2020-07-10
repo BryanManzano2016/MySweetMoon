@@ -1592,6 +1592,12 @@ pre {
   .table-responsive > .table-bordered {
     border: 0; }
 
+.form-content{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  align-self: baseline;
+}
+
 .form-control {
   display: block;
   width: 100%;
