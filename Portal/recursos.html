@@ -3,7 +3,7 @@
 
 <head>
     <title>MySweetMoon-Recursos</title>
-    <link rel="icon" href="../img/logo.png">
+    <link rel="icon" href="img/logo.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -64,7 +64,7 @@
                         <div class="d-flex justify-content-center align-items-center">
                             <a href="#recursosResultado">
                                 <img class="iconoAnimacion" src="img/cake_icon.png" height="100" width="100" alt="cake"
-                                onclick="tipoConsulta('productos');" href="#recursosResultado">
+                                onclick="tipoConsulta('productos');" href="#recursosResultado" >
                             </a>
                         </div>
                         <div class="text mt-3">
@@ -99,7 +99,7 @@
                 </div>
 
 
-                <div id="recursos" v-for="elemento in resultados" class="col-md-4 justify-content-center p-2">
+                <div id="recursos" v-for="elemento in resultados" class="col-md-4 col-sm-6 justify-content-center p-2">
                     <div class="card justify-content-center" style="width: 100%; height: 100%;" v-if="tipo == 'productos'">
                         <div class="card-body">
                           <h5 class="card-title">PRODUCTO: {{ elemento.nombre}}</h5>

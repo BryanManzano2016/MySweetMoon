@@ -45,6 +45,7 @@
 
 
 html {
+  scroll-behavior: smooth;
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -9695,3 +9696,8 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+    .hero-wrap .slider-text .breadcrumbs span a:hover {
+      color: var(--color-pink);
+      font-weight: bold;;
+  }

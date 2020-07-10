@@ -49,7 +49,7 @@ const app = new Vue({
       {nombre : this.name, apellido: this.lastname, telefono: this.phone, correo: this.email, fecha: this.date, mensaje: this.message})
       .then(response => {
         alert('Mensaje Enviado!');
-        //this.eraseInformation();
+        this.eraseInformation();
         console.log(response)
         console.log(response.data)
       })
