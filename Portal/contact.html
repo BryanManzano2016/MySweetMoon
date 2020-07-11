@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/introjs.css">
+    <link rel="stylesheet" href="css/introjs-rtl.css">
   </head>
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light ftco-navbar-light-2" id="ftco-navbar">
@@ -54,9 +56,10 @@
 		<div class="overlay"></div>
 		<div class="container">
 		  <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-			<div class="col-md-9 ftco-animate text-center">
-			  <h1 class="mb-3 bread">Contactos</h1>
-			</div>
+			     <div class="col-md-9 ftco-animate text-center">
+			          <h1 class="mb-3 bread">Contacto</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Inicio</a></span> <span>Contacto</span></p>
+			     </div>
 		  </div>
 		</div>
 	  </section>
@@ -64,12 +67,12 @@
 	  <section class="ftco-section contact-section">
 		<div class="container">
 		  <div class="row block-9">
-					  <div class="col-md-4 contact-info ftco-animate bg-light p-4">
+					  <div id="pas1" class="col-md-4 contact-info ftco-animate bg-light p-4">
 						  <div class="row">
 							  <div class="col-md-12 mb-4">
 					<h2 class="h4">Información de Contacto</h2>
 				</div>
-  
+
 				  <div class="col-md-12 mb-3">
 					<p><span>Dirección:</span> Cdla. Las Terrazas, mz. B villa 15.</p>
 				  </div>
@@ -86,38 +89,38 @@
 						  </div>
 					  </div>
 					  <div class="col-md-1"></div>
-			<div class="col-md-6 ftco-animate">
+			<div id="pas2" class="col-md-6 ftco-animate">
 			  <form class="contact-form" id="contact" @submit.prevent="processForm">
 				  <div class="row">
 					<div class="col-md-6 form-content">
 					  <input type="text" name="name" v-model="name" class="form-control" placeholder="Tu Nombre" required>
 					</div>
-  
+
 					<div class="col-md-6 form-content">
 					  <input type="text" name="lastname" v-model="lastname" class="form-control" placeholder="Tu Apellido" required>
 					</div>
-  
+
 					<div class="col-md-6 form-content">
-					  <input type="tel" name="phone" v-model="phone" class="form-control" pattern="[+593]?[0-9]{10}" 
+					  <input type="tel" name="phone" v-model="phone" class="form-control" pattern="[+593]?[0-9]{10}"
 					  placeholder="Tu Celular" title="Teléfono de 10 dígitos" required>
 					</div>
-  
+
 					<div class="col-md-6 form-content">
 					  <input type="email" name="email" v-model="email" class="form-control" placeholder="Tu Email" required>
 					</div>
-  
+
 					<div class="form-content col-md-6">
 					  <label for="fecha" class="">Fecha de Nacimiento: </label>
 					</div>
-  
+
 					<div class="col-md-6 form-content">
 					  <input type="date" name="date" v-model="date" class="form-control" required>
 					</div>
-  
+
 					<div class="col-md-12 form-content" id='prueba'>
 					  <textarea name="message" v-model="message" cols="30" rows="7" class="form-control" placeholder="Mensaje" required></textarea>
 					</div>
-  
+
 					<div class="col-md-12 form-content">
 					  <input type="submit" value="Enviar Mensaje" class="btn btn-primary py-3 px-5" id="contact-btn">
 					</div>
@@ -163,13 +166,13 @@
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
-  
+
             <p class="mb-0">
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               Copyright &copy;
               <script>
                 document.write(new Date().getFullYear());
-  
+
               </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i>
               by <a href="https://colorlib.com" target="_blank">Colorlib</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -196,7 +199,7 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  
+
   <script src=""></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
@@ -204,5 +207,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
   <script src="js/message-contact.js"></script>
+
+  <script src="js/jquery-1.10.1.min.js"></script>
+  <script src="js/intro.js"></script>
+  <script src="js/guiaContactos.js"></script>
 </body>
 </html>
