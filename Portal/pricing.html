@@ -59,122 +59,198 @@
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
         <div class="col-md-9 ftco-animate text-center">
-          <h1 class="mb-3 bread">Pricing</h1>
-          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Pricing</span></p>
+          <h1 class="mb-3 bread">Crea tu torta</h1>
+          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Inicio</a></span> <span>Crea tu torta</span></p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="ftco-section ftco-no-pt ftco-no-pb">
-    <div class="container">
-      <div class="row no-gutters">
-        <div class="col-md-4 d-flex align-items-stretch">
-          <div class="offer-deal text-center px-2 px-lg-5">
-            <div class="img" style="background-image: url(images/offer-deal-1.jpg);"></div>
-            <div class="text mt-4">
-              <h3 class="mb-4">Book Your Treatment</h3>
-              <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                there live the blind texts.</p>
-              <p><a href="#" class="btn btn-white px-4 py-3"> Book A Treatment <span
-                    class="ion-ios-arrow-round-forward"></span></a></p>
-            </div>
+  <!-- Vertical Steppers -->
+  <div class="row mt-1">
+    <div class="col-md-12">
+      <!-- Stepers Wrapper -->
+      <ul class="stepper stepper-vertical">
+
+        <!-- First Step -->
+        <li class="completed">
+          <!--Section Title -->
+          <a href="#!">
+            <span class="circle">1</span>
+            <span class="label">Escoge el tamaño de tu torta.</span>
+          </a>
+          <!-- Section Description -->
+          <div class="step-content grey lighten-3">
+            <select name="s1" id="s1">
+              <option value="pequeno">Pequeño</option>
+              <option value="mediano">Mediano</option>
+              <option value="grande">Grande</option>
+            </select>
           </div>
-        </div>
-        <div class="col-md-4 d-flex align-items-stretch">
-          <div class="offer-deal active text-center px-2 px-lg-5">
-            <div class="img" style="background-image: url(images/offer-deal-2.jpg);"></div>
-            <div class="text mt-4">
-              <h3 class="mb-4">Great Gift Packages</h3>
-              <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                there live the blind texts.</p>
-              <p><a href="#" class="btn btn-white px-4 py-3"> Book A Treatment <span
-                    class="ion-ios-arrow-round-forward"></span></a></p>
-            </div>
+        </li>
+
+        <!-- Second Step -->
+        <li class="active">
+          <!--Section Title -->
+          <a href="#!">
+            <span class="circle">2</span>
+            <span class="label">Escoge el tipo de masa.</span>
+          </a>
+          <!-- Section Description -->
+          <div class="step-content grey lighten-3">
+            <select name="s2" id="s2">
+              <option value="quebrada">Quebrada</option>
+              <option value="fermentada">Fermentada</option>
+              <option value="batida">Batida</option>
+              <option value="escaldada">Escaldada</option>
+              <option value="hojaldrada">Hojaldrada</option>
+              <option value="seca">Seca</option>
+            </select>
           </div>
-        </div>
-        <div class="col-md-4 d-flex align-items-stretch">
-          <div class="offer-deal text-center px-2 px-lg-5">
-            <div class="img" style="background-image: url(images/offer-deal-3.jpg);"></div>
-            <div class="text mt-4">
-              <h3 class="mb-4">Special Offer &amp; Deal</h3>
-              <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                there live the blind texts.</p>
-              <p><a href="#" class="btn btn-white px-4 py-3"> Book A Treatment <span
-                    class="ion-ios-arrow-round-forward"></span></a></p>
-            </div>
+        </li>
+
+        <!-- Third Step -->
+        <li class="warning">
+          <!--Section Title -->
+          <a href="#!">
+            <span class="circle"><i class="fas fa-exclamation">3</i></span>
+            <span class="label">Escoge el relleno</span>
+          </a>
+          <!-- Section Description -->
+          <div class="step-content grey lighten-3">
+            <select name="s3" id="s3">
+              <option value="vainilla">Vainilla</option>
+              <option value="chocolate">Chocolate</option>
+              <option value="chocolateB">Chocolate Blanco</option>
+              <option value="frutilla">Frutilla</option>
+              <option value="manjar">Manjar</option>
+              <option value="sr">Sin relleno</option>
+            </select>
           </div>
-        </div>
-      </div>
+        </li>
+
+        <!-- Fourth Step -->
+        <li>
+          <!--Section Title -->
+          <a href="#!">
+            <span class="circle">4</span>
+            <span class="label">Escoge la cubierta.</span>
+          </a>
+          <!-- Section Description -->
+          <div class="step-content grey lighten-3">
+            <select name="s4" id="s4">
+              <option value="sc">Sin Cubierta</option>
+              <option value="chocolate">Chocolate</option>
+              <option value="chocolateB">Chocolate Blanco</option>
+              <option value="manjar">Manjar</option>
+              <option value="frutilla">Frutilla</option>
+              <option value="merengue">Merengue</option>
+            </select>
+          </div>
+        </li>
+
+        <!-- Fifth Step -->
+        <li>
+          <!--Section Title -->
+          <a href="#!">
+            <span class="circle">5</span>
+            <span class="label">Escoge el topping.</span>
+          </a>
+          <!-- Section Description -->
+          <div class="step-content grey lighten-3">
+            <select name="s5" id="s5">
+              <option value="st">Sin topping</option>
+              <option value="grajeas">Grajea</option>
+              <option value="oreos">Oreos</option>
+              <option value="galletas">Galleta</option>
+              <option value="frutillas">Frutillas</option>
+              <option value="mms">MMs</option>
+            </select>
+          </div>
+        </li>
+
+      </ul>
+      <!-- /.Stepers Wrapper -->
     </div>
-  </section>
+  </div>
+  <!-- Steppers Navigation -->
+  <div class="row mt-1">
+    <div class="col-md-12 text-right">
+      <button class="btn btn-flat btn-sm">Reset</button>
+      <button class="btn btn-primary btn-sm">Comprar</button>
+    </div>
+  </div>
+  <!-- /.Vertical Steppers -->
 
   <section class="ftco-section bg-light">
     <div class="container">
       <div class="row justify-content-center mb-5 pb-3">
         <div class="col-md-7 heading-section ftco-animate text-center">
-          <h3 class="subheading">Pricing Tables</h3>
-          <h2 class="mb-1">Pricing Treatments</h2>
+          <h3 class="subheading">Algunas de nuestras</h3>
+          <h2 class="mb-1">RECOMENDACIONES</h2>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 ftco-animate">
           <div class="block-7">
             <div class="text-center">
-              <h2 class="heading">Year Card</h2>
-              <span class="price"><sup>$</sup> <span class="number">449</span></span>
-              <span class="excerpt d-block">For 1 Year</span>
+              <h2 class="heading">Torta de cumpleaños</h2>
+              <span class="price"><sup>$</sup> <span class="number">50</span></span>
+              <span class="excerpt d-block">Globos incluidos</span>
 
-              <h3 class="heading-2 my-4">Enjoy All The Features</h3>
+              <h3 class="heading-2 my-4">La torta tiene:</h3>
 
               <ul class="pricing-text mb-5">
-                <li>Face Treatments</li>
-                <li>Nail Treatments</li>
-                <li>Medical Treatments</li>
-                <li>Hair Removal</li>
+                <li>Tamaño grande</li>
+                <li>Masa batida</li>
+                <li>Relleno de manjar</li>
+                <li>Cubierta de merengue</li>
+                <li>Grajeas</li>
               </ul>
 
-              <a href="#" class="btn btn-primary d-block px-2 py-4">Get Started</a>
+              <a href="#" class="btn btn-primary d-block px-2 py-4">Comprar</a>
             </div>
           </div>
         </div>
         <div class="col-md-4 ftco-animate">
           <div class="block-7">
             <div class="text-center">
-              <h2 class="heading">Monthly Card</h2>
-              <span class="price"><sup>$</sup> <span class="number">200</span></span>
-              <span class="excerpt d-block">For 1 Month</span>
+              <h2 class="heading">Torta personal</h2>
+              <span class="price"><sup>$</sup> <span class="number">10</span></span>
+              <span class="excerpt d-block">Kinder Joy incluido</span>
 
-              <h3 class="heading-2 my-4">Enjoy All The Features</h3>
+              <h3 class="heading-2 my-4">La torta tiene:</h3>
 
               <ul class="pricing-text mb-5">
-                <li>Face Treatments</li>
-                <li>Nail Treatments</li>
-                <li>Medical Treatments</li>
-                <li>Hair Removal</li>
+                <li>Tamaño pequeño</li>
+                <li>Masa seca</li>
+                <li>Relleno de vainilla</li>
+                <li>Cubierta de chocolate</li>
+                <li>Galleta</li>
               </ul>
 
-              <a href="#" class="btn btn-primary d-block px-2 py-4">Get Started</a>
+              <a href="#" class="btn btn-primary d-block px-2 py-4">Comprar</a>
             </div>
           </div>
         </div>
         <div class="col-md-4 ftco-animate">
           <div class="block-7">
             <div class="text-center">
-              <h2 class="heading">Weekly Card</h2>
-              <span class="price"><sup>$</sup> <span class="number">85</span></span>
-              <span class="excerpt d-block">For 1 Week</span>
+              <h2 class="heading">Torta para oficina</h2>
+              <span class="price"><sup>$</sup> <span class="number">20</span></span>
+              <span class="excerpt d-block">Platos desechables incluidos</span>
 
-              <h3 class="heading-2 my-4">Enjoy All The Features</h3>
+              <h3 class="heading-2 my-4">La torta tiene:</h3>
 
               <ul class="pricing-text mb-5">
-                <li>Face Treatments</li>
-                <li>Nail Treatments</li>
-                <li>Medical Treatments</li>
-                <li>Hair Removal</li>
+                <li>Tamaño mediano</li>
+                <li>Masa fermentada</li>
+                <li>Relleno de manjar</li>
+                <li>Cubierta de chocolate blanco</li>
+                <li>Oreos</li>
               </ul>
 
-              <a href="#" class="btn btn-primary d-block px-2 py-4">Get Started</a>
+              <a href="#" class="btn btn-primary d-block px-2 py-4">Comprar</a>
             </div>
           </div>
         </div>
@@ -187,9 +263,8 @@
       <div class="row d-flex">
         <div class="col-md">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Energen</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts.</p>
+            <h2 class="ftco-heading-2">MySweetMoon</h2>
+            <p>Los mejores bocadillos para nuestra gran cliente.</p>
             <ul class="ftco-footer-social list-unstyled float-lft mt-3">
               <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
               <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -199,39 +274,20 @@
         </div>
         <div class="col-md">
           <div class="ftco-footer-widget mb-4 ml-md-4">
-            <h2 class="ftco-heading-2">Popular Links</h2>
+            <h2 class="ftco-heading-2">Contacto</h2>
             <ul class="list-unstyled">
-              <li><a href="#">Aromatheraphy</a></li>
-              <li><a href="#">Skin Care</a></li>
-              <li><a href="#">Herbal Spa</a></li>
-              <li><a href="#">Body Massage</a></li>
+              <li><a href="#">Ubicanos</a></li>
+              <li><a href="#">Correos</a></li>
             </ul>
           </div>
         </div>
         <div class="col-md">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Quick Links</h2>
+            <h2 class="ftco-heading-2">Empresa</h2>
             <ul class="list-unstyled">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Our Spa</a></li>
-              <li><a href="#">Treatments</a></li>
-              <li><a href="#">Specialists</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="#">Acerca de nosotros</a></li>
+              <li><a href="#">Trabaja con nosotros</a></li>
             </ul>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Have a Questions?</h2>
-            <div class="block-23 mb-3">
-              <ul>
-                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San
-                    Francisco, California, USA</span></li>
-                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                <li><a href="#"><span class="icon icon-envelope"></span><span
-                      class="text">info@yourdomain.com</span></a></li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
