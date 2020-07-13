@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 let dataProductos = require('./recursos/productos.json')
 let dataContactos = require('./recursos/contactos.json')
+let dataPasos = require('./recursos/pasos.json');
 const fs = require('fs');
 
 crearCors(app)
@@ -27,6 +28,11 @@ app.get('/contactos', (solicitud, respuesta) => {
 app.get('/productos', (solicitud, respuesta) => {
     imprimirRuta("/productos")
     respuesta.send(JSON.stringify(dataProductos))
+})
+
+app.get('/pasos', (solicitud, respuesta) => {
+    imprimirRuta("/pasos")
+    respuesta.send(JSON.stringify(dataPasos));
 })
 
 // Post

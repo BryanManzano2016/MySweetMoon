@@ -1,0 +1,23 @@
+[{
+    "sizes":[
+        {"size": "25 porciones"},
+        {"size":"20 porciones"}, 
+        {"size":"10 porciones"}],
+    "masas":[
+        {"masa": "Naranja"},
+        {"masa":"Chocolate"}, 
+        {"masa":"Vainilla"},
+        {"masa":"Amaretto"}],
+    "rellenos":[
+        {"relleno": "Manjar"},
+        {"relleno": "Mermelada"},
+        {"relleno": "Brigadeiro"}],
+    "cubiertas":[
+        {"cubierta": "Frosting"},
+        {"cubierta": "Butter Cream"}],
+    "topings":[
+        {"toping":"Modelado de muñecos"},
+        {"toping":"Dulces y Paletas"},
+        {"toping":"Perzonalizado"}]
+ }
+]
