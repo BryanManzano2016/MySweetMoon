@@ -37,30 +37,114 @@
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light ftco-navbar-light-2"
         id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><span class="flaticon-lotus"></span>Energen</a>
+            <a class="navbar-brand" href="index.html"><span class="flaticon-lotus"></span>MySweetMoon</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li class="nav-item active"><a href="about.html" class="nav-link">Nosotros</a></li>
-                    <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
-                    <li class="nav-item"><a href="pricing.html" class="nav-link">Crea tu torta</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Noticias</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
+                    <li class="nav-item active"><a href="recursos.html" class="nav-link">Recursos</a></li>
+                    <li class="nav-item"><a href="procesos.html" class="nav-link">Procesos</a></li>
+                    <li class="nav-item"><a href="panel-grafico.html" class="nav-link">Gráficos</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- END nav -->
 
-    <section class="ftco-section ftco-section-services js-fullheight bg-light">
+    <section class="hero-wrap  hero-wrap-2" style="background-image: url('img/portada-proceso.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-3 bread">Panel de Control</h1>
+            <div class="row justify-content-center">
+	            <div class="col-md-7 mb-3">
+	            	<p>Recursos de la página principal.</p>
+	            </div>
+	          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-section-services bg-light">
         <div class="container-fluid px-md-5">
+            <!--cards -->
             <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="services text-center ftco-animate">
+                <!-- Pedidos Realizados -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pedidos (Semanal)</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">15</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Cotizaciones (Semanal) -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-secondary h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Cotizaciones (Semanal)</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">21</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Mensajes Respondidos -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-info h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pedidos Realizados</div>
+                        <div class="row no-gutters align-items-center">
+                          <div class="col-auto">
+                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">20%</div>
+                          </div>
+                          <div class="col">
+                            <div class="progress progress-sm mr-2">
+                              <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Mensajes Pendientes -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-secondary h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Mensajes Pendientes</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">4</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--END cards-->
+
+            <!--resources-->
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-3 justify-content-center p-2">
+                <div class="card justify-content-center">
+                    <div class="services text-center ftco-animate card-body">
                         <div class="d-flex justify-content-center align-items-center">
                             <a href="#recursosResultado">
                                 <img class="iconoAnimacion" src="img/cake_icon.png" height="100" width="100" alt="cake"
@@ -73,21 +157,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="services text-center ftco-animate">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <a href="#recursosResultado">
-                            <img class="iconoAnimacion" src="img/contacto.png" height="100" width="100" alt="cake"
-                                onclick="tipoConsulta('contactos');" href="#recursosResultado">
-                            </a>
-                        </div>
-                        <div class="text mt-3">
-                            <h3>Reportes de contacto</h3>
-                            <p>Revise los mensajes que los clientes enviaron</p>
+                </div>
+                <div class="col-md-6 col-lg-3 justify-content-center p-2">
+                    <div class="card justify-content-center">
+                        <div class="services text-center ftco-animate card-body">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="#recursosResultado">
+                                <img class="iconoAnimacion" src="img/contacto.png" height="100" width="100" alt="cake"
+                                    onclick="tipoConsulta('contactos');" href="#recursosResultado">
+                                </a>
+                            </div>
+                            <div class="text mt-3">
+                                <h3>Reportes de contacto</h3>
+                                <p>Revise los mensajes que los clientes enviaron</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!--END resources-->
         </div>
     </section>
 
