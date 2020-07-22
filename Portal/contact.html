@@ -27,7 +27,10 @@
 
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<script src="js/modoUsuario.js"></script>
+
     <link rel="stylesheet" href="css/introjs.css">
     <link rel="stylesheet" href="css/introjs-rtl.css">
   </head>
@@ -38,16 +41,18 @@
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
-  					<li class="nav-item active"><a href="about.html" class="nav-link">Nosotros</a></li>
-  					<li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
-  					<li class="nav-item"><a href="pricing.html" class="nav-link">Crea tu torta</a></li>
-  					<li class="nav-item"><a href="blog.html" class="nav-link">Noticias</a></li>
-  					<li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
-	        </ul>
-	      </div>
+       
+		  <div class="collapse navbar-collapse" id="ftco-nav">
+			<ul id="navbar"  class="navbar-nav ml-auto">
+				<li v-for="elem in enlacesUsuario" v-if="usuario == 0" class="nav-item">
+					<a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
+				</li>
+				<li v-for="elem in enlacesAdmin" v-if="usuario == 1" class="nav-item">
+					<a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
+				</li>
+			</ul>
+		</div>
+
 		  </div>
 	  </nav>
     <!-- END nav -->
@@ -132,61 +137,16 @@
 		</div>
 	  </section>
 
-	  <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row d-flex">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">MySweetMoon</h2>
-              <p>Los mejores bocadillos para nuestra gran cliente.</p>
-              <ul class="ftco-footer-social list-unstyled float-lft mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Contacto</h2>
-              <ul class="list-unstyled">
-                <li><a href="#">Ubicanos</a></li>
-                <li><a href="#">Correos</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Empresa</h2>
-              <ul class="list-unstyled">
-                <li><a href="#">Acerca de nosotros</a></li>
-                <li><a href="#">Trabaja con nosotros</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p class="mb-0">
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>
-                document.write(new Date().getFullYear());
-
-              </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i>
-              by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-        </div>
-      </div>
+    <footer id="footer" class="ftco-footer ftco-section">
     </footer>
+
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
   <script src="js/jquery.min.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/general.js"></script>
+
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -208,8 +168,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
   <script src="js/message-contact.js"></script>
-
-  <script src="js/jquery-1.10.1.min.js"></script>
+ 
   <script src="js/intro.js"></script>
   <script src="js/guiaContactos.js"></script>
 </body>
