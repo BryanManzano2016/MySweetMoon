@@ -23,7 +23,7 @@ var recursosSeccion = new Vue({
 
 // funcion asincrona que conecta con servidor express
 async function cargarContactosFetch() {
-  let response = await fetch("https://servermysweetmoon.herokuapp.com/contactos", {
+  let response = await fetch("http://localhost:3000/contactos", {
     method: "GET",
   });
   var data = await response.text();
@@ -32,7 +32,7 @@ async function cargarContactosFetch() {
 
 // funcion asincrona que conecta con servidor express
 async function cargarProductosFetch() {
-  let response = await fetch("https://servermysweetmoon.herokuapp.com/productos", {
+  let response = await fetch("http://localhost:3000/productos", {
     method: "GET",
   });
   var data = await response.text();

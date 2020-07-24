@@ -32,7 +32,7 @@ var contenidoProceso = new Vue({
   
   // funcion asincrona que conecta con servidor express
   async function cargarContenidoFetch() {
-    let response = await fetch("https://servermysweetmoon.herokuapp.com/pasos", {
+    let response = await fetch("http://localhost:3000/pasos", {
       method: "GET"
     });
     var data = await response.text();

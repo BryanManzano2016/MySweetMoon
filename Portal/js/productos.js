@@ -17,7 +17,7 @@ var productosSeccion = new Vue({
 async function cargarProductosFetch() {
   var busqueda = $("#busquedaTexto").val() == "" ? "" : "/" + $("#busquedaTexto").val()
   let response = await fetch(
-    "https://servermysweetmoon.herokuapp.com/productos" + busqueda,
+    "http://localhost:3000/productos" + busqueda,
     { method: "GET" }
   );
   var data = await response.text();
