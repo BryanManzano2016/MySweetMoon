@@ -43,12 +43,11 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light ftco-navbar-light-2"
-		id="ftco-navbar">
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light ftco-navbar-light-2" id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="index.html">
-				<img></img>
-				<span class="flaticon-lotus"></span>My Sweet Moon</a>
+
+				<span class="flaticon-lotus"></span>MySweetMoon</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
@@ -69,10 +68,9 @@
 	</nav>
 	<!-- END nav -->
 
-	<section class="hero-wrap hero-wrap-2" style="background-image: url('img/fondo5.jpg');">
-		<div class="overlay"></div>
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('img/portada2.jpg');"> 
 		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+			<div class="row slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
 					<h1 class="mb-3 bread">Productos</h1>
 					<p class="breadcrumbs"> <span>Tenemos una amplia gama para ofrecer</span></p>
@@ -81,29 +79,30 @@
 		</div>
 	</section>
 
-	<section id="productosResultado" class="ftco-section">
-		<div class="container-fluid px-sm-4">
-			<div class="row justify-content-center mb-4 pb-2 ">
+	<section id="productosResultado" class="pt-5">
+		<div class="container-fluid ">
+			<div class="row justify-content-center">
 				<div id="pas1"class="col-md-12 heading-section ftco-animate text-center">
-					<h3 class="subheading">Busqueda</h3>
+					<h3 class="subheading">Búsqueda</h3>
 					<h4 class="mb-1">Ingrese el nombre de un producto</h4>
 					<br>
 					<div class="row justify-content-center mb-5 pb-3">
 						<div class="col-md-4 heading-section ftco-animate text-center">
 							<div class="input-group">
 								<input type="text" class="form-control" aria-label="Busqueda"
-									aria-describedby="basic-addon2" id="busquedaTexto" placeholder="Nombre">
+									aria-describedby="basic-addon2" style="padding-left: 8px;" id="busquedaTexto" placeholder="Nombre">
 								<button id="buscarBoton" class="input-group-text"> <i class="fa fa-search"
-										aria-hidden="true"></i></button>
+										aria-hidden="true"></i>
+								</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div id="productosResultado" class="row justify-content-center mb-4 pb-2">
+			<div id="productosResultado" class="row justify-content-center">
 				<div v-for="elemento in resultados" class="col-sm-4 d-flex align-items-stretch">
-					<div class="offer-deal text-center px-2 px-sm-4">
+					<div class="offer-deal text-center">
 						<div class="img" :style="{ backgroundImage: 'url(img/' + elemento.archivo + ')' }"></div>
 						<div class="text mt-4">
 							<h3 class="mb-4">{{ elemento.nombre }}</h3>

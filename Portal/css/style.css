@@ -8409,9 +8409,10 @@ h1, h2, h3, h4, h5,
       .hero-wrap .overlay {
         width: 100%; } }
   .hero-wrap.hero-wrap-2 {
-    height: 400px; }
+    height: 200px; }
     .hero-wrap.hero-wrap-2 .slider-text {
-      height: 400px !important; }
+      height: 200px !important;
+      color: rgba(0, 0, 0, 0.5); }
   .hero-wrap .slider-text {
     color: rgba(0, 0, 0, 0.8); }
     .hero-wrap .slider-text .icon {
@@ -8590,7 +8591,6 @@ h1, h2, h3, h4, h5,
 
 .offer-deal {
   width: 100%;
-  padding-top: 5em;
   padding-bottom: 5em; }
   .offer-deal.active {
     background: #faf7ef; }

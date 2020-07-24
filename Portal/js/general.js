@@ -1,4 +1,4 @@
-var modoUsuario;
+var modoUsuario = 0;
 
 var navOpcionesCliente = new Vue({
   el: "#navbar",
@@ -9,15 +9,16 @@ var navOpcionesCliente = new Vue({
       { enlace: "productos.html", texto: "Productos" },
       { enlace: "pricing.html", texto: "Crea tu torta" },
       { enlace: "blog.html", texto: "Noticias" },
-      { enlace: "contact.html", texto: "Contacto" },
-      { enlace: "team.html", texto: "Equipo" }
+      { enlace: "team.html", texto: "Equipo" },
+      { enlace: "contact.html", texto: "Contacto" }
     ],
     enlacesAdmin: [
-        { enlace: "panel-grafico.html", texto: "Graficos" },
+        { enlace: "recursos.html", texto: "Panel de Recursos"},
         { enlace: "procesos.html", texto: "Procesos" },
-        { enlace: "recursos.html", texto: "Panel de recursos"}
+        { enlace: "panel-grafico.html", texto: "Gráficos" }
       ],
-    usuario: sessionStorage.getItem("modoUsuario")
+    usuario: sessionStorage.getItem("modoUsuario"),
+    target: ""
   },
 });
  
@@ -29,9 +30,9 @@ const footer = `
                     <h2 class="ftco-heading-2">MySweetMoon</h2>
                     <p>Los mejores bocadillos para nuestra gran cliente.</p>
                     <ul class="ftco-footer-social list-unstyled float-lft mt-3">
-                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        <li><a href="https://twitter.com/My_Sweet_Moon"><span class="icon-twitter"></span></a></li>
+                        <li><a href="https://www.facebook.com/mysweetmoonbakery"><span class="icon-facebook"></span></a></li>
+                        <li><a href="https://www.instagram.com/my_sweet_moon"><span class="icon-instagram"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -39,8 +40,8 @@ const footer = `
                 <div class="ftco-footer-widget mb-4 ml-md-4">
                     <h2 class="ftco-heading-2">Contacto</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#">Ubicanos</a></li>
-                        <li><a href="#">Correos</a></li>
+                        <li><a href="contact.html">Ubicanos</a></li>
+                        <li><a href="contact.html">Correos</a></li>
                     </ul>
                 </div>
             </div>
