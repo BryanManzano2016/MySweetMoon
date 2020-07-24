@@ -11,7 +11,7 @@ intro.setOptions({
     },
     {
       element: "#pas2",
-      intro: "Razones para preferirnos :)"
+      intro: "Razones para preferirnos."
     },
     {
       element: "#pas3",
