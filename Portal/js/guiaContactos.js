@@ -11,7 +11,7 @@ intro.setOptions({
     },
     {
       element: "#pas2",
-      intro: "También nos puedes enviar un mensaje :)"
+      intro: "También nos puedes enviar un mensaje."
     }
   ]
 })
