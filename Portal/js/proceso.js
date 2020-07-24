@@ -1,19 +1,3 @@
-let btn_size = document.getElementById("btn_size");
-let size_content = document.getElementById("size_content");
-
-let btn_mass = document.getElementById("btn_mass");
-let mass_content = document.getElementById("mass_content");
-
-let btn_relleno = document.getElementById("btn_relleno");
-let relleno_content = document.getElementById("relleno_content");
-
-let btn_cover = document.getElementById("btn_cover");
-let cover_content = document.getElementById("cover_content");
-
-let btn_toping = document.getElementById("btn_toping");
-let toping_content = document.getElementById("toping_content");
-
-
 var contenidoProceso = new Vue({
     el: "#content_process",
     data: {
@@ -48,7 +32,7 @@ var contenidoProceso = new Vue({
   
   // funcion asincrona que conecta con servidor express
   async function cargarContenidoFetch() {
-    let response = await fetch("http://localhost:3000/pasos", {
+    let response = await fetch("https://servermysweetmoon.herokuapp.com/pasos", {
       method: "GET"
     });
     var data = await response.text();
@@ -65,17 +49,16 @@ var contenidoProceso = new Vue({
 let base_color = (btn) => {
     let buttons = document.getElementsByClassName("step-trigger");
     for(let button of buttons){
-        button.removeAttribute("class");
-        button.setAttribute("Class", "step-trigger")
+       button.classList.remove("active");
     }
-
-    btn.setAttribute('class', btn.getAttribute('class') + " active");
+    btn.classList.add('active');
 }
 
 let buttons = document.getElementsByClassName("step-trigger");
 
 for(let btn of buttons){
   btn.addEventListener("click", function(e) {
+    document.getElementById('recursos').classList.remove('d-none');
     base_color(this); 
   });
 }

@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 5000;
 const express = require('express')
 const app = express()
 let dataProductos = require('./recursos/productos.json')
@@ -56,7 +57,7 @@ app.post('/contactos',function (solicitud, respuesta) {
 })
 
 // Ejecutar servidor
-app.listen(3000, () => console.log('Listening on port 3000!'))
+app.listen(PORT, () => console.log('Listening on port '+ PORT + '!'))
 
 
 // cruzar informacion entre dominios diferentes

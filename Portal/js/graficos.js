@@ -6,7 +6,7 @@ window.onload = function () {
     config.exportEnabled = false;
     config.animationEnabled = true;
     config.theme = "light2";
-    config.subtitles = [{text: "Click para ocultar o mostrar las barras"}];
+    config.subtitles = [{text: "Click en la leyenda para ocultar o mostrar las barras"}];
     config.axisX = {title: "Sabores de Pasteles"}
     config.toolTip= {shared: false};
     config.legend= {
@@ -43,10 +43,10 @@ window.onload = function () {
         showInLegend: true,
         yValueFormatString: "#,##0.# Cotizaciones",
         dataPoints: [
-            { label: "Chocolate",  y: 15 },
-            { label: "Naranja", y: 5 },
-            { label: "Vainilla", y: 10 },
-            { label: "Amaretto",  y: 4 }
+            { label: "Chocolate",  y: 20 },
+            { label: "Naranja", y: 6 },
+            { label: "Vainilla", y: 8 },
+            { label: "Amaretto",  y: 5 }
         ]
     }];
 
@@ -66,7 +66,7 @@ window.onload = function () {
 
     //GAFRICO PORCENTAJE DE TIPO DE RELLENO DE TORTA
 
-    var totalVisitors = 25;
+    var totalCotizaciones = 91;
     var newVSReturningVisitorsOptions = {
         animationEnabled: true,
         theme: "light2",
@@ -74,7 +74,7 @@ window.onload = function () {
             fontFamily: "calibri",
             fontSize: 14,
             itemTextFormatter: function (e) {
-                return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / totalVisitors * 100) + "%";  
+                return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / totalCotizaciones * 100) + "%";  
             }
         },
         data: [{
@@ -88,9 +88,9 @@ window.onload = function () {
             startAngle: 90,
             type: "doughnut",
             dataPoints: [
-                { y: 17, name: "Manjar", color: "#DF7970" }, 
-                { y: 8, name: "Mermelada", color: "#546BC1" },
-                { y: 3, name: "Brigadeiro", color: "#52CD9F" }
+                { y: 44, name: "Manjar", color: "#DF7970" }, 
+                { y: 28, name: "Mermelada", color: "#546BC1" },
+                { y: 19, name: "Brigadeiro", color: "#52CD9F" }
             ]
         }]
     };

@@ -48,7 +48,7 @@ const footer = `
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Empresa</h2>
                     <ul class="list-unstyled">
-                        <li><a href="http://127.0.0.1:8887/about.html">Acerca de nosotros</a></li> 
+                        <li><a href="about.html">Acerca de nosotros</a></li> 
                     </ul>
                 </div>
             </div>

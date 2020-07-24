@@ -23,7 +23,7 @@ var recursosSeccion = new Vue({
 
 // funcion asincrona que conecta con servidor express
 async function cargarContactosFetch() {
-  let response = await fetch("http://localhost:3000/contactos", {
+  let response = await fetch("https://servermysweetmoon.herokuapp.com/contactos", {
     method: "GET",
   });
   var data = await response.text();
@@ -32,7 +32,7 @@ async function cargarContactosFetch() {
 
 // funcion asincrona que conecta con servidor express
 async function cargarProductosFetch() {
-  let response = await fetch("http://localhost:3000/productos", {
+  let response = await fetch("https://servermysweetmoon.herokuapp.com/productos", {
     method: "GET",
   });
   var data = await response.text();
@@ -40,6 +40,7 @@ async function cargarProductosFetch() {
 }
 
 function tipoConsulta(valor) {
+  document.getElementById("recursosResultado").classList.remove('d-none');
   switch (valor) {
     case "productos":
         recursosSeccion.cargarInformacionProductos();
