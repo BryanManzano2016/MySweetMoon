@@ -18,7 +18,6 @@ var navOpcionesCliente = new Vue({
         { enlace: "panel-grafico.html", texto: "Gráficos" }
       ],
     usuario: sessionStorage.getItem("modoUsuario"),
-    target: ""
   },
 });
  
@@ -40,7 +39,7 @@ const footer = `
                 <div class="ftco-footer-widget mb-4 ml-md-4">
                     <h2 class="ftco-heading-2">Contacto</h2>
                     <ul class="list-unstyled">
-                        <li><a href="contact.html">Ubicanos</a></li>
+                        <li><a href="contact.html">Ubícanos</a></li>
                         <li><a href="contact.html">Correos</a></li>
                     </ul>
                 </div>
