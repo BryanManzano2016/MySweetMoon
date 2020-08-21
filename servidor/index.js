@@ -1,64 +1,17 @@
 var PORT = process.env.PORT || 3000;
 const express = require('express')
 const app = express()
-let dataProductos = require('./recursos/productos.json')
-let dataContactos = require('./recursos/contactos.json')
-let dataPasos = require('./recursos/pasos.json');
-const fs = require('fs');
+ 
+crearCors(app) 
 
-crearCors(app)
+var productoRouter = require('./routes/producto'); 
+var contactoRouter = require('./routes/contacto'); 
+var connection = require('./models/index');
 
-/* restful GET y POST */
-app.get('/productos/:nombre', (solicitud, respuesta) => {
-    imprimirRuta("/productos/:nombre")
-    let respuestaArreglo = []
-    dataProductos.forEach((elemento, _) => {
-        const regexp = new RegExp(`${solicitud.params.nombre}`, 'gi')
-        if (elemento.nombre.search(regexp) != -1) {
-            respuestaArreglo.push(elemento)
-        }        
-    })
-    respuesta.send(JSON.stringify(respuestaArreglo))
-})
-
-app.get('/contactos', (solicitud, respuesta) => {
-    imprimirRuta("/contactos")
-    respuesta.send(JSON.stringify(dataContactos))
-})
-
-app.get('/productos', (solicitud, respuesta) => {
-    imprimirRuta("/productos")
-    respuesta.send(JSON.stringify(dataProductos))
-})
-
-app.get('/pasos', (solicitud, respuesta) => {
-    imprimirRuta("/pasos")
-    respuesta.send(JSON.stringify(dataPasos));
-})
-
-// Post
-app.post("/", function (solicitud, respuesta) {
-    console.log(solicitud.body);
-    respuesta.send("POST request to the homepage")
-})
-
-app.post('/contactos',function (solicitud, respuesta) {
-    console.log(solicitud.body);
-
-    let rawdata = fs.readFileSync('./recursos/contactos.json');
-    let contactoFile = JSON.parse(rawdata);
-    console.log(contactoFile);
-    contactoFile.push(solicitud.body);
-    console.log(contactoFile);
-
-    let data = JSON.stringify(contactoFile);
-    fs.writeFileSync('./recursos/contactos.json', data);
-    respuesta.send("Success!");
-})
-
-// Ejecutar servidor
+app.use('/producto', productoRouter); 
+app.use('/contacto', contactoRouter); 
+ 
 app.listen(PORT, () => console.log('Listening on port '+ PORT + '!'))
-
 
 // cruzar informacion entre dominios diferentes
 function crearCors(app) {
@@ -72,8 +25,5 @@ function crearCors(app) {
     });
     app.use(express.json());
 }
+ 
 
-function imprimirRuta(valor){
-    console.log(valor)
-    console.log(new Date())
-}
