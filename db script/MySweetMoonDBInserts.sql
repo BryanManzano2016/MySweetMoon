@@ -16,9 +16,12 @@ INSERT INTO contacts(nombre, apellido, celular, correo, fecha, userId, mensaje) 
 "Buenos días, quería felicitarle por el pedido que realicé, fue perfecto el pastel.");
 
 INSERT INTO quotes(nombre, tamano, isModelo, fecha, userId) VALUES
-("TORTA DE CUMPLEAÑOS", 25, true, "2020-08-22",3),
-("PERSONAL CHOCOLOVER", 10, true, "2020-08-22",3),
-("TORTA DE OFICINA", 20, true, "2020-08-22",3);
+("TORTA DE CUMPLEAÑOS", 25, true, "2020-06-22",3),
+("PERSONAL CHOCOLOVER", 10, true, "2020-06-22",3),
+("TORTA DE OFICINA", 20, true, "2020-05-22",3),
+("", 10, false, "2020-04-22",1),
+("", 20, false, "2020-03-22",1),
+("", 20, false, "2020-08-22",3);
 
 INSERT INTO ingredients(nombre, precio, tipo) VALUES
 ("Naranja", 0.25 ,"Masa"),
@@ -31,8 +34,7 @@ INSERT INTO ingredients(nombre, precio, tipo) VALUES
 ("Frosting", 0.40 ,"Cubierta"),
 ("Butter Cream", 0.40 ,"Cubierta"),
 ("Modelado de muñecos", 10.0 ,"Toping"),
-("Dulces y Paletas", 2.50 ,"Toping"),
-("Personalizado", 5.0 ,"Toping");
+("Dulces y Paletas", 2.50 ,"Toping");
 
 INSERT INTO quote_ingredients(quoteId, ingredientId) VALUES
 (1, 3),
@@ -46,7 +48,19 @@ INSERT INTO quote_ingredients(quoteId, ingredientId) VALUES
 (3, 4),
 (3, 5),
 (3, 8),
-(3, 11);
+(3, 11),
+(4, 3),
+(4, 5),
+(4, 8),
+(4, 11),
+(5, 3),
+(5, 5),
+(5, 9),
+(5, 3),
+(6, 4),
+(6, 5),
+(6, 8),
+(6, 11);
 
 INSERT INTO pictures(url, alt, esGaleria) VALUES
 ("nuevos.jpg",  "Alfajores", true),
@@ -95,3 +109,7 @@ INSERT INTO comments(fecha, mensaje, userId, newId) VALUES
 2, 2),
 ("2020-06-30", "¿Saben donde puedo hacer esas reservaciones? me gustaría hacer una.",
 1, 2);
+
+SELECT ing.nombre, tipo, tamano, fecha, users.nombre, users.apellido 
+from ingredients as ing, quote_ingredients as qi, quotes, users 
+where ing.id = qi.ingredientId and quotes.id = qi.quoteId and users.id = quotes.userId;

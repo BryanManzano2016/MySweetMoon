@@ -40,8 +40,8 @@ CREATE TABLE contacts (
 DROP TABLE IF EXISTS quotes;
 CREATE TABLE quotes (
 	`id` INTEGER NOT NULL AUTO_INCREMENT,
-    `nombre` VARCHAR(50),
     `tamano` INTEGER NOT NULL,
+    `nombre` VARCHAR(50),
     `isModelo` BOOL NOT NULL,
     `fecha` DATE NOT NULL,
     `userId` INTEGER NOT NULL,

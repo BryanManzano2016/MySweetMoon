@@ -1,72 +1,59 @@
-
-window.onload = function () {
-
-    //GRAFICO BARRAS SABORES VS TAMAÑOS DE TORTAS
+async function loadgraph1() {
     let config = new Object();
     config.exportEnabled = false;
     config.animationEnabled = true;
     config.theme = "light2";
-    config.subtitles = [{text: "Click en la leyenda para ocultar o mostrar las barras"}];
-    config.axisX = {title: "Sabores de Pasteles"}
-    config.toolTip= {shared: false};
-    config.legend= {
+    config.subtitles = [{ text: "Click en la leyenda para ocultar o mostrar las barras" }];
+    config.axisX = { title: "Sabores de Pasteles" }
+    config.toolTip = { shared: false };
+    config.legend = {
         cursor: "pointer",
         itemclick: toggleDataSeries
     };
-    config.data = [{
-        type: "column",
-        name: "20 Porciones",
-        showInLegend: true,      
-        yValueFormatString: "#,##0.# Cotizaciones",
-        dataPoints: [
-            { label: "Chocolate",  y: 10 },
-            { label: "Naranja", y: 2 },
-            { label: "Vainilla", y: 5 },
-            { label: "Amaretto",  y: 1 }
-        ]
-    },
-    {
-        type: "column",
-        name: "10 porciones",
-        showInLegend: true,
-        yValueFormatString: "#,##0.# Cotizaciones",
-        dataPoints: [
-            { label: "Chocolate",  y: 15 },
-            { label: "Naranja", y: 5 },
-            { label: "Vainilla", y: 10 },
-            { label: "Amaretto",  y: 4 }
-        ]
-    },
-    {
-        type: "column",
-        name: "15 porciones",
-        showInLegend: true,
-        yValueFormatString: "#,##0.# Cotizaciones",
-        dataPoints: [
-            { label: "Chocolate",  y: 20 },
-            { label: "Naranja", y: 6 },
-            { label: "Vainilla", y: 8 },
-            { label: "Amaretto",  y: 5 }
-        ]
-    }];
 
-    console.log(config);
-    var chart = new CanvasJS.Chart("chartContainer", config);
-    chart.render();
-    
-    function toggleDataSeries(e) {
-        if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-            e.dataSeries.visible = false;
-        } else {
-            e.dataSeries.visible = true;
+    let response = await fetch("http://localhost:3000/graph/1", {
+        method: "GET",
+    });
+    var values = await response.json();
+    let result = [];
+
+    for (let tamaño of Object.keys(values)) {
+        let data = {};
+        data.type = "column";
+        data.name = tamaño + " Porciones";
+        data.showInLegend = true;
+        data.yValueFormatString = "#,##0.# Cotizaciones";
+        data.dataPoints = [];
+
+        for (let masa of Object.keys(values[tamaño])) {
+            data.dataPoints.push({ label: masa, y: parseInt(values[tamaño][masa]) });
         }
-        e.chart.render();
+        result.push(data);
     }
 
+    config.data = result;
 
-    //GAFRICO PORCENTAJE DE TIPO DE RELLENO DE TORTA
+    var chart = new CanvasJS.Chart("chartContainer", config);
+    chart.render();
 
-    var totalCotizaciones = 91;
+}
+
+
+async function loadgraph2() {
+    var totalCotizaciones = 0;
+    let response = await fetch("http://localhost:3000/graph/2", {
+        method: "GET",
+    });
+    var values = await response.json();
+    let dataPoints = [];
+    for (let relleno of Object.keys(values)) {
+        let elements = { y: values[relleno], name: relleno };
+        dataPoints.push(elements);
+        totalCotizaciones += values[relleno];
+    }
+
+    console.log(dataPoints);
+
     var newVSReturningVisitorsOptions = {
         animationEnabled: true,
         theme: "light2",
@@ -74,11 +61,11 @@ window.onload = function () {
             fontFamily: "calibri",
             fontSize: 14,
             itemTextFormatter: function (e) {
-                return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / totalCotizaciones * 100) + "%";  
+                return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / totalCotizaciones * 100) + "%";
             }
         },
         data: [{
-            
+
             explodeOnClick: true,
             innerRadius: "75%",
             legendMarkerType: "square",
@@ -87,15 +74,61 @@ window.onload = function () {
             showInLegend: true,
             startAngle: 90,
             type: "doughnut",
-            dataPoints: [
-                { y: 44, name: "Manjar", color: "#DF7970" }, 
-                { y: 28, name: "Mermelada", color: "#546BC1" },
-                { y: 19, name: "Brigadeiro", color: "#52CD9F" }
-            ]
+            dataPoints: dataPoints
         }]
     };
-    
     var chart = new CanvasJS.Chart("chartContainer1", newVSReturningVisitorsOptions);
     chart.render();
-    
+}
+
+
+async function loadgraph3() {
+    let meses = ["", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciempre"]
+
+    let response = await fetch("http://localhost:3000/graph/3", {
+        method: "GET",
+    });
+    var values = await response.json();
+    data = [];
+    for(let year of Object.keys(values)){
+        for(let month of Object.keys(values[year])){
+            let element = {};
+            element.label = year + " " + meses[month];
+            element.y = parseInt(values[year][month]);
+            data.push(element);
+        }
     }
+
+
+    var chart = new CanvasJS.Chart("chartContainer2", {
+        animationEnabled: true,
+        axisY: {
+            title: "Número de Cotizaciones"
+        },
+        toolTip: {
+            shared: true
+        },
+        data: [{
+            type: "spline",
+            dataPoints: data
+        }]
+    });
+
+    chart.render();
+}
+
+function toggleDataSeries(e) {
+    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+        e.dataSeries.visible = false;
+    } else {
+        e.dataSeries.visible = true;
+    }
+    e.chart.render();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    loadgraph1();
+    loadgraph2();
+    loadgraph3();
+})

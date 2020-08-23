@@ -6,10 +6,12 @@ crearCors(app)
 
 var productoRouter = require('./routes/producto'); 
 var contactoRouter = require('./routes/contacto'); 
+var graphRouter = require('./routes/graphs');
 var connection = require('./models/index');
 
 app.use('/producto', productoRouter); 
 app.use('/contacto', contactoRouter); 
+app.use('/graph', graphRouter); 
  
 app.listen(PORT, () => console.log('Listening on port '+ PORT + '!'))
 
