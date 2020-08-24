@@ -33,8 +33,11 @@ INSERT INTO ingredients(nombre, precio, tipo) VALUES
 ("Brigadeiro", 0.60 ,"Relleno"),
 ("Frosting", 0.40 ,"Cubierta"),
 ("Butter Cream", 0.40 ,"Cubierta"),
-("Modelado de muñecos", 10.0 ,"Toping"),
-("Dulces y Paletas", 2.50 ,"Toping");
+("Modelo Fondant", 10.0 ,"Toping"),
+("Dulces y Paletas", 2.50 ,"Toping"),
+("10 Porciones", 0 ,"Tamaño"),
+("15 Porciones", 0 ,"Tamaño"),
+("20 Porciones", 0 ,"Tamaño");
 
 INSERT INTO quote_ingredients(quoteId, ingredientId) VALUES
 (1, 3),
