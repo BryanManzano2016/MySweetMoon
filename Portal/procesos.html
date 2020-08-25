@@ -1,151 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Procesos-MySweetMoon</title>
-    <link rel="icon" href="img/logo.png">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+<head>
+  <title>Procesos-MySweetMoon</title>
+  <link rel="icon" href="img/logo.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
 
-    <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/aos.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
 
 
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/stepper.css">
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/stepper.css">
 
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/modal.css">
 
-    <script src="js/modoUsuario.js"></script>
-  </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light ftco-navbar-light-2" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html"><span class="flaticon-lotus"></span>MySweetMoon</a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-        </button>
+  <script src="js/modoUsuario.js"></script>
+</head>
 
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul id="navbar"  class="navbar-nav ml-auto">
-            <li v-for="elem in enlacesUsuario" v-if="usuario == 0" class="nav-item">
-              <a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
-            </li>
-            <li v-for="elem in enlacesAdmin" v-if="usuario == 1" class="nav-item">
-              <a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
-            </li>
-          </ul>
-        </div>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light ftco-navbar-light-2"
+    id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><span class="flaticon-lotus"></span>MySweetMoon</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
 
-		  </div>
-	  </nav>
-    <!-- END nav -->
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul id="navbar" class="navbar-nav ml-auto">
+          <li v-for="elem in enlacesUsuario" v-if="usuario == 0" class="nav-item">
+            <a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
+          </li>
+          <li v-for="elem in enlacesAdmin" v-if="usuario == 1" class="nav-item">
+            <a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
+          </li>
+        </ul>
+      </div>
 
-    <section class="hero-wrap  hero-wrap-2" style="background-image: url('img/portada-proceso.jpg');">
-      <div class="container">
-        <div class="row slider-text align-items-center justify-content-center">
-          <div class="col-md-9 text-center">
-            <h1 class="mb-3 bread">Proceso de Flujo</h1>
-            <div class="row justify-content-center">
-	            <div class="col-md-7 mb-3">
-	            	<p>Procesos de Flujo: Crea tu torta.</p>
-	            </div>
-	          </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+  <section class="hero-wrap  hero-wrap-2" style="background-image: url('img/portada-proceso.jpg');">
+    <div class="container">
+      <div class="row slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+          <h1 class="mb-3 bread">Proceso de Flujo</h1>
+          <div class="row justify-content-center">
+            <div class="col-md-7 mb-3">
+              <p>Procesos de Flujo: Crea tu torta</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-  
-    <div id="content_process">
+    </div>
+  </section>
+
+  <div id="content_process">
     <div class="container">
-        <div class="row">
-          <div class="col-md-12 mt-5">
-            <div class="bs-stepper">
-              <div class="bs-stepper-header">
-                <div class="step">
-                  <button type="button" class="step-trigger" id="btn_size" onclick="asignarPaso('size');window.location.href='#content_process'">
-                    <span class="bs-stepper-circle">1</span>
-                    <span class="bs-stepper-label d-lg-inline d-none">Tamaño</span>
-                  </button>
-                </div>
-                <div class="line"></div>
-                <div class="step">
-                  <button type="button" class="step-trigger" id="btn_mass"  onclick="asignarPaso('mass');window.location.href='#content_process'">
-                    <span class="bs-stepper-circle">2</span>
-                    <span class="bs-stepper-label d-lg-inline d-none">Masa</span>
-                  </button>
-                </div>
-                <div class="line"></div>
-                <div class="step"> 
-                  <button type="button" class="step-trigger" id="btn_relleno" onclick="asignarPaso('relleno');window.location.href='#content_process'">
-                    <span class="bs-stepper-circle">3</span>
-                    <span class="bs-stepper-label d-lg-inline d-none">Relleno</span>
-                  </button>
-                </div>
-                <div class="line"></div>
-                <div class="step">
-                  <button type="button" class="step-trigger" id="btn_cover" onclick="asignarPaso('cubierta');window.location.href='#content_process'">
-                    <span class="bs-stepper-circle">4</span>
-                    <span class="bs-stepper-label d-lg-inline d-none">Cubierta</span>
-                  </button>
-                </div>
-                <div class="line"></div>
-                <div class="step">
-                  <button type="button" class="step-trigger" id="btn_toping" onclick="asignarPaso('toping');window.location.href='#content_process'">
-                    <span class="bs-stepper-circle">5</span>
-                    <span class="bs-stepper-label d-lg-inline d-none">Toping</span>
-                  </button>
-                </div>
+      <div class="row">
+        <div class="col-md-12 mt-5">
+          <div class="bs-stepper">
+            <div class="bs-stepper-header">
+              <div class="step">
+                <button class="step-trigger" id="btn_size"
+                  onclick="asignarPaso('Tamaño');window.location.href='#content_process';">
+                  <span class="bs-stepper-circle">1</span>
+                  <span class="bs-stepper-label d-lg-inline d-none">Tamaño</span>
+                </button>
+              </div>
+              <div class="line"></div>
+              <div class="step">
+                <button type="button" class="step-trigger" id="btn_mass"
+                  onclick="asignarPaso('Masa');window.location.href='#content_process'">
+                  <span class="bs-stepper-circle">2</span>
+                  <span class="bs-stepper-label d-lg-inline d-none">Masa</span>
+                </button>
+              </div>
+              <div class="line"></div>
+              <div class="step">
+                <button type="button" class="step-trigger" id="btn_relleno"
+                  onclick="asignarPaso('Relleno');window.location.href='#content_process'">
+                  <span class="bs-stepper-circle">3</span>
+                  <span class="bs-stepper-label d-lg-inline d-none">Relleno</span>
+                </button>
+              </div>
+              <div class="line"></div>
+              <div class="step">
+                <button type="button" class="step-trigger" id="btn_cover"
+                  onclick="asignarPaso('Cubierta');window.location.href='#content_process'">
+                  <span class="bs-stepper-circle">4</span>
+                  <span class="bs-stepper-label d-lg-inline d-none">Cubierta</span>
+                </button>
+              </div>
+              <div class="line"></div>
+              <div class="step">
+                <button type="button" class="step-trigger" id="btn_toping"
+                  onclick="asignarPaso('Toping');window.location.href='#content_process'">
+                  <span class="bs-stepper-circle">5</span>
+                  <span class="bs-stepper-label d-lg-inline d-none">Toping</span>
+                </button>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
 
-    <div id="recursos" class="container ftco-section contact-section js-fullheight d-none">
-      <div class="row justify-content-center">
-          <div v-for="elemento in resultados" class="card col-md-3 col-sm-6 m-1" style="width: 100%; height: 100%;">
-            <div class="card-body" v-if="tipo == 'size'">
-              <h6 class="card-title">{{elemento.size}}</h6>
+    <div id="recursos" class="container ftco-section contact-section js-fullheight d-none justify-content-center">
+      <div class="row col-12 justify-content-center">
+        <span class="col-8 d-sm-inline d-lg-none title" v-if="tipo == 'Tamaño'">Tamaño</span>
+        <span class="col-8 d-sm-inline d-lg-none title" v-if="tipo == 'Masa'">Masa</span>
+        <span class="col-8 d-sm-inline d-lg-none title" v-if="tipo == 'Relleno'">Relleno</span>
+        <span class="col-8 d-sm-inline d-lg-none title" v-if="tipo == 'Cubierta'">Cubierta</span>
+        <span class="col-8 d-sm-inline d-lg-none title" v-if="tipo == 'Toping'">Toping</span>
+
+        <div v-if="tipo == 'Tamaño'" class="d-flex justify-content-start col-10">
+          <button onclick="display_modal('Tamaño')" type="button" id="" class="btn btn-primary col-md-3 col-sm-6 m-1"
+            style="width: 100%;">+ Nuevo</button>
+        </div>
+        <div v-if="tipo == 'Masa'" class="d-flex justify-content-start col-10">
+          <button onclick="display_modal('Masa')" type="button" id="" class="btn btn-primary col-md-3 col-sm-6 m-1"
+            style="width: 100%;">+ Nuevo</button>
+        </div>
+        <div v-if="tipo == 'Relleno'" class="d-flex justify-content-start col-10">
+          <button onclick="display_modal('Relleno')" type="button" id="" class="btn btn-primary col-md-3 col-sm-6 m-1"
+            style="width: 100%;">+ Nuevo</button>
+        </div>
+        <div v-if="tipo == 'Cubierta'" class="d-flex justify-content-start col-10">
+          <button onclick="display_modal('Cubierta')" type="button" id="" class="btn btn-primary col-md-3 col-sm-6 m-1"
+            style="width: 100%;">+ Nuevo</button>
+        </div>
+        <div v-if="tipo == 'Toping'" class="d-flex justify-content-start col-10">
+          <button onclick="display_modal('Toping')" type="button" id="" class="btn btn-primary col-md-3 col-sm-6 m-1"
+            style="width: 100%;">+ Nuevo</button>
+        </div>
+
+        <div v-for="elemento in resultados" class="card col-md-3 col-sm-6 m-1" style="width: 100%; height: 100%;">
+          
+          <div class="card-body" v-if="tipo == 'Tamaño'" style="width:100%">
+            <div class="d-flex justify-content-between align-content-start mb-3">
+              <p class="close emoji" v-on:click="clickActions(elemento.id)">✏️Editar</p>
+              <span class="close" v-on:click="clickActions(elemento.id)">&times;</span>
             </div>
-            <div class="card-body" v-if="tipo == 'mass'">
-              <h6 class="card-title">{{elemento.masa}}</h6>
-            </div>
-            <div class="card-body" v-if="tipo == 'relleno'">
-              <h6 class="card-title">{{elemento.relleno}}</h6>
-            </div>
-            <div class="card-body" v-if="tipo == 'cubierta'">
-              <h6 class="card-title">{{elemento.cubierta}}</h6>
-            </div>
-            <div class="card-body" v-if="tipo == 'toping'">
-              <h6 class="card-title">{{elemento.toping}}</h6>
-            </div>
+            <h6 class="card-title">{{elemento.nombre}}</h6>
           </div>
+          
+          <div class="card-body" v-if="tipo == 'Masa'" style="width:100%">
+            <div class="d-flex justify-content-between align-content-end mb-3">
+              <p class="close emoji" v-on:click="clickActions(elemento.id)">✏️Editar</p>
+              <span class="close" v-on:click="clickActions(elemento.id)">&times;</span>
+            </div>
+            <h6 class="card-title">{{elemento.nombre}}</h6>
+          </div>
+          
+          <div class="card-body" v-if="tipo == 'Relleno'" style="width:100%">
+            <div class="d-flex justify-content-between align-content-end mb-3">
+              <p class="close emoji" v-on:click="clickActions(elemento.id)">✏️Editar</p>
+              <span class="close" v-on:click="clickActions(elemento.id)">&times;</span>
+            </div>
+            <h6 class="card-title">{{elemento.nombre}}</h6>
+          </div>
+          
+          <div class="card-body" v-if="tipo == 'Cubierta'" style="width:100%">
+            <div class="d-flex justify-content-between align-content-end mb-3">
+              <p class="close emoji" v-on:click="clickActions(elemento.id)">✏️Editar</p>
+              <span class="close" v-on:click="clickActions(elemento.id)">&times;</span>
+            </div>
+            <h6 class="card-title">{{elemento.nombre}}</h6>
+          </div>
+          
+          <div class="card-body" v-if="tipo == 'Toping'" style="width:100%">
+            <div class="d-flex justify-content-between align-content-end mb-3">
+              <p class="close emoji" v-on:click="clickActions(elemento.id)">✏️Editar</p>
+              <span class="close" v-on:click="clickActions(elemento.id)">&times;</span>
+            </div>
+            <h6 class="card-title">{{elemento.nombre}}</h6>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
 
+  <div id="myModal" class="modal">
+  </div>
+
   <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
- 
-	<script src="js/jquery.min1.js"></script>
-	<script src="js/vue.js"></script>
-	<script src="js/general.js"></script>
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" /></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/general.js"></script>
 
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -162,9 +232,8 @@
   <script src="js/scrollax.min.js"></script>
   <script src="js/main.js"></script>
 
-  <script src="js/vue.js"></script>
-
+  <script src="js/editor_display.js"></script>
   <script src="js/proceso.js"></script>
+</body>
 
-  </body>
 </html>

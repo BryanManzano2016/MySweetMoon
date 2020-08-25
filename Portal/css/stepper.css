@@ -1,4 +1,4 @@
-.bs-stepper .step-trigger {
+.step-trigger {
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
@@ -19,7 +19,7 @@
     border-radius: .25rem;
     transition: background-color .15s ease-out, color .15s ease-out;
   }
-  
+
   .bs-stepper .step-trigger:hover {
     text-decoration: none;
     background-color: rgba(0, 0, 0, .10);
@@ -87,4 +87,16 @@
   
   .bs-stepper-content {
     padding: 0 20px 20px;
+  }
+
+  .title{
+    color: #cd595a;
+    margin-left: 25%;
+    padding-bottom: 2%;
+    font-weight: bold;
+  }
+
+  .ingredients{
+    display: flex;
+    flex-wrap: nowrap;
   }
