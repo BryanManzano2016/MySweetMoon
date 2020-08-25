@@ -57,3 +57,15 @@ const footer = `
 `
 
 $("#footer").html(footer)
+
+
+
+async function getFetchObjeto(url = "", objeto = {}) {
+    let parametros = objeto
+    let query = Object.keys(parametros).map(k => encodeURIComponent(k) + '=' + 
+      encodeURIComponent(parametros[k])).join('&')
+    let urlEnviar = url + '?' + query
+    let respuesta = await fetch( urlEnviar, { method: "GET" } )
+    var data = await respuesta.json()
+    return data;
+}

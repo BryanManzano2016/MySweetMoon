@@ -9,12 +9,16 @@ var news = db.define('new', {
     subtitulo: Sequelize.STRING,
     contenido: Sequelize.STRING,
     fecha: Sequelize.DATE,
-    userId: Sequelize.INTEGER,
-    pictureId: Sequelize.INTEGER
+    userId: Sequelize.INTEGER, 
+    pictureId: Sequelize.INTEGER, 
 }, {
     timestamps: false
 });
-User.hasMany(news);
-Picture.hasOne(news);
+ 
+Picture.hasMany(news, {foreignKey: 'pictureId'})
+news.belongsTo(Picture, {foreignKey: 'pictureId'})
+
+User.hasMany(news, {foreignKey: 'userId'})
+news.belongsTo(User, {foreignKey: 'userId'})    
 
 module.exports = news;
