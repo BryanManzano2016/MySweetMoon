@@ -26,11 +26,23 @@ router.get('/:id', async (req, res, next) => {
         })
 });
 
-
 router.post('/', async (req, res, next) => {
-    res.sendStatus(404);
-});
+    let nombre = req.body.nombre;
+    let precio = req.body.precio;
+    let tipo = req.body.tipo;
 
+    console.log("POST  ingredient nombre: " + nombre + " precio: " + precio + " tipo: " + tipo);
+    Ingredientes.create({
+        id: 0,
+        nombre: nombre,
+        precio: precio,
+        tipo: tipo
+    }).then((result) => {
+        res.sendStatus(200);
+    }).catch((err) => {
+        res.sendStatus(404);
+    });
+});
 
 router.put('/:id', async (req, res, next) => {
     let id = req.params.id;
@@ -50,19 +62,17 @@ router.put('/:id', async (req, res, next) => {
             }
         }
     ).then(function (rowsUpdated) {
-            res.status = 200;
-            res.send(rowsUpdated);
-        })
+        res.status = 200;
+        res.send(rowsUpdated);
+    })
         .catch(next => {
             console.log(next);
             res.sendStatus(404);
         });
 });
 
-
 router.delete('/:id', async (req, res, next) => {
     res.sendStatus(404);
 });
-
 
 module.exports = router;
