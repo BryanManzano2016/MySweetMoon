@@ -6,6 +6,7 @@ var ingredient = db.define('ingredient', {
     nombre: Sequelize.STRING,
     precio: Sequelize.FLOAT,
     tipo: Sequelize.STRING,
+    isActive: Sequelize.BOOLEAN,
 }, {
     timestamps: false
 });

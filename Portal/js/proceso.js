@@ -5,8 +5,12 @@ var contenidoProceso = new Vue({
     tipo: "",
   },
   methods: {
-    clickActions: function (id){
-      display_modal(this.tipo, id, true);
+    clickActions: function (id, action, name){
+      if(action == "delete"){
+        displayYesNo(this.tipo, name, id);
+      }else{
+        display_modal(this.tipo, id, true);
+      }
     },
     cargarInformacion: function () {
       cargarContenidoFetch().then((data) => {

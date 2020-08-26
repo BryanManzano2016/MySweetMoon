@@ -7,6 +7,7 @@ async function display_modal(tipo, id, isEdit) {
     let value = 0.0;
     let isTamaño = "";
     let llamada = "";
+    let title = "";
 
     if (isEdit) {
         let response = await fetch("http://localhost:3000/ingrediente/" + id, {
@@ -16,8 +17,10 @@ async function display_modal(tipo, id, isEdit) {
         name = "value='" + data[0].nombre + "'";
         value = data[0].precio;
         llamada = "putIngredient(" + id + ", '" + tipo + "')";
+        title = "Editar " + tipo + " '" + data[0].nombre + "'";
 
     } else {
+        title = "Agregar " + tipo;
         llamada = "createIngredient('" + tipo + "')";
     } if (tipo == "Tamaño") {
         isTamaño = "d-none";
@@ -28,7 +31,7 @@ async function display_modal(tipo, id, isEdit) {
     <div class="d-flex justify-content-end">
     <span class="close" onclick="closeModal()">&times;</span>
     </div>
-    <span class="title">${tipo}</span>
+    <p class="title">${title}</p>
       <form id="form-cambios">
       <div class="input row">
         <label class="col-12" for="nombre">Nombre:</label> 
@@ -44,6 +47,25 @@ async function display_modal(tipo, id, isEdit) {
       </form> </div>`;
     modal.innerHTML = content;
 
+}
+
+
+async function displayYesNo(tipo, nombre, id){
+    modal.style.display = "block";
+    let content = "";
+    content = `<div class="modal-content col-lg-6 col-sm-10">
+    <div class="d-flex justify-content-end">
+    <span class="close" onclick="closeModal()">&times;</span>
+    </div>
+    <span class="title">Eliminar Ingrediente</span>
+    <p>¿Desea eliminar permanentemente el elemento '${nombre}'?</p>
+    
+    <div class="col-12 d-flex justify-content-end">
+        <input id="guardar" class="btn btn-primary send-btn" type="button" onclick="deleteIngredient(${id}, '${tipo}')" value="Aceptar">
+        <input id="cancelar" class="btn btn-secondary" type="button" onclick="closeModal()" value="Cancelar">
+    </div>
+    </div>`;
+    modal.innerHTML = content;
 }
 
 async function putIngredient(id, tipo) {
@@ -108,6 +130,23 @@ async function createIngredient(tipo) {
     }
 }
 
+async function deleteIngredient(id, tipo){
+    fetch('http://localhost:3000/ingrediente/' + id, {
+        method: 'DELETE'
+    }).then((res) => {
+        if(res.status == 404){
+            throw res.status;
+        }
+        console.log(res.status);
+        console.log(res);
+        alert('El elemento fue eliminado exitosamente!');
+        closeModal();
+        asignarPaso(tipo);
+    }).catch(error => {
+        console.log("y se cayó :c");
+        alert('No se pudo eliminar el elemento!');
+    });
+}
 
 function closeModal() {
     modal.style.display = "none";

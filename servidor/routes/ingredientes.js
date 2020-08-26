@@ -3,12 +3,15 @@ var router = express.Router();
 var Ingredientes = require('../models/ingredient');
 
 router.get('/', async (req, res, next) => {
-    Ingredientes.findAll()
-        .then(data => {
-            res.send(data);
-        }).catch(err => {
-            res.sendStatus(404);
-        })
+    Ingredientes.findAll({
+        where: {
+            isActive: true
+        }
+    }).then(data => {
+        res.send(data);
+    }).catch(err => {
+        res.sendStatus(404);
+    })
 });
 
 router.get('/:id', async (req, res, next) => {
@@ -16,14 +19,14 @@ router.get('/:id', async (req, res, next) => {
 
     Ingredientes.findAll({
         where: {
-            id: id
+            id: id,
+            isActive: true
         }
-    })
-        .then(data => {
-            res.send(data);
-        }).catch(err => {
-            res.sendStatus(404);
-        })
+    }).then(data => {
+        res.send(data);
+    }).catch(err => {
+        res.sendStatus(404);
+    });
 });
 
 router.post('/', async (req, res, next) => {
@@ -36,7 +39,8 @@ router.post('/', async (req, res, next) => {
         id: 0,
         nombre: nombre,
         precio: precio,
-        tipo: tipo
+        tipo: tipo,
+        isActive: true
     }).then((result) => {
         res.sendStatus(200);
     }).catch((err) => {
@@ -72,7 +76,26 @@ router.put('/:id', async (req, res, next) => {
 });
 
 router.delete('/:id', async (req, res, next) => {
-    res.sendStatus(404);
+    let id = req.params.id;
+    console.log("\nDELETE ingredients id: " + id);
+
+    Ingredientes.update(
+        {
+            isActive: false
+        },
+        {
+            where: {
+                id: id
+            }
+        }
+    ).then(function (rowsUpdated) {
+        res.status = 200;
+        res.send(rowsUpdated);
+    })
+        .catch(next => {
+            console.log(next);
+            res.sendStatus(404);
+        });
 });
 
 module.exports = router;

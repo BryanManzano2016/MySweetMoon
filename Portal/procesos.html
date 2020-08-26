@@ -161,7 +161,7 @@
           <div class="card-body" v-if="tipo == 'Tamaño'" style="width:100%">
             <div class="d-flex justify-content-between align-content-start mb-3">
               <p class="close emoji" v-on:click="clickActions(elemento.id)">✏️Editar</p>
-              <span class="close" v-on:click="clickActions(elemento.id)">&times;</span>
+              <span class="close" v-on:click="clickActions(elemento.id, 'delete', elemento.nombre)">&times;</span>
             </div>
             <h6 class="card-title">{{elemento.nombre}}</h6>
           </div>
@@ -169,7 +169,7 @@
           <div class="card-body" v-if="tipo == 'Masa'" style="width:100%">
             <div class="d-flex justify-content-between align-content-end mb-3">
               <p class="close emoji" v-on:click="clickActions(elemento.id)">✏️Editar</p>
-              <span class="close" v-on:click="clickActions(elemento.id)">&times;</span>
+              <span class="close" v-on:click="clickActions(elemento.id, 'delete', elemento.nombre)">&times;</span>
             </div>
             <h6 class="card-title">{{elemento.nombre}}</h6>
           </div>
@@ -177,7 +177,7 @@
           <div class="card-body" v-if="tipo == 'Relleno'" style="width:100%">
             <div class="d-flex justify-content-between align-content-end mb-3">
               <p class="close emoji" v-on:click="clickActions(elemento.id)">✏️Editar</p>
-              <span class="close" v-on:click="clickActions(elemento.id)">&times;</span>
+              <span class="close" v-on:click="clickActions(elemento.id, 'delete', elemento.nombre)">&times;</span>
             </div>
             <h6 class="card-title">{{elemento.nombre}}</h6>
           </div>
@@ -185,7 +185,7 @@
           <div class="card-body" v-if="tipo == 'Cubierta'" style="width:100%">
             <div class="d-flex justify-content-between align-content-end mb-3">
               <p class="close emoji" v-on:click="clickActions(elemento.id)">✏️Editar</p>
-              <span class="close" v-on:click="clickActions(elemento.id)">&times;</span>
+              <span class="close" v-on:click="clickActions(elemento.id, 'delete', elemento.nombre)">&times;</span>
             </div>
             <h6 class="card-title">{{elemento.nombre}}</h6>
           </div>
@@ -193,7 +193,7 @@
           <div class="card-body" v-if="tipo == 'Toping'" style="width:100%">
             <div class="d-flex justify-content-between align-content-end mb-3">
               <p class="close emoji" v-on:click="clickActions(elemento.id)">✏️Editar</p>
-              <span class="close" v-on:click="clickActions(elemento.id)">&times;</span>
+              <span class="close" v-on:click="clickActions(elemento.id, 'delete', elemento.nombre)">&times;</span>
             </div>
             <h6 class="card-title">{{elemento.nombre}}</h6>
           </div>

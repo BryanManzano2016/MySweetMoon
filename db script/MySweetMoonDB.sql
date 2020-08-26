@@ -55,9 +55,9 @@ CREATE TABLE ingredients(
 	`nombre` varchar(30) NOT NULL,
     `precio` FLOAT NOT NULL,
     `tipo` varchar(30) NOT NULL,
+    `isActive` BOOLEAN NOT NULL,
 	PRIMARY KEY(`id`)
 );
-  
 
 DROP TABLE IF EXISTS quote_ingredients;
 CREATE TABLE quote_ingredients(

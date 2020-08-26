@@ -23,21 +23,21 @@ INSERT INTO quotes(nombre, tamano, isModelo, fecha, userId) VALUES
 ("", 20, false, "2020-03-22",1),
 ("", 20, false, "2020-08-22",3);
 
-INSERT INTO ingredients(nombre, precio, tipo) VALUES
-("Naranja", 0.25 ,"Masa"),
-("Chocolate", 0.20 ,"Masa"),
-("Vainilla", 0.30 ,"Masa"),
-("Amaretto", 0.40 ,"Masa"),
-("Manjar", 0.40 ,"Relleno"),
-("Mermelada", 0.30 ,"Relleno"),
-("Brigadeiro", 0.60 ,"Relleno"),
-("Frosting", 0.40 ,"Cubierta"),
-("Butter Cream", 0.40 ,"Cubierta"),
-("Modelo Fondant", 10.0 ,"Toping"),
-("Dulces y Paletas", 2.50 ,"Toping"),
-("10 Porciones", 0 ,"Tamaño"),
-("15 Porciones", 0 ,"Tamaño"),
-("20 Porciones", 0 ,"Tamaño");
+INSERT INTO ingredients(nombre, precio, tipo, isActive) VALUES
+("Naranja", 0.25 ,"Masa", true),
+("Chocolate", 0.20 ,"Masa", true),
+("Vainilla", 0.30 ,"Masa", true),
+("Amaretto", 0.40 ,"Masa", true),
+("Manjar", 0.40 ,"Relleno", true),
+("Mermelada", 0.30 ,"Relleno", true),
+("Brigadeiro", 0.60 ,"Relleno", true),
+("Frosting", 0.40 ,"Cubierta", true),
+("Butter Cream", 0.40 ,"Cubierta", true),
+("Modelo Fondant", 10.0 ,"Toping", true),
+("Dulces y Paletas", 2.50 ,"Toping", true),
+("10 Porciones", 0 ,"Tamaño", true),
+("15 Porciones", 0 ,"Tamaño", true),
+("20 Porciones", 0 ,"Tamaño", true);
 
 INSERT INTO quote_ingredients(quoteId, ingredientId) VALUES
 (1, 3),
@@ -112,7 +112,3 @@ INSERT INTO comments(fecha, mensaje, userId, newId) VALUES
 2, 2),
 ("2020-06-30", "¿Saben donde puedo hacer esas reservaciones? me gustaría hacer una.",
 1, 2);
-
-SELECT ing.nombre, tipo, tamano, fecha, users.nombre, users.apellido 
-from ingredients as ing, quote_ingredients as qi, quotes, users 
-where ing.id = qi.ingredientId and quotes.id = qi.quoteId and users.id = quotes.userId;
