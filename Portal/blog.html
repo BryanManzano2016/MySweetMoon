@@ -69,138 +69,22 @@
     </section>
 
     <section class="ftco-section bg-light">
-      <div class="container">
+      <div id="noticiasResultado" class="container">
         <div id="pas1" class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
+          <div v-for="elemento in resultados" class="col-md-4 d-flex ftco-animate fadeInUp ftco-animated">
           	<div class="blog-entry justify-content-end">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/nuevos.jpg');">
+              <a class="block-20" 
+                v-bind:style="{ 'background-image': 'url(images/' + elemento.picture.url + ')' }" >
               </a>
-              <div class="text p-4 float-right d-block">
-              	<div class="d-flex align-items-center pt-2 mb-4">
-              		<div class="one">
-              			<span class="day">09</span>
-              		</div>
-              		<div class="two">
-              			<span class="yr">2020</span>
-              			<span class="mos">Julio</span>
-              		</div>
-              	</div>
-                <h3 class="heading mt-2"><a href="blog-single.html">¡Nuevos productos!</a></h3>
-                <p>Tenemos nuevos productos para ti y tus familiares ¡Te esperamos!</p>
+              <div class="text p-4 float-right d-block"> 
+                <h3 class="heading mt-2">
+                  <a v-bind:href="'blog-single.html?id='+ elemento.id"> {{ elemento.titulo }}</a>
+                </h3>
+                <p>{{ elemento.subtitulo }}</p>
               </div>
             </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/pronto.jpg');">
-              </a>
-              <div class="text p-4 float-right d-block">
-              	<div class="d-flex align-items-center pt-2 mb-4">
-              		<div class="one">
-              			<span class="day">25</span>
-              		</div>
-              		<div class="two">
-              			<span class="yr">2020</span>
-              			<span class="mos">Junio</span>
-              		</div>
-              	</div>
-                <h3 class="heading mt-2"><a href="blog-single.html">Sorpresas próximamente</a></h3>
-                <p>El 9 de Julio tendremos sorpresas para ti. No te lo pierdas.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/baja.jpg');">
-              </a>
-              <div class="text p-4 float-right d-block">
-              	<div class="d-flex align-items-center pt-2 mb-4">
-              		<div class="one">
-              			<span class="day">10</span>
-              		</div>
-              		<div class="two">
-              			<span class="yr">2020</span>
-              			<span class="mos">Junio</span>
-              		</div>
-              	</div>
-                <h3 class="heading mt-2"><a href="blog-single.html">¡Bajamos los precios!</a></h3>
-                <p>Estamos pasando por momentos difíciles, y queremos facilitarte la vida.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/volvimos.jpg');">
-              </a>
-              <div class="text p-4 float-right d-block">
-              	<div class="d-flex align-items-center pt-2 mb-4">
-              		<div class="one">
-              			<span class="day">25</span>
-              		</div>
-              		<div class="two">
-              			<span class="yr">2020</span>
-              			<span class="mos">Mayo</span>
-              		</div>
-              	</div>
-                <h3 class="heading mt-2"><a href="blog-single.html">¡Volvimos!</a></h3>
-                <p>Pide nuestros productos por Glovo o UberEats.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/volveremos.jpg');">
-              </a>
-              <div class="text p-4 float-right d-block">
-              	<div class="d-flex align-items-center pt-2 mb-4">
-              		<div class="one">
-              			<span class="day">01</span>
-              		</div>
-              		<div class="two">
-              			<span class="yr">2020</span>
-              			<span class="mos">Mayo</span>
-              		</div>
-              	</div>
-                <h3 class="heading mt-2"><a href="blog-single.html">Volveremos juntos</a></h3>
-                <p>La seguridad es lo más importante, así que quédate en casa.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/hasta.jpg');">
-              </a>
-              <div class="text p-4 float-right d-block">
-              	<div class="d-flex align-items-center pt-2 mb-4">
-              		<div class="one">
-              			<span class="day">23</span>
-              		</div>
-              		<div class="two">
-              			<span class="yr">2020</span>
-              			<span class="mos">Marzo</span>
-              		</div>
-              	</div>
-                <h3 class="heading mt-2"><a href="blog-single.html">¡Hasta pronto!</a></h3>
-                <p>No es un adiós, solo un hasta pronto. Cuiden de ustedes y sus familias.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col text-center">
-            <div id="pas2" class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+          </div> 
+        </div> 
       </div>
     </section>
 
@@ -213,6 +97,7 @@
   <script src="js/jquery.min.js"></script>
 	<script src="js/vue.js"></script>
   <script src="js/general.js"></script>
+  <script src="js/noticias.js"></script>
   
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -227,11 +112,15 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
+<!-- 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
+ -->
+
   <script src="js/main.js"></script>
  
   <script src="js/intro.js"></script>
   <script src="js/guiaNoticias.js"></script>
+  
   </body>
 </html>
