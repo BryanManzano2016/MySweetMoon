@@ -1,6 +1,6 @@
 // instancia de clase VUE
 var recursosSeccion = new Vue({
-  el: "#recursosResultado",
+  el: "#pas3",
   data: {
     resultados: [],
     tipo: "",

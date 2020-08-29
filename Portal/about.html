@@ -1,204 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
 	<title>Nosotros-MySweetMoon</title>
 	<link rel="icon" href="img/logo.png">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
 
-    <link rel="stylesheet" href="css/aos.css">
+	<link rel="stylesheet" href="css/aos.css">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+	<link rel="stylesheet" href="css/ionicons.min.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="css/jquery.timepicker.css">
 
 
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
 
 	<script src="js/modoUsuario.js"></script>
 
-    <link rel="stylesheet" href="css/introjs.css">
-    <link rel="stylesheet" href="css/introjs-rtl.css">
-  </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light ftco-navbar-light-2" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html"><span class="flaticon-lotus"></span>MySweetMoon</a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menú
-	      </button>
-        
-		  <div class="collapse navbar-collapse" id="ftco-nav">
-			<ul id="navbar"  class="navbar-nav ml-auto">
-				<li v-for="elem in enlacesUsuario" v-if="usuario == 0" class="nav-item">
-					<a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
-				</li>
-				<li v-for="elem in enlacesAdmin" v-if="usuario == 1" class="nav-item">
-					<a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
-				</li>
-			</ul>
+	<link rel="stylesheet" href="css/introjs.css">
+	<link rel="stylesheet" href="css/introjs-rtl.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light ftco-navbar-light-2"
+		id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html"><span class="flaticon-lotus"></span>MySweetMoon</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menú
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul id="navbar" class="navbar-nav ml-auto">
+					<li v-for="elem in enlacesUsuario" v-if="usuario == 0" class="nav-item">
+						<a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
+					</li>
+					<li v-for="elem in enlacesAdmin" v-if="usuario == 1" class="nav-item">
+						<a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
+					</li>
+				</ul>
+			</div>
+
 		</div>
+	</nav>
+	<!-- END nav -->
 
-		  </div>
-	  </nav>
-    <!-- END nav -->
-
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('img/portada2.jpg');" >
-      <div class="container">
-        <div class="row slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-3 bread">Nosotros</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Inicio</a></span> <span>Nosotros</span></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-counter img" id="section-counter" style="background-image: url(images/portada1.jpg);" >
-       <div class="container">
-        <div class="row justify-content-center">
-        	<div class="col-md-10">
-        		<div id="pas1" class="row">
-		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		              	<strong class="number" data-number="560">0</strong>
-		              	<span>Clientes felices</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		              	<strong class="number" data-number="60">0</strong>
-		              	<span>Pedidos de cupcakes</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		              	<strong class="number" data-number="50">0</strong>
-		              	<span>Pedidos de bocaditos</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		              	<strong class="number" data-number="100">0</strong>
-		              	<span>Pedidos de tortas</span>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-        </div>
-      </div>
-    </section>
-
-		<section class="ftco-intro js-fullheight" style="background-image: url(img/eating.jpg);">
-			<div class="container">
-				<div class="row justify-content-end">
-					<div id="pas2" class="col-md-6">
-						<div class="heading-section ftco-animate">
-	            <h2 class="mb-4">¿Por qué escoger nuestros pasteles?</h2>
-	          </div>
-	          <p class="ftco-animate">Somos un pequeño local familiar, pero tenemos varias ventajas sobre negocios más grandes.</p>
-	          <ul class="mt-5 do-list">
-	          	<li class="ftco-animate"><a href="./productos.html"><span class="ion-ios-checkmark-circle mr-3"></span>La atención es personalizada.</a></li>
-	          	<li class="ftco-animate"><a href="./productos.html"><span class="ion-ios-checkmark-circle mr-3"></span>Precios accesibles.</a></li>
-	          	<li class="ftco-animate"><a href="./productos.html"><span class="ion-ios-checkmark-circle mr-3"></span>Fácil comunicación.</a></li>
-	          	<li class="ftco-animate"><a href="./productos.html"><span class="ion-ios-checkmark-circle mr-3"></span>Y lo más importante: lo hacemos con amor.</a></li>
-	          </ul>
-					</div>
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('img/portada2.jpg');">
+		<div class="container">
+			<div class="row slider-text align-items-center justify-content-center">
+				<div class="col-md-9 ftco-animate text-center">
+					<h1 class="mb-3 bread">Nosotros</h1>
+					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Inicio</a></span>
+						<span>Nosotros</span></p>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ftco-gallery ftco-section">
-    	<div id="pas3" class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-            <h3 class="subheading">Galería</h3>
-            <h2 class="mb-1">¡Revisa nuestro Instragram!</h2>
-          </div>
-        </div>
-    		<div class="row">
-					<div class="col-md-3 ftco-animate">
-						<a href="images/nuevos.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/nuevos.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
+	<section class="ftco-gallery ftco-section">
+		<div id="pas3" class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section ftco-animate text-center">
+					<h1 class="subheading">Galería</h1>
+				</div>
+			</div>
+			<div class="row justify-content-center" id="galeria">
+				<div v-for="elemento in resultados" class="card col-md-3 col-sm-6 m-1"
+					style="width: 100%; height: 100%;">
+					<div class="card-body" style="width:100%">
+						<h6 class="card-title">{{elemento.alt}}</h6>
+						<img class="card-img-bottom" v-bind:src="elemento.url" alt="Card image cap">
+
 					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="images/nuevos1.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/nuevos1.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-intro js-fullheight" style="background-image: url(img/eating.jpg);">
+		<div class="container">
+			<div class="row justify-content-end">
+				<div id="pas2" class="col-md-6">
+					<div class="heading-section ftco-animate">
+						<h2 class="mb-4">¿Por qué escoger nuestros pasteles?</h2>
 					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="images/nuevos2jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/nuevos2.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="images/nuevos3.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/nuevos3.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-        </div>
-    	</div>
-    </section>
+					<p class="ftco-animate">Somos un pequeño local familiar, pero tenemos varias ventajas sobre negocios
+						más grandes.</p>
+					<ul class="mt-5 do-list">
+						<li class="ftco-animate"><a href="./productos.html"><span
+									class="ion-ios-checkmark-circle mr-3"></span>La atención es personalizada.</a></li>
+						<li class="ftco-animate"><a href="./productos.html"><span
+									class="ion-ios-checkmark-circle mr-3"></span>Precios accesibles.</a></li>
+						<li class="ftco-animate"><a href="./productos.html"><span
+									class="ion-ios-checkmark-circle mr-3"></span>Fácil comunicación.</a></li>
+						<li class="ftco-animate"><a href="./productos.html"><span
+									class="ion-ios-checkmark-circle mr-3"></span>Y lo más importante: lo hacemos con
+								amor.</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <footer id="footer" class="ftco-footer ftco-section">
-    </footer>
+	<footer id="footer" class="ftco-footer ftco-section">
+	</footer>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" /></svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
+	<script src="js/jquery.min1.js"></script>
 	<script src="js/vue.js"></script>
 	<script src="js/general.js"></script>
 
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="js/main.js"></script>
- 
-  <script src="js/intro.js"></script>
-  <script src="js/guiaNosotros.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/jquery.timepicker.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script src="js/main.js"></script>
 
-  </body>
+	<script src="js/intro.js"></script>
+	<script src="js/guiaNosotros.js"></script>
+	<script src="js/galeria.js"></script>
+
+</body>
+
 </html>

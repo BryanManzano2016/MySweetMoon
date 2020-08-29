@@ -17,7 +17,7 @@ mongoose.connect(DATABASE_URL, {
 
 const Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('mysweetmoondb', 'root', 'bmanzano', {
+var sequelize = new Sequelize('mysweetmoondb', 'root', 'root', {
     host: 'localhost',
     dialect: 'mysql',
 });

@@ -1,7 +1,9 @@
 var PORT = process.env.PORT || 3000;
-const express = require('express')
+const express = require('express');
+const fileUpload = require('express-fileupload');
 const app = express()
 
+app.use(fileUpload());
 crearCors(app)
 
 var productoRouter = require('./routes/producto');
@@ -9,12 +11,18 @@ var contactoRouter = require('./routes/contacto');
 var graphRouter = require('./routes/graphs');
 var newRouter = require('./routes/new');
 var ingredientRouter = require('./routes/ingredientes');
+var galeriaRouter = require('./routes/galeria');
+var imagenRouter = require('./routes/imagen');
+
 var connection = require('./models/index');
 
 app.use('/producto', productoRouter);
 app.use('/contacto', contactoRouter);
 app.use('/graph', graphRouter);
+app.use('/galeria', galeriaRouter);
+app.use('/imagen', imagenRouter);
 app.use('/new', newRouter);
+
 app.use('/ingrediente', ingredientRouter);
 
 app.listen(PORT, () => console.log('Listening on port ' + PORT + '!'))

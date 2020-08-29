@@ -42,13 +42,12 @@ async function display_modal(tipo, id, isEdit) {
       <div class="col-12 d-flex justify-content-end">
         <input id="guardar" class="btn btn-primary send-btn" type="button" onclick="${llamada}" value="Guardar">
         <input id="cancelar" class="btn btn-secondary" type="button" onclick="closeModal()" value="Cancelar">
-        <input id="btn-submit" type="submit" class="d-none" value="holi">
+        <input id="btn-submit" type="submit" class="d-none">
       </div>
       </form> </div>`;
     modal.innerHTML = content;
 
 }
-
 
 async function displayYesNo(tipo, nombre, id){
     modal.style.display = "block";

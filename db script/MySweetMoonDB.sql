@@ -72,8 +72,8 @@ CREATE TABLE quote_ingredients(
 DROP TABLE IF EXISTS pictures;
 CREATE TABLE pictures(
 	`id` INTEGER NOT NULL AUTO_INCREMENT,
-	`url` varchar(30) NOT NULL,
-    `alt` varchar(30) NOT NULL,
+	`url` varchar(100) NOT NULL,
+    `alt` varchar(100) NOT NULL,
     `esGaleria` BOOL NOT NULL,
 	PRIMARY KEY(`id`)
 );

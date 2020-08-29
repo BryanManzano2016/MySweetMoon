@@ -69,7 +69,7 @@ INSERT INTO pictures(url, alt, esGaleria) VALUES
 ("nuevos.jpg",  "Alfajores", true),
 ("nuevos1.jpg","Bocaditos de Coco", true),
 ("nuevos2.jpg","Dulces mixtos", true),
-("nuevos3.jpg", "Mensaje", true),
+("nuevos3.jpg", "2019", true),
 ("hasta.jpg", "Pastel de Sirena", false),
 ("volveremos.jpg", "Pastel floral", false),
 ("volvimos.jpg", "Arreglo de mesa", false),
