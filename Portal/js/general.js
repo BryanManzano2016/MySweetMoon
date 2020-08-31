@@ -15,6 +15,7 @@ var navOpcionesCliente = new Vue({
     enlacesAdmin: [
         { enlace: "recursos.html", texto: "Panel de Recursos"},
         { enlace: "procesos.html", texto: "Procesos" },
+        { enlace: "gallery.html", texto: "Galería" },
         { enlace: "panel-grafico.html", texto: "Gráficos" }
       ],
     usuario: sessionStorage.getItem("modoUsuario"),

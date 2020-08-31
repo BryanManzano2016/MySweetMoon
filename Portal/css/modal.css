@@ -50,3 +50,10 @@
     margin-bottom: 0%;
     margin-top: 3%;
 }
+
+.imgage_modal{
+  width: 40%;
+  height: 40%;
+  display:block;
+  margin:auto;
+}

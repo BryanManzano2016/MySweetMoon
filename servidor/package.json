@@ -19,6 +19,7 @@
   "homepage": "https://github.com/BryanManzano2016/MySweetMoon#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
     "mongoose": "^5.10.0",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.4"
