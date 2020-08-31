@@ -11,6 +11,7 @@ var news = db.define('new', {
     fecha: Sequelize.DATE,
     userId: Sequelize.INTEGER, 
     pictureId: Sequelize.INTEGER, 
+    estado: Sequelize.BOOLEAN
 }, {
     timestamps: false
 });

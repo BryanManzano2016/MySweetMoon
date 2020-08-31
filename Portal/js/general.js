@@ -1,27 +1,27 @@
 var modoUsuario = 0;
 
 var navOpcionesCliente = new Vue({
-  el: "#navbar",
-  data: {
-    enlacesUsuario: [
-      { enlace: "index.html", texto: "Inicio"},
-      { enlace: "about.html", texto: "Nosotros" },
-      { enlace: "productos.html", texto: "Productos" },
-      { enlace: "pricing.html", texto: "Crea tu torta" },
-      { enlace: "blog.html", texto: "Noticias" },
-      { enlace: "team.html", texto: "Equipo" },
-      { enlace: "contact.html", texto: "Contacto" }
-    ],
-    enlacesAdmin: [
-        { enlace: "recursos.html", texto: "Panel de Recursos"},
-        { enlace: "procesos.html", texto: "Procesos" },
-        { enlace: "gallery.html", texto: "Galería" },
-        { enlace: "panel-grafico.html", texto: "Gráficos" }
-      ],
-    usuario: sessionStorage.getItem("modoUsuario"),
-  },
+    el: "#navbar",
+    data: {
+        enlacesUsuario: [
+            { enlace: "index.html", texto: "Inicio" },
+            { enlace: "about.html", texto: "Nosotros" },
+            { enlace: "productos.html", texto: "Productos" },
+            { enlace: "pricing.html", texto: "Crea tu torta" },
+            { enlace: "blog.html", texto: "Noticias" },
+            { enlace: "team.html", texto: "Equipo" },
+            { enlace: "contact.html", texto: "Contacto" }
+        ],
+        enlacesAdmin: [
+            { enlace: "recursos.html", texto: "Panel de Recursos" },
+            { enlace: "procesos.html", texto: "Procesos" },
+            { enlace: "gallery.html", texto: "Galería" },
+            { enlace: "panel-grafico.html", texto: "Gráficos" }
+        ],
+        usuario: sessionStorage.getItem("modoUsuario"),
+    },
 });
- 
+
 const footer = `
     <div class="container">
         <div class="row d-flex">
@@ -63,10 +63,49 @@ $("#footer").html(footer)
 
 async function getFetchObjeto(url = "", objeto = {}) {
     let parametros = objeto
-    let query = Object.keys(parametros).map(k => encodeURIComponent(k) + '=' + 
-      encodeURIComponent(parametros[k])).join('&')
+    let query = Object.keys(parametros).map(k => encodeURIComponent(k) + '=' +
+        encodeURIComponent(parametros[k])).join('&')
     let urlEnviar = url + '?' + query
-    let respuesta = await fetch( urlEnviar, { method: "GET" } )
+    let respuesta = await fetch(urlEnviar, { method: "GET" })
     var data = await respuesta.json()
     return data;
+}
+
+async function storeFetch(url = "", objectoEnviar = {}) {
+    let response = await fetch(
+        url,
+        {
+            method: "POST",
+            body: JSON.stringify(objectoEnviar),
+            headers: { 'Content-Type': 'application/json' }
+        }
+    )
+    var data = await response.json()
+    return data
+}
+
+async function putFetch(url = "", objectoEnviar = {}) {
+    let response = await fetch(
+        url,
+        {
+            method: "PUT",
+            body: JSON.stringify(objectoEnviar),
+            headers: { 'Content-Type': 'application/json' }
+        }
+    )
+    var data = await response.json()
+    return data
+}
+
+async function deleteFetch(url = "", objectoEnviar = {}) {
+    let response = await fetch(
+        url,
+        {
+            method: "DELETE",
+            body: JSON.stringify(objectoEnviar),
+            headers: { 'Content-Type': 'application/json' }
+        }
+    )
+    var data = await response.json()
+    return data
 }

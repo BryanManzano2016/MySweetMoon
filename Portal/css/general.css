@@ -1,7 +1,4 @@
 .iconoAnimacion:hover  {
     transform: scale(1.35);
 }
-
-.itemSelecionAnimacion:hover  {
-    font-weight: bold; 
-}
+ 

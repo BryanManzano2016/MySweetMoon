@@ -1,9 +1,31 @@
+$("#formularioNoticia").submit(function (e) {
+  e.preventDefault()
+  guardarNoticia()
+})
+$("#formularioProducto").submit(function (e) {
+  e.preventDefault()
+  guardarProducto()
+})
+$("#botonAgregarNoticia").click(function (e) { 
+  document.getElementById('formularioNoticia').reset()
+  $("#idNoticia").val("");
+});
+function reiniciarFormularioProducto() { 
+  document.getElementById('formularioProducto').reset()
+  $("#idProducto").val("")
+}
+function reiniciarFormularioNoticia() { 
+  document.getElementById('formularioNoticia').reset()
+  $("#idNoticia").val("")
+}
+document.getElementById('formularioProducto').reset()
 // instancia de clase VUE
 var recursosSeccion = new Vue({
-  el: "#pas3",
+  el: "#recursosResultado",
   data: {
     resultados: [],
     tipo: "",
+    elementoSeleccionado: {}
   },
   methods: {
     cargarInformacionContacto: function () {
@@ -22,7 +44,32 @@ var recursosSeccion = new Vue({
       this.tipo = "administrarNoticias"
       cargarNoticiasFetch().then((data) => {
         this.resultados = JSON.parse(data)
-        console.log(this.resultados);
+      })
+    },
+    seleccionarElemento: function (elemento) {
+      this.elementoSeleccionado = elemento
+      switch (this.tipo) {
+        case "administrarProductos":
+
+
+          break
+        case "administrarContactos":
+
+
+          break
+        case "administrarNoticias":
+          $("#tituloNoticia").val(elemento.titulo)
+          $("#subtituloNoticia").val(elemento.subtitulo)
+          $("#contenidoNoticia").val(elemento.contenido)
+          $("#idNoticia").val(elemento.id)
+          break
+        default:
+          break
+      }
+    },
+    eliminarElemento: function (elemento) {
+      deleteFetch("http://localhost:3000/new/borrarNoticia/" + elemento.id).then((res) => {
+        recursosSeccion.cargarInformacionNoticias()
       })
     }
   }
@@ -67,4 +114,38 @@ function tipoConsulta(valor) {
     default:
       break
   }
+}
+
+function guardarNoticia() {
+  let objetoNoticiasGuardar = {
+    titulo: $("#tituloNoticia").val(),
+    subtitulo: $("#subtituloNoticia").val(),
+    contenido: $("#contenidoNoticia").val(),
+    id: $("#idNoticia").val(),
+    fecha: Date(),
+    userId: 1,
+    pictureId: 1
+  }
+  if ($("#idNoticia").val() == "") {
+    storeFetch("http://localhost:3000/new/guardarNoticia", objetoNoticiasGuardar).then((res) => {
+      limpiarFormularioNoticias()
+    })
+  } else {
+    putFetch("http://localhost:3000/new/modificarNoticia", objetoNoticiasGuardar).then((res) => {
+      limpiarFormularioNoticias()
+    })
+  }
+}
+
+function limpiarFormularioNoticias() {
+  $('body').removeClass('modal-open')
+  $(".modal-backdrop").remove()
+  $('.modal-backdrop').remove()
+  $('#modalNoticia').modal('hide')
+  document.getElementById('formularioNoticia').reset()
+  recursosSeccion.cargarInformacionNoticias()
+}
+
+function guardarProducto() {
+
 }
