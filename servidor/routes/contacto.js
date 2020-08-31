@@ -1,7 +1,56 @@
-var express = require('express'); 
+var express = require('express');
+var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
 
-var Contacto = require("../models/contacto")
 var router = express.Router();
+var Contacto = require("../models/contacto");
+
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(bodyParser.json());
+
+router.get('/', async (req, res, next) => {
+    res.render('contact');
+});
+
+router.post('/send', async(req, res, next) => {
+  const output = `
+    <p>You have a new contact request</p>
+    <h3>Información de contacto</h3>
+    <ul>
+      <li>Nombre: ${req.body.name}</li>
+      <li>Apellido: ${req.body.lastname}</li>
+      <li>Celular: ${req.body.email}</li>
+      <li>Email: ${req.body.phone}</li>
+      <li>Fecha de nacimiento: ${req.body.date}</li>
+    </ul>
+    <h3>Message</h3>
+    <p>${req.body.message}</p>
+  `;
+});
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'correodepruebasMSM@gmail.com',
+    pass: 'correo16101998'
+  }
+});
+
+var mailOptions = {
+  from: 'correodepruebasMSM@gmail.com',
+  to: 'correodepruebasMSM@gmail.com',
+  subject: 'Intento de contacto',
+  text: 'Espero que esto funcione',
+  //aqui deberia ir html: output pero no me funciona :(
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
 
 router.get('/todos', async (req, res, next) => {
     res.send({})
