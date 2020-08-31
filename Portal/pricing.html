@@ -36,6 +36,7 @@
 
   <link rel="stylesheet" href="css/introjs.css">
   <link rel="stylesheet" href="css/introjs-rtl.css">
+  <link rel="stylesheet" href="css/step.css">
 </head>
 
 <body>
@@ -74,123 +75,81 @@
     </div>
   </section>
 
-  <div id="content_process">
-  <div class="container">
-      <div class="row">
-        <div class="col-md-12 mt-5">
-          <div class="bs-stepper">
-            <div id="pas1" class="bs-stepper-header">
-              <div class="step">
-              <a>
-                <button type="button" class="step-trigger" id="btn_size" onclick="asignarPaso('size');">
-                  <span class="bs-stepper-circle">1</span>
-                  <span class="bs-stepper-label d-lg-inline d-none">Tamaño</span>
-                </button>
-                <div class="step-content grey lighten-3">
-                  <select name="s1" id="s1">
-                    <option value="pequeno">Pequeño</option>
-                    <option value="mediano">Mediano</option>
-                    <option value="grande">Grande</option>
-                  </select>
-                </div>
-              </a>
-              </div>
-              <div class="line"></div>
-              <div class="step">
-                <a>
-                <button type="button" class="step-trigger" id="btn_mass"  onclick="asignarPaso('mass');">
-                  <span class="bs-stepper-circle">2</span>
-                  <span class="bs-stepper-label d-lg-inline d-none">Masa</span>
-                </button>
-                <div class="step-content grey lighten-3">
-                  <select name="s2" id="s2">
-                    <option value="quebrada">Quebrada</option>
-                    <option value="fermentada">Fermentada</option>
-                    <option value="batida">Batida</option>
-                    <option value="escaldada">Escaldada</option>
-                    <option value="hojaldrada">Hojaldrada</option>
-                    <option value="seca">Seca</option>
-                  </select>
-                </div>
-              </a>
-              </div>
-              <div class="line"></div>
-              <div class="step">
-                <a>
-                <button type="button" class="step-trigger" id="btn_relleno" onclick="asignarPaso('relleno');">
-                  <span class="bs-stepper-circle">3</span>
-                  <span class="bs-stepper-label d-lg-inline d-none">Relleno</span>
-                </button>
-                <div class="step-content grey lighten-3">
-                  <select name="s3" id="s3">
-                    <option value="vainilla">Vainilla</option>
-                    <option value="chocolate">Chocolate</option>
-                    <option value="chocolateB">Chocolate Blanco</option>
-                    <option value="frutilla">Frutilla</option>
-                    <option value="manjar">Manjar</option>
-                    <option value="sr">Sin relleno</option>
-                  </select>
-                </div>
-              </a>
-              </div>
-              <div class="line"></div>
-              <div class="step">
-                <a>
-                <button type="button" class="step-trigger" id="btn_cover" onclick="asignarPaso('cubierta');">
-                  <span class="bs-stepper-circle">4</span>
-                  <span class="bs-stepper-label d-lg-inline d-none">Cubierta</span>
-                </button>
-                <div class="step-content grey lighten-3">
-                  <select name="s4" id="s4">
-                    <option value="sc">Sin Cubierta</option>
-                    <option value="chocolate">Chocolate</option>
-                    <option value="chocolateB">Chocolate Blanco</option>
-                    <option value="manjar">Manjar</option>
-                    <option value="frutilla">Frutilla</option>
-                    <option value="merengue">Merengue</option>
-                  </select>
-                </div>
-              </a>
-              </div>
-              <div class="line"></div>
-              <div class="step">
-                <a>
-                <button type="button" class="step-trigger" id="btn_toping" onclick="asignarPaso('toping');">
-                  <span class="bs-stepper-circle">5</span>
-                  <span class="bs-stepper-label d-lg-inline d-none">Toping</span>
-                </button>
-                <div class="step-content grey lighten-3">
-                  <select name="s5" id="s5">
-                    <option value="st">Sin topping</option>
-                    <option value="grajeas">Grajea</option>
-                    <option value="oreos">Oreos</option>
-                    <option value="galletas">Galleta</option>
-                    <option value="frutillas">Frutillas</option>
-                    <option value="mms">MMs</option>
-                  </select>
-                </div>
-              </a>
-              </div>
-            </div>
-          </div>
+
+  <section>
+    <form id="regForm" action="">
+
+      <h1>Crea tu propia torta</h1>
+
+      <div class="tab">Tamaño:
+        <select name="s1" id="s1">
+          <option value="pequeno">Pequeño</option>
+          <option value="mediano">Mediano</option>
+          <option value="grande">Grande</option>
+        </select>
+      </div>
+
+      <div class="tab">Masa:
+        <select name="s2" id="s2">
+          <option value="quebrada">Quebrada</option>
+          <option value="fermentada">Fermentada</option>
+          <option value="batida">Batida</option>
+          <option value="escaldada">Escaldada</option>
+          <option value="hojaldrada">Hojaldrada</option>
+          <option value="seca">Seca</option>
+        </select>
+      </div>
+
+      <div class="tab">Relleno:
+        <select name="s3" id="s3">
+          <option value="vainilla">Vainilla</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="chocolateB">Chocolate Blanco</option>
+          <option value="frutilla">Frutilla</option>
+          <option value="manjar">Manjar</option>
+          <option value="sr">Sin relleno</option>
+        </select>
+      </div>
+
+      <div class="tab">Cubierta:
+        <select name="s4" id="s4">
+          <option value="sc">Sin Cubierta</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="chocolateB">Chocolate Blanco</option>
+          <option value="manjar">Manjar</option>
+          <option value="frutilla">Frutilla</option>
+          <option value="merengue">Merengue</option>
+        </select>
+      </div>
+
+      <div class="tab">Topping:
+        <select name="s5" id="s5">
+          <option value="st">Sin topping</option>
+          <option value="grajeas">Grajea</option>
+          <option value="oreos">Oreos</option>
+          <option value="galletas">Galleta</option>
+          <option value="frutillas">Frutillas</option>
+          <option value="mms">MMs</option>
+        </select>
+      </div>
+
+      <div style="overflow:auto;">
+        <div style="float:right;">
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Regresar</button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
         </div>
       </div>
-  </div>
-</div>
-  <!-- Espacio en blanco -->
-  <div class="row mt-1">
-    <div class="col-md-12 text-right">
-      <button class="btn btn-flat btn-sm"></button>
-    </div>
-  </div>
-  <!-- Steppers Navigation -->
-  <div class="row mt-1">
-    <div class="col-md-12 text-right">
-      <button id="pas2" class="btn btn-flat btn-sm">Reset</button>
-      <button id="pas3" class="btn btn-primary btn-sm">Comprar</button>
-    </div>
-  </div>
-  <!-- /.Vertical Steppers -->
+
+      <!-- Circles which indicates the steps of the form: -->
+      <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+    </form>
+  </section>
 
   <section class="ftco-section bg-light">
     <div id="pas4" class="container">
@@ -300,6 +259,7 @@
 
   <script src="js/intro.js"></script>
   <script src="js/guiaTorta.js"></script>
+  <script src="js/step.js"></script>
 </body>
 
 </html>
