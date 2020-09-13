@@ -102,9 +102,9 @@
                   data-toggle="tooltip" data-placement="left" title="Campo obligatorio">
               </div>
               <div class="col-md-12 mb-2">
-                <label>Descripcíon</label>
-                <input id="descripcionProducto" required name="descripcionProducto" class="form-control"
-                  placeholder="Descripcíon" data-toggle="tooltip" data-placement="left" title="Campo obligatorio">
+                <label>Caracteristicas</label>
+                <input id="caracteristicasProducto" required name="caracteristicasProducto" class="form-control"
+                  placeholder="caracteristicas" data-toggle="tooltip" data-placement="left" title="Campo obligatorio">
               </div>
             </div>
             <div class="modal-footer">
@@ -247,7 +247,7 @@
         </div>
         <div class="col-md-6 col-lg-3 justify-content-center p-2">
           <div class="card justify-content-center">
-            <div class="services text-center ftco-animate card-body">
+            <div class="services text-center card-body">
               <div class="d-flex justify-content-center align-items-center">
                 <a href="#recursosResultado">
                   <img class="iconoAnimacion" src="img/contacto.png" height="100" width="100" alt="cake"
@@ -263,7 +263,7 @@
         </div>
         <div class="col-md-6 col-lg-3 justify-content-center p-2">
           <div class="card justify-content-center">
-            <div class="services text-center ftco-animate card-body">
+            <div class="services text-center card-body">
               <div class="d-flex justify-content-center align-items-center">
                 <a href="#recursosResultado">
                   <img class="iconoAnimacion" src="img/noticiasIcono.png" height="100" width="100" alt="cake"
@@ -290,9 +290,16 @@
         <div v-for="elemento in resultados" class="col-md-4 col-sm-6 justify-content-center p-2">
           <div class="card justify-content-center" style="width: 100%; height: 100%;"
             v-if="tipo == 'administrarProductos'">
-            <div class="iconoAnimacion" class="card-body">
-              <h5 class="card-title" v-on:click="seleccionarElemento(elemento)">Producto: {{elemento.nombre}}</h5>
-              <p class="card-text">{{elemento.description}}</p>
+            <div class="card-body">
+
+              <div class="row">
+                <div class="col-lg-8">
+                  <h5 class="card-title" v-on:click="seleccionarElemento(elemento)" data-toggle='modal'
+                    data-target='#modalProducto'>Producto: {{elemento.nombre}}</h5>
+                </div> 
+                <div class="col"><em class="fa fa-trash" v-on:click="eliminarElemento(elemento, 'producto')"></em></div>
+              </div>
+              <p class="card-text">{{elemento.caracteristicas}}</p> 
             </div>
           </div>
           <div class="card justify-content-center" style="width: 100%; height: 100%;"
@@ -311,7 +318,7 @@
                   <h5 class="card-title" v-on:click="seleccionarElemento(elemento)" data-toggle='modal'
                     data-target='#modalNoticia'>{{elemento.id}} - {{elemento.titulo}} </h5>
                 </div> 
-                <div class="col"><i class="fa fa-trash" v-on:click="eliminarElemento(elemento)"></i></div>
+                <div class="col"><em class="fa fa-trash" v-on:click="eliminarElemento(elemento, 'noticia')"></em></div>
               </div>
               <p class="card-text">{{elemento.subtitulo}}</p>
             </div>
@@ -319,14 +326,11 @@
         </div>
         <div class="col justify-content-center" v-if="tipo == 'administrarNoticias'"><button
             class="btn btn-primary col-md-3 col-sm-6 m-1" style="width: 100%;" data-toggle="modal"
-            data-target="#modalNoticia" onclick="reiniciarFormularioNoticia()" 
-            >+ Nuevo</button>
+            data-target="#modalNoticia" onclick="reiniciarFormularioNoticia()">+ Nuevo</button>
         </div>
         <div class="col justify-content-center" v-if="tipo == 'administrarProductos'"><button
             class="btn btn-primary col-md-3 col-sm-6 m-1" style="width: 100%;" data-toggle="modal"
-            data-target="#modalProducto" onclick="reiniciarFormularioProducto()" 
-            >+
-            Nuevo</button></div>
+            data-target="#modalProducto" onclick="reiniciarFormularioProducto()">+Nuevo</button></div>
       </div>
     </div>
   </section>

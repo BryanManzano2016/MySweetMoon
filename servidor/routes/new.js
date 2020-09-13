@@ -7,7 +7,7 @@ const UserModel = require('../models/user');
 
 var router = express.Router()
 
-router.get('/todos', async (req, res, next) => {
+router.get('/all', async (req, res, next) => {
     try {
         const news = await NewModel.findAll({ where: { estado: true }, include: [FigureModel] })
         res.json(news);
@@ -30,7 +30,7 @@ router.get('/:id', async (req, res, next) => {
     }
 })
 
-router.post('/guardarNoticia', async (req, res, next) => {
+router.post('/save', async (req, res, next) => {
     try {
         let requestBody = req.body
         delete requestBody.id
@@ -42,7 +42,7 @@ router.post('/guardarNoticia', async (req, res, next) => {
     }
 })
 
-router.put('/modificarNoticia', async (req, res, next) => {
+router.put('/update', async (req, res, next) => {
     try {
         let requestBody = req.body
         let objectNew = await NewModel.findOne({ where: { id: requestBody.id } })
@@ -57,7 +57,7 @@ router.put('/modificarNoticia', async (req, res, next) => {
     }
 })
 
-router.delete('/borrarNoticia/:id', async (req, res, next) => {
+router.delete('/delete/:id', async (req, res, next) => {
     try {
         let objectNew = await NewModel.findOne({ where: { id: req.params.id } })
         objectNew.estado = false

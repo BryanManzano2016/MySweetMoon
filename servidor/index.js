@@ -17,7 +17,7 @@ var adminRouter = require('./routes/adminRouter')
 
 app.use("/admin", adminRouter)
 
-app.use('/productos', productoRouter)
+app.use('/product', productoRouter)
 // app.use('/contacto', contactoRouter)
 app.use('/graph', graphRouter)
 app.use('/galeria', galeriaRouter)

@@ -6,15 +6,15 @@ $("#formularioProducto").submit(function (e) {
   e.preventDefault()
   guardarProducto()
 })
-$("#botonAgregarNoticia").click(function (e) { 
+$("#botonAgregarNoticia").click(function (e) {
   document.getElementById('formularioNoticia').reset()
-  $("#idNoticia").val("");
-});
-function reiniciarFormularioProducto() { 
+  $("#idNoticia").val("")
+})
+function reiniciarFormularioProducto() {
   document.getElementById('formularioProducto').reset()
   $("#idProducto").val("")
 }
-function reiniciarFormularioNoticia() { 
+function reiniciarFormularioNoticia() {
   document.getElementById('formularioNoticia').reset()
   $("#idNoticia").val("")
 }
@@ -36,13 +36,9 @@ var recursosSeccion = new Vue({
     },
     cargarInformacionProductos: function () {
       this.tipo = "administrarProductos"
-
- /*      
       cargarProductosFetch().then((data) => {
-        console.log(data);
         this.resultados = JSON.parse(data)
       })
- */
     },
     cargarInformacionNoticias: function () {
       this.tipo = "administrarNoticias"
@@ -54,8 +50,9 @@ var recursosSeccion = new Vue({
       this.elementoSeleccionado = elemento
       switch (this.tipo) {
         case "administrarProductos":
-
-
+          $("#idProducto").val(elemento.id)
+          $("#nombreProducto").val(elemento.nombre)
+          $("#caracteristicasProducto").val(elemento.caracteristicas)
           break
         case "administrarContactos":
 
@@ -71,10 +68,21 @@ var recursosSeccion = new Vue({
           break
       }
     },
-    eliminarElemento: function (elemento) {
-      deleteFetch("http://localhost:3000/new/borrarNoticia/" + elemento.id).then((res) => {
-        recursosSeccion.cargarInformacionNoticias()
-      })
+    eliminarElemento: function (elemento = {}, tipo = "") {
+      switch (tipo) {
+        case "producto":
+          deleteFetch("http://localhost:3000/product/delete/" + elemento.id).then((res) => {
+            recursosSeccion.cargarInformacionProductos()
+          })
+          break
+        case "noticia":
+          deleteFetch("http://localhost:3000/new/delete/" + elemento.id).then((res) => {
+            recursosSeccion.cargarInformacionNoticias()
+          })
+          break
+        default:
+          break
+      } 
     }
   }
 })
@@ -88,7 +96,7 @@ async function cargarContactosFetch() {
 }
 
 async function cargarProductosFetch() {
-  let response = await fetch("http://localhost:3000/productos", {
+  let response = await fetch("http://localhost:3000/product/all", {
     method: "GET",
   })
   var data = await response.text()
@@ -96,7 +104,7 @@ async function cargarProductosFetch() {
 }
 
 async function cargarNoticiasFetch() {
-  let response = await fetch("http://localhost:3000/new/todos", {
+  let response = await fetch("http://localhost:3000/new/all", {
     method: "GET",
   })
   var data = await response.text()
@@ -120,8 +128,28 @@ function tipoConsulta(valor) {
   }
 }
 
+function limpiarFormularioNoticias() {
+  ocultarModal()
+  $('#modalNoticia').modal('hide')
+  document.getElementById('formularioNoticia').reset()
+  recursosSeccion.cargarInformacionNoticias()
+}
+
+function limpiarFormularioProductos() {
+  ocultarModal()
+  $('#modalProducto').modal('hide')
+  document.getElementById('formularioProducto').reset()
+  recursosSeccion.cargarInformacionProductos()
+}
+
+function ocultarModal() {
+  $('body').removeClass('modal-open')
+  $(".modal-backdrop").remove()
+}
+
+
 function guardarNoticia() {
-  let objetoNoticiasGuardar = {
+  let objetoGuardar = {
     titulo: $("#tituloNoticia").val(),
     subtitulo: $("#subtituloNoticia").val(),
     contenido: $("#contenidoNoticia").val(),
@@ -131,25 +159,31 @@ function guardarNoticia() {
     pictureId: 1
   }
   if ($("#idNoticia").val() == "") {
-    storeFetch("http://localhost:3000/new/guardarNoticia", objetoNoticiasGuardar).then((res) => {
+    storeFetch("http://localhost:3000/new/save", objetoGuardar).then((res) => {
       limpiarFormularioNoticias()
     })
   } else {
-    putFetch("http://localhost:3000/new/modificarNoticia", objetoNoticiasGuardar).then((res) => {
+    putFetch("http://localhost:3000/new/update", objetoGuardar).then((res) => {
+      console.log(res)
       limpiarFormularioNoticias()
     })
   }
 }
 
-function limpiarFormularioNoticias() {
-  $('body').removeClass('modal-open')
-  $(".modal-backdrop").remove()
-  $('.modal-backdrop').remove()
-  $('#modalNoticia').modal('hide')
-  document.getElementById('formularioNoticia').reset()
-  recursosSeccion.cargarInformacionNoticias()
-}
-
 function guardarProducto() {
-
+  let objetoGuardar = {
+    nombre: $("#nombreProducto").val(),
+    caracteristicas: $("#caracteristicasProducto").val(),
+    id: $("#idProducto").val(),
+    pictureId: 1
+  }
+  if ($("#idProducto").val() == "") {
+    storeFetch("http://localhost:3000/product/save", objetoGuardar).then((res) => {
+      limpiarFormularioProductos()
+    })
+  } else {
+    putFetch("http://localhost:3000/product/update", objetoGuardar).then((res) => {
+      limpiarFormularioProductos()
+    })
+  }
 }
