@@ -10,7 +10,8 @@ var product = db.define('product', {
 }, {
     timestamps: false
 });
-
-Picture.hasOne(product);
+ 
+Picture.hasOne(product, {foreignKey: 'pictureId'})
+product.belongsTo(Picture, {foreignKey: 'pictureId'})
 
 module.exports = product;
