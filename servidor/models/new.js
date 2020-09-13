@@ -4,7 +4,7 @@ const User = require('./user');
 const Picture = require('./picture');
 
 var news = db.define('new', {
-    id: { type: Sequelize.INTEGER, primaryKey: true },
+    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     titulo: Sequelize.STRING,
     subtitulo: Sequelize.STRING,
     contenido: Sequelize.STRING,

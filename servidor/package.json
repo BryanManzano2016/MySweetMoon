@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon server.js"
+    "serve": "npx nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +18,15 @@
   },
   "homepage": "https://github.com/BryanManzano2016/MySweetMoon#readme",
   "dependencies": {
+    "@admin-bro/express": "^3.0.0",
+    "@admin-bro/sequelize": "^1.1.0",
+    "admin-bro": "^3.2.5",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.0",
+    "express-formidable": "^1.2.0",
     "express-handlebars": "^5.1.0",
+    "formidable": "^1.2.2",
     "mongoose": "^5.10.0",
     "mysql2": "^2.1.0",
     "nodemailer": "^6.4.11",

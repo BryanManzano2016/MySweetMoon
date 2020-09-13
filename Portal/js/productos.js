@@ -7,7 +7,7 @@ var productosSeccion = new Vue({
   methods: {
     cargarProductos: function () {    
       cargarProductosFetch().then( data => {
-        this.resultados = JSON.parse(data)
+         this.resultados = JSON.parse(data)
       } );
     },
   },

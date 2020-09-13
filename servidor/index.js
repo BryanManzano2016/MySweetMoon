@@ -1,29 +1,32 @@
-var PORT = process.env.PORT || 3000;
-const express = require('express');
-const fileUpload = require('express-fileupload');
+var PORT = process.env.PORT || 3000
+const express = require('express')
+const fileUpload = require('express-fileupload')
 const app = express()
 
-app.use(fileUpload());
 crearCors(app)
 
-var productoRouter = require('./routes/producto');
-var contactoRouter = require('./routes/contacto');
-var graphRouter = require('./routes/graphs');
-var newRouter = require('./routes/new');
-var ingredientRouter = require('./routes/ingredientes');
-var galeriaRouter = require('./routes/galeria');
-var imagenRouter = require('./routes/imagen');
+var productoRouter = require('./routes/producto')
+// var contactoRouter = require('./routes/contacto')
+var graphRouter = require('./routes/graphs')
+var newRouter = require('./routes/new')
+var ingredientRouter = require('./routes/ingredientes')
+var galeriaRouter = require('./routes/galeria')
+var imagenRouter = require('./routes/imagen')
 
-var connection = require('./models/index');
+var adminRouter = require('./routes/adminRouter')
 
-app.use('/producto', productoRouter);
-app.use('/contacto', contactoRouter);
-app.use('/graph', graphRouter);
-app.use('/galeria', galeriaRouter);
-app.use('/imagen', imagenRouter);
-app.use('/new', newRouter);
+app.use("/admin", adminRouter)
 
-app.use('/ingrediente', ingredientRouter);
+app.use('/productos', productoRouter)
+// app.use('/contacto', contactoRouter)
+app.use('/graph', graphRouter)
+app.use('/galeria', galeriaRouter)
+app.use('/imagen', imagenRouter)
+app.use('/new', newRouter)
+
+app.use('/ingrediente', ingredientRouter)
+  
+app.use(fileUpload())
 
 app.listen(PORT, () => console.log('Listening on port ' + PORT + '!'))
 
@@ -36,6 +39,6 @@ function crearCors(app) {
 		respuesta.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
 		respuesta.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE')
 		next()
-	});
-	app.use(express.json());
+	})
+	app.use(express.json())
 }

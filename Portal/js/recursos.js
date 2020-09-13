@@ -36,9 +36,13 @@ var recursosSeccion = new Vue({
     },
     cargarInformacionProductos: function () {
       this.tipo = "administrarProductos"
+
+ /*      
       cargarProductosFetch().then((data) => {
+        console.log(data);
         this.resultados = JSON.parse(data)
       })
+ */
     },
     cargarInformacionNoticias: function () {
       this.tipo = "administrarNoticias"
