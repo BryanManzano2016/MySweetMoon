@@ -7,9 +7,8 @@ var noticiasSeccion = new Vue({
     },
     methods: {
         cargarNoticias: function () {
-            getFetchObjeto("http://localhost:3000/new/todos", {}).then(data => {
-                this.resultados = data
-                console.log(data)
+            getFetchObjeto("http://localhost:3000/new/all", {}).then(data => {
+                this.resultados = data 
             });
         },
     },

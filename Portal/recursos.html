@@ -277,6 +277,22 @@
             </div>
           </div>
         </div>
+        <div class="col-md-6 col-lg-3 justify-content-center p-2">
+          <div class="card justify-content-center">
+            <div class="services text-center card-body">
+              <div class="d-flex justify-content-center align-items-center">
+                <a href="#recursosResultado">
+                  <img class="iconoAnimacion" src="img/ventas_reporte.png" height="100" width="100" alt="cake"
+                    onclick="tipoConsulta('reporteVentas');">
+                </a>
+              </div>
+              <div class="text mt-3">
+                <h3>Ventas de productos</h3>
+                <p>Reporte de ventas</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -291,15 +307,14 @@
           <div class="card justify-content-center" style="width: 100%; height: 100%;"
             v-if="tipo == 'administrarProductos'">
             <div class="card-body">
-
               <div class="row">
                 <div class="col-lg-8">
                   <h5 class="card-title" v-on:click="seleccionarElemento(elemento)" data-toggle='modal'
                     data-target='#modalProducto'>Producto: {{elemento.nombre}}</h5>
-                </div> 
+                </div>
                 <div class="col"><em class="fa fa-trash" v-on:click="eliminarElemento(elemento, 'producto')"></em></div>
               </div>
-              <p class="card-text">{{elemento.caracteristicas}}</p> 
+              <p class="card-text">{{elemento.caracteristicas}}</p>
             </div>
           </div>
           <div class="card justify-content-center" style="width: 100%; height: 100%;"
@@ -317,10 +332,45 @@
                 <div class="col-lg-8">
                   <h5 class="card-title" v-on:click="seleccionarElemento(elemento)" data-toggle='modal'
                     data-target='#modalNoticia'>{{elemento.id}} - {{elemento.titulo}} </h5>
-                </div> 
+                </div>
                 <div class="col"><em class="fa fa-trash" v-on:click="eliminarElemento(elemento, 'noticia')"></em></div>
               </div>
               <p class="card-text">{{elemento.subtitulo}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="card justify-content-center" style="width: 100%; height: 100%;" v-if="tipo == 'reporteVentas'">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md"></div>
+              <div class="col-md">
+                <label>Elemento comprado: </label>
+                <select name="productosReporteSelect" v-on:change="cargarProductosHistorial"
+                  v-model="productoCompradoSeleccion">
+                  <option v-for="elemento in resultados" v-bind:value="elemento.id">{{elemento.nombre}}</option>
+                </select>
+              </div>
+              <div class="col-md"></div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md"></div>
+              <div class="col-md">
+                <table id="tablaReporteProducto" aria-describedby="Listado de clientes con sus respectivas compras"
+                  class="table table-striped table-hover">
+                  <tr class="cabecerasReporteProducto">
+                    <th scope="col">Id de operación</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Vendedor</th>
+                  </tr>
+                  <tr v-for="reporte in reportes">
+                    <td>{{reporte._id}}</td>
+                    <td>{{reporte.dateSale}}</td>
+                    <td>{{reporte.nameEmployee }}</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-md"></div>
             </div>
           </div>
         </div>

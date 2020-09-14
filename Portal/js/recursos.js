@@ -18,13 +18,22 @@ function reiniciarFormularioNoticia() {
   document.getElementById('formularioNoticia').reset()
   $("#idNoticia").val("")
 }
-document.getElementById('formularioProducto').reset()
+
+$("#productosReporteSelect").change(function (e) {
+  recursosSeccion.cargarProductosHistorial()
+})
+function clickMe(args) {
+  console.log(args);
+}
+
 // instancia de clase VUE
 var recursosSeccion = new Vue({
   el: "#recursosResultado",
   data: {
     resultados: [],
+    reportes: [],
     tipo: "",
+    productoCompradoSeleccion: "",
     elementoSeleccionado: {}
   },
   methods: {
@@ -45,6 +54,19 @@ var recursosSeccion = new Vue({
       cargarNoticiasFetch().then((data) => {
         this.resultados = JSON.parse(data)
       })
+    },
+    cargarReporteProductos: function () {
+      this.tipo = "reporteVentas"
+      cargarProductoDisponiblesFetch().then((data) => {
+        this.resultados = JSON.parse(data)
+      })
+    },
+    cargarProductosHistorial: function () {
+      if (this.productoCompradoSeleccion != "") {
+        cargarProductoHistorialFetch(this.productoCompradoSeleccion).then((data) => {
+          this.reportes = JSON.parse(data)
+        })
+      }
     },
     seleccionarElemento: function (elemento) {
       this.elementoSeleccionado = elemento
@@ -82,7 +104,10 @@ var recursosSeccion = new Vue({
           break
         default:
           break
-      } 
+      }
+    },
+    clickMe: function (params) {
+      console.log(params);
     }
   }
 })
@@ -111,6 +136,22 @@ async function cargarNoticiasFetch() {
   return data
 }
 
+async function cargarProductoDisponiblesFetch() {
+  let response = await fetch("http://localhost:3000/quote/all", {
+    method: "GET",
+  })
+  var data = await response.text()
+  return data
+}
+
+async function cargarProductoHistorialFetch(id = "") {
+  let response = await fetch("http://localhost:3000/quote/report/" + id, {
+    method: "GET",
+  })
+  var data = await response.text()
+  return data
+}
+
 function tipoConsulta(valor) {
   document.getElementById("recursosResultado").classList.remove('d-none')
   switch (valor) {
@@ -122,6 +163,9 @@ function tipoConsulta(valor) {
       break
     case "administrarNoticias":
       recursosSeccion.cargarInformacionNoticias()
+      break
+    case "reporteVentas":
+      recursosSeccion.cargarReporteProductos()
       break
     default:
       break
@@ -146,7 +190,6 @@ function ocultarModal() {
   $('body').removeClass('modal-open')
   $(".modal-backdrop").remove()
 }
-
 
 function guardarNoticia() {
   let objetoGuardar = {
@@ -187,3 +230,4 @@ function guardarProducto() {
     })
   }
 }
+

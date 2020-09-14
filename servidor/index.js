@@ -13,6 +13,8 @@ var ingredientRouter = require('./routes/ingredientes')
 var galeriaRouter = require('./routes/galeria')
 var imagenRouter = require('./routes/imagen')
 
+var quoteRouter = require('./routes/quote')
+
 var adminRouter = require('./routes/adminRouter')
 
 app.use("/admin", adminRouter)
@@ -25,6 +27,8 @@ app.use('/imagen', imagenRouter)
 app.use('/new', newRouter)
 
 app.use('/ingrediente', ingredientRouter)
+
+app.use('/quote', quoteRouter)
   
 app.use(fileUpload())
 
