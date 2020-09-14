@@ -6,13 +6,13 @@ const app = express()
 crearCors(app)
 
 var productoRouter = require('./routes/producto')
-// var contactoRouter = require('./routes/contacto')
+var contactoRouter = require('./routes/contacto')
 var graphRouter = require('./routes/graphs')
 var newRouter = require('./routes/new')
 var ingredientRouter = require('./routes/ingredientes')
 var galeriaRouter = require('./routes/galeria')
 var imagenRouter = require('./routes/imagen')
-
+//var tortaRouter = require('./routes/torta')
 var quoteRouter = require('./routes/quote')
 
 var adminRouter = require('./routes/adminRouter')
@@ -20,16 +20,18 @@ var adminRouter = require('./routes/adminRouter')
 app.use("/admin", adminRouter)
 
 app.use('/product', productoRouter)
-// app.use('/contacto', contactoRouter)
+app.use('/contacto', contactoRouter)
 app.use('/graph', graphRouter)
 app.use('/galeria', galeriaRouter)
 app.use('/imagen', imagenRouter)
+//app.use('/torta', tortaRouter)
 app.use('/new', newRouter)
+
 
 app.use('/ingrediente', ingredientRouter)
 
 app.use('/quote', quoteRouter)
-  
+
 app.use(fileUpload())
 
 app.listen(PORT, () => console.log('Listening on port ' + PORT + '!'))
