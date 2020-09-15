@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 
 var router = express.Router();
-var Contacto = require("../models/contacto");
+var Contacto = require("../models/contact");
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
@@ -11,6 +11,16 @@ router.use(bodyParser.json());
 router.get('/', async (req, res, next) => {
     res.render('contact');
 });
+
+router.get('/all', async (req, res, next) => {
+    try {
+        const contacts = await Contacto.findAll()
+        res.json(contacts);
+    } catch (error) {
+        console.log(error)
+        res.sendStatus(500)
+    }
+})
 
 router.post('/send', async(req, res, next) => {
   const output = `

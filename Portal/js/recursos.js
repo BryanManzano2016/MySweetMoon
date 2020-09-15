@@ -113,7 +113,7 @@ var recursosSeccion = new Vue({
 })
 
 async function cargarContactosFetch() {
-  let response = await fetch("http://localhost:3000/contactos", {
+  let response = await fetch("http://localhost:3000/contacto/all", {
     method: "GET",
   })
   var data = await response.text()
@@ -230,4 +230,3 @@ function guardarProducto() {
     })
   }
 }
-
