@@ -6,13 +6,13 @@ const app = express()
 crearCors(app)
 
 var productoRouter = require('./routes/producto')
-// var contactoRouter = require('./routes/contacto')
+var contactoRouter = require('./routes/contacto')
 var graphRouter = require('./routes/graphs')
 var newRouter = require('./routes/new')
 var ingredientRouter = require('./routes/ingredientes')
 var galeriaRouter = require('./routes/galeria')
 var imagenRouter = require('./routes/imagen')
-
+var loginRouter = require('./routes/login')
 var quoteRouter = require('./routes/quote')
 
 var adminRouter = require('./routes/adminRouter')
@@ -21,16 +21,17 @@ app.use("/admin", adminRouter)
 app.use(fileUpload())
 
 app.use('/product', productoRouter)
-// app.use('/contacto', contactoRouter)
+app.use('/contacto', contactoRouter)
 app.use('/graph', graphRouter)
 app.use('/galeria', galeriaRouter)
 app.use('/imagen', imagenRouter)
+app.use('/login', loginRouter)
 app.use('/new', newRouter)
+
 
 app.use('/ingrediente', ingredientRouter)
 
-app.use('/quote', quoteRouter)
-  
+app.use('/quote', quoteRouter)  
 
 app.listen(PORT, () => console.log('Listening on port ' + PORT + '!'))
 
@@ -43,6 +44,6 @@ function crearCors(apps) {
 		respuesta.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
 		respuesta.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE')
 		next()
-	})
-	apps.use(express.json())
-}
+	}) 
+	app.use(express.json())
+} 
