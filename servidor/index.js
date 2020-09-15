@@ -18,6 +18,7 @@ var quoteRouter = require('./routes/quote')
 var adminRouter = require('./routes/adminRouter')
 
 app.use("/admin", adminRouter)
+app.use(fileUpload())
 
 app.use('/product', productoRouter)
 // app.use('/contacto', contactoRouter)
@@ -30,13 +31,12 @@ app.use('/ingrediente', ingredientRouter)
 
 app.use('/quote', quoteRouter)
   
-app.use(fileUpload())
 
 app.listen(PORT, () => console.log('Listening on port ' + PORT + '!'))
 
 // cruzar informacion entre dominios diferentes
-function crearCors(app) {
-	app.use((solicitud, respuesta, next) => {
+function crearCors(apps) {
+	apps.use((solicitud, respuesta, next) => {
 		respuesta.header('Access-Control-Allow-Origin', '*')
 		respuesta.header('Access-Control-Allow-Headers',
 			'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method')
@@ -44,5 +44,5 @@ function crearCors(app) {
 		respuesta.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE')
 		next()
 	})
-	app.use(express.json())
+	apps.use(express.json())
 }

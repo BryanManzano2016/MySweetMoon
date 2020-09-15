@@ -84,6 +84,20 @@ async function storeFetch(url = "", objectoEnviar = {}) {
     return data
 }
 
+async function postFetch(url = "", objectoEnviar = {}) {
+    let response = await fetch(
+        url,
+        {
+            method: "POST",
+            body: JSON.stringify(objectoEnviar),
+            headers: { 'Content-Type': 'application/json' }
+        }
+    )
+    var data = await response.json()
+    return data
+}
+
+
 async function putFetch(url = "", objectoEnviar = {}) {
     let response = await fetch(
         url,
