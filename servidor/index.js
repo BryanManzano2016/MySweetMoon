@@ -12,7 +12,7 @@ var newRouter = require('./routes/new')
 var ingredientRouter = require('./routes/ingredientes')
 var galeriaRouter = require('./routes/galeria')
 var imagenRouter = require('./routes/imagen')
-var loginRouter = require('./routes/login')
+var userRouter = require('./routes/user')
 var quoteRouter = require('./routes/quote')
 
 var adminRouter = require('./routes/adminRouter')
@@ -24,10 +24,10 @@ app.use('/product', productoRouter)
 app.use('/contacto', contactoRouter)
 app.use('/graph', graphRouter)
 app.use('/galeria', galeriaRouter)
-app.use('/imagen', imagenRouter)
-app.use('/login', loginRouter)
+app.use('/imagen', imagenRouter) 
 app.use('/new', newRouter)
 
+app.use('/user', userRouter)
 
 app.use('/ingrediente', ingredientRouter)
 

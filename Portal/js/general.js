@@ -1,24 +1,41 @@
-var modoUsuario = 0;
+if (["null", "", "undefined", null, undefined].includes(sessionStorage.getItem("rol"))) {
+    location.replace("login.html")
+}
+
+const opcionesCliente = [
+    { enlace: "index.html", texto: "Inicio" },
+    { enlace: "about.html", texto: "Nosotros" },
+    { enlace: "productos.html", texto: "Productos" },
+    { enlace: "pricing.html", texto: "Crea tu torta" },
+    { enlace: "blog.html", texto: "Noticias" },
+    { enlace: "team.html", texto: "Equipo" },
+    { enlace: "contact.html", texto: "Contacto" }
+];
+
+const opcionesAdmin = [
+    { enlace: "recursos.html", texto: "Panel de Recursos" },
+    { enlace: "procesos.html", texto: "Procesos" },
+    { enlace: "gallery.html", texto: "Galería" },
+    { enlace: "panel-grafico.html", texto: "Gráficos" }
+];
+
+var opcionesNav = []
+switch (sessionStorage.getItem("rol")) {
+    case "1":
+        opcionesNav = asignarOpciones(opcionesAdmin)
+        break
+    case "2":
+        opcionesNav = asignarOpciones(opcionesCliente)
+        break
+    default:
+        break
+}
 
 var navOpcionesCliente = new Vue({
     el: "#navbar",
     data: {
-        enlacesUsuario: [
-            { enlace: "index.html", texto: "Inicio" },
-            { enlace: "about.html", texto: "Nosotros" },
-            { enlace: "productos.html", texto: "Productos" },
-            { enlace: "pricing.html", texto: "Crea tu torta" },
-            { enlace: "blog.html", texto: "Noticias" },
-            { enlace: "team.html", texto: "Equipo" },
-            { enlace: "contact.html", texto: "Contacto" }
-        ],
-        enlacesAdmin: [
-            { enlace: "recursos.html", texto: "Panel de Recursos" },
-            { enlace: "procesos.html", texto: "Procesos" },
-            { enlace: "gallery.html", texto: "Galería" },
-            { enlace: "panel-grafico.html", texto: "Gráficos" }
-        ],
-        usuario: sessionStorage.getItem("modoUsuario"),
+        enlaces: opcionesNav,
+        usuario: sessionStorage.getItem("rol")
     },
 });
 
@@ -58,8 +75,6 @@ const footer = `
 `
 
 $("#footer").html(footer)
-
-
 
 async function getFetchObjeto(url = "", objeto = {}) {
     let parametros = objeto
@@ -122,4 +137,22 @@ async function deleteFetch(url = "", objectoEnviar = {}) {
     )
     var data = await response.json()
     return data
+}
+
+function obtenerPaginaActual() {
+    var url = window.location
+    return url.toString().split("/")[3]
+}
+
+function asignarOpciones(arreglo = []) {
+    let validar = false
+    arreglo.forEach((Element, i) => {
+        if (Element.enlace == obtenerPaginaActual()) {
+            validar = true;
+        }
+    });
+    if (!validar) {
+        location.replace("login.html");
+    }
+    return arreglo;
 }
