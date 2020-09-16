@@ -45,6 +45,7 @@ CREATE TABLE quotes (
     `isModelo` BOOL NOT NULL,
     `fecha` DATE NOT NULL,
     `userId` INTEGER NOT NULL,
+    `isActive` BOOLEAN NOT NULL,
 	PRIMARY KEY(`id`),
     CONSTRAINT `user_Id` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
 );
@@ -100,16 +101,4 @@ CREATE TABLE products(
     `pictureId` INTEGER NOT NULL,
     PRIMARY KEY(`id`),
     CONSTRAINT `picturePId` FOREIGN KEY (`pictureId`) REFERENCES `pictures` (`id`)
-);
-
-DROP TABLE IF EXISTS comments;
-CREATE TABLE comments(
-	`id` INTEGER NOT NULL AUTO_INCREMENT,
-    `fecha` DATE NOT NULL,
-    `mensaje` varchar(500) NOT NULL,
-    `userId` INTEGER NOT NULL,
-    `newId` INTEGER NOT NULL,
-    PRIMARY KEY(`id`),
-    CONSTRAINT `userCId` FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
-    CONSTRAINT `newCId` FOREIGN KEY (`newId`) REFERENCES `news` (`id`)
 );

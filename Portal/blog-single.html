@@ -24,6 +24,7 @@
 
   <link rel="stylesheet" href="css/bootstrap-datepicker.css">
   <link rel="stylesheet" href="css/jquery.timepicker.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
 
   <link rel="stylesheet" href="css/flaticon.css">
@@ -40,17 +41,20 @@
         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul id="navbar"  class="navbar-nav ml-auto">
-          <li v-for="elem in enlacesUsuario" v-if="usuario == 0" class="nav-item">
-            <a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
-          </li>
-          <li v-for="elem in enlacesAdmin" v-if="usuario == 1" class="nav-item">
-            <a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
-          </li>
-        </ul>
-      </div>
 
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul id="navbar" class="navbar-nav ml-auto">
+					<li v-for="elem in enlaces" class="nav-item">
+						<a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login.html">
+							<i class="fa fa-sign-out" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
     </div>
   </nav>
   <!-- END nav -->

@@ -15,13 +15,13 @@ INSERT INTO contacts(nombre, apellido, celular, correo, fecha, userId, mensaje) 
 ("David","Guerrero","0984343467","david99@gmail.com","1999-10-10", 3,
 "Buenos días, quería felicitarle por el pedido que realicé, fue perfecto el pastel.");
 
-INSERT INTO quotes(nombre, tamano, isModelo, fecha, userId) VALUES
-("TORTA DE CUMPLEAÑOS", 25, true, "2020-06-22",3),
-("PERSONAL CHOCOLOVER", 10, true, "2020-06-22",3),
-("TORTA DE OFICINA", 20, true, "2020-05-22",3),
-("", 10, false, "2020-04-22",1),
-("", 20, false, "2020-03-22",1),
-("", 20, false, "2020-08-22",3);
+INSERT INTO quotes(nombre, tamano, isModelo, fecha, userId, isActive) VALUES
+("TORTA DE CUMPLEAÑOS", 25, true, "2020-06-22",3, true),
+("PERSONAL CHOCOLOVER", 10, true, "2020-06-22",3, true),
+("TORTA DE OFICINA", 20, true, "2020-05-22",3, true),
+("FRUTILLA PASTEL", 10, false, "2020-04-22",1, true),
+("MEGA TORTA HELADA", 20, false, "2020-03-22",1, true),
+("TORTA JAPONESA", 20, false, "2020-08-22",3, true);
 
 INSERT INTO ingredients(nombre, precio, tipo, isActive) VALUES
 ("Naranja", 0.25 ,"Masa", true),
@@ -102,13 +102,3 @@ INSERT INTO products(nombre, caracteristicas, pictureId) VALUES
 ("Torta de Minecraft", "Masa de chocolate y rellena de mermelada.", 9),
 ("Torta de Sirenita", "Masa de vainilla con manjar", 5),
 ("Torta de Unicornio", "Modelado con fondant y rellena de chocolate", 13);
-
-INSERT INTO comments(fecha, mensaje, userId, newId) VALUES
-("2020-07-10", "Wow! no espero por ver los nuevos productos, aunque me gustaría que incluyan una nueva línea de paquetes de fiesta",
-1, 1),
-("2020-07-10", "Me encantan! ya me llegó el pedido de los nuevos productos, las galletas estaban súper crocantes.",
-2, 1),
-("2020-06-30", "Ya era tiempo que sacaran este tipo de ofertas :D",
-2, 2),
-("2020-06-30", "¿Saben donde puedo hacer esas reservaciones? me gustaría hacer una.",
-1, 2);

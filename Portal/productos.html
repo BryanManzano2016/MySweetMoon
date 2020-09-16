@@ -29,14 +29,13 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
 
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" href="css/productos.css">
- 
-	<script src="js/modoUsuario.js"></script>
- 
+  
 	<link rel="stylesheet" href="css/introjs.css">
 	<link rel="stylesheet" href="css/introjs-rtl.css">
 
@@ -52,17 +51,20 @@
 				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menú
 			</button>
-		
+
 			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul id="navbar"  class="navbar-nav ml-auto">
-					<li v-for="elem in enlacesUsuario" v-if="usuario == 0" class="nav-item">
+				<ul id="navbar" class="navbar-nav ml-auto">
+					<li v-for="elem in enlaces" class="nav-item">
 						<a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
 					</li>
-					<li v-for="elem in enlacesAdmin" v-if="usuario == 1" class="nav-item">
-						<a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
+					<li class="nav-item">
+						<a class="nav-link" href="login.html">
+							<i class="fa fa-sign-out" aria-hidden="true"></i>
+						</a>
 					</li>
 				</ul>
 			</div>
+			
 
 		</div>
 	</nav>

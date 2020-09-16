@@ -4,7 +4,7 @@ const Quote = require('./quote');
 const Ingredient = require('./ingredient');
 
 var qIng = db.define('quote_ingredient', {
-    id: { type: Sequelize.INTEGER, primaryKey: true },
+    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     quoteId: Sequelize.INTEGER,
     ingredientId: Sequelize.INTEGER
 }, {

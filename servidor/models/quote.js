@@ -3,12 +3,13 @@ const db = require('./index');
 const User = require('./user');
 
 var quote = db.define('quote', {
-    id: { type: Sequelize.INTEGER, primaryKey: true },
+    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
     nombre: Sequelize.STRING,
     tamano: Sequelize.INTEGER,
     isModelo: Sequelize.BOOLEAN,
     fecha: Sequelize.DATE,
-    userId: Sequelize.INTEGER
+    userId: Sequelize.INTEGER,
+    isActive: Sequelize.BOOLEAN
 }, {
     timestamps: false
 });

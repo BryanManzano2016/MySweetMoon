@@ -12,7 +12,8 @@ var user = db.define('user', {
 }, {
     timestamps: false
 })
-
-Rol.hasOne(user) 
+  
+Rol.hasMany(user, {foreignKey: 'rolId'})
+user.belongsTo(Rol, {foreignKey: 'rolId'})
 
 module.exports = user

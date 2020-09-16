@@ -1,23 +1,65 @@
-<style>
-.center {
-  margin: 200px 500px;
-  width: 25%;
-  height: 200px;
-  border: 3px solid #F5B7B1;
-  padding: 10px;
-  text-align: center;
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
 
-<form class="center" action="/login" method="POST">
-  <h1>Login de MySweetMoon</h1>
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-  </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-  </div>
-  <button type="submit">Login</button>
-</form>
+<head>
+	<title>MySweetMoon</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<link rel="stylesheet" href="css/style.css"> 
+</head>
+
+<body>
+
+	<div class="container">
+		<div id="myModal" class="modal">
+		</div>
+	</div>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+				<form class="login100-form validate-form" action="" id="formularioLogin">
+					<span class="login100-form-title p-b-55">
+						Login
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-16"
+						data-validate="Valid email is required: ex@abc.xyz">
+						<input class="input100" type="email" name="correoCampo" id="correoCampo" name="email"
+							placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-envelope"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+						<input class="input100" type="password" id="passwordCampo" name="passwordCampo"
+							placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-lock"></span>
+						</span>
+					</div>
+
+					<div class="container-login100-form-btn p-t-25">
+						<button class="login100-form-btn" id="enviarLogin">
+							Iniciar Sesión
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/sweetalert2.js"></script>
+
+	<script src="js/login.js"></script>
+</body>

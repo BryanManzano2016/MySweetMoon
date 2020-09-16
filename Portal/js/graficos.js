@@ -12,7 +12,7 @@ async function loadgraph1() {
     };
 
     let response = await fetch("http://localhost:3000/graph/1", {
-        method: "GET",
+        method: "GET", 
     });
     var values = await response.json();
     let result = [];

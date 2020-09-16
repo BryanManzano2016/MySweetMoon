@@ -28,15 +28,17 @@
 
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
-  <link rel="stylesheet" href="css/stepper.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
-  <script src="js/modoUsuario.js"></script>
 
   <link rel="stylesheet" href="css/introjs.css">
   <link rel="stylesheet" href="css/introjs-rtl.css">
   <link rel="stylesheet" href="css/step.css">
+
+  <link rel="stylesheet" href="css/stepper.css">
+  <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body>
@@ -49,27 +51,32 @@
         <span class="oi oi-menu"></span> Menu
       </button>
 
+
       <div class="collapse navbar-collapse" id="ftco-nav">
-				<ul id="navbar"  class="navbar-nav ml-auto">
-					<li v-for="elem in enlacesUsuario" v-if="usuario == 0" class="nav-item">
-						<a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
-					</li>
-					<li v-for="elem in enlacesAdmin" v-if="usuario == 1" class="nav-item">
-						<a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
-					</li>
-				</ul>
-			</div>
+        <ul id="navbar" class="navbar-nav ml-auto">
+          <li v-for="elem in enlaces" class="nav-item">
+            <a v-bind:href="elem.enlace" class="nav-link">{{ elem.texto }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
 
     </div>
   </nav>
   <!-- END nav -->
 
-  <section class="hero-wrap hero-wrap-2" style="background-image: url('img/portada2.jpg');" >
+  <section class="hero-wrap hero-wrap-2" style="background-image: url('img/portada2.jpg');">
     <div class="container">
       <div class="row slider-text align-items-center justify-content-center">
         <div class="col-md-9 ftco-animate text-center">
           <h1 class="mb-3 bread">Crea tu torta</h1>
-          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Inicio</a></span> <span>Crea tu torta</span></p>
+          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Inicio</a></span> <span>Crea tu torta</span>
+          </p>
         </div>
       </div>
     </div>
@@ -77,66 +84,53 @@
 
 
   <section style="background-image: url('img/torta1234.jpg');">
-    <form id="regForm" action="">
+    <form id="regForm">
 
       <h1>Crea tu propia torta</h1>
 
       <div class="tab">Tamaño:
         <select name="s1" id="s1">
-          <option value="pequeno">Pequeño</option>
-          <option value="mediano">Mediano</option>
-          <option value="grande">Grande</option>
+          <option value="12">10 Porciones</option>
+          <option value="13">15 Porciones</option>
+          <option value="14">20 Porciones</option>
         </select>
       </div>
 
       <div class="tab">Masa:
         <select name="s2" id="s2">
-          <option value="quebrada">Quebrada</option>
-          <option value="fermentada">Fermentada</option>
-          <option value="batida">Batida</option>
-          <option value="escaldada">Escaldada</option>
-          <option value="hojaldrada">Hojaldrada</option>
-          <option value="seca">Seca</option>
+          <option value="1">Naranja</option>
+          <option value="2">Chocolate</option>
+          <option value="3">Vainilla</option>
+          <option value="4">Amaretto</option>
         </select>
       </div>
 
       <div class="tab">Relleno:
         <select name="s3" id="s3">
-          <option value="vainilla">Vainilla</option>
-          <option value="chocolate">Chocolate</option>
-          <option value="chocolateB">Chocolate Blanco</option>
-          <option value="frutilla">Frutilla</option>
-          <option value="manjar">Manjar</option>
-          <option value="sr">Sin relleno</option>
+          <option value="5">Manjar</option>
+          <option value="6">Mermelada</option>
+          <option value="7">Brigadeiro</option>
         </select>
       </div>
 
       <div class="tab">Cubierta:
         <select name="s4" id="s4">
-          <option value="sc">Sin Cubierta</option>
-          <option value="chocolate">Chocolate</option>
-          <option value="chocolateB">Chocolate Blanco</option>
-          <option value="manjar">Manjar</option>
-          <option value="frutilla">Frutilla</option>
-          <option value="merengue">Merengue</option>
+          <option value="8">Frosting</option>
+          <option value="9">Butter Cream</option>
         </select>
       </div>
 
       <div class="tab">Topping:
         <select name="s5" id="s5">
-          <option value="st">Sin topping</option>
-          <option value="grajeas">Grajea</option>
-          <option value="oreos">Oreos</option>
-          <option value="galletas">Galleta</option>
-          <option value="frutillas">Frutillas</option>
-          <option value="mms">MMs</option>
+          <option value="10">Modelo Fondant</option>
+          <option value="11">Dulces y Paletas</option>
         </select>
       </div>
 
       <div style="overflow:auto;">
         <div style="float:right;">
-          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Regresar</button>
-          <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+          <button type="button" id="prevBtn" class="btn btn-secondary" onclick="nextPrev(-1)">Regresar</button>
+          <button type="button" id="nextBtn" class=" btn btn-primary" onclick="nextPrev(1)">Siguiente</button>
         </div>
       </div>
 
@@ -150,6 +144,41 @@
       </div>
     </form>
   </section>
+
+
+  <div id="content_process">
+    <div class="container ftco-section">
+      <h3 class="text-center subheading">Cotizaciones</h3>
+      <div class="row mt-4 justify-content-center" id="torta">
+        <div class="d-flex justify-content-center col-10">
+          <button onclick=" restaurarQuote()" type="button" id="" class="btn btn-primary col-md-3 col-sm-6 m-1"
+            style="width: 100%;">Restaurar eliminado</button>
+        </div>
+
+        <div class="d-flex justify-content-center col-10">
+          <div v-for="elemento in resultados" class="card col-md-3 col-sm-6 m-1"
+            style="width: 100%; height: 100%;">
+            <div class="card-body" style="width:100%">
+              <div class="d-flex justify-content-between align-content-start mb-3">
+                <p class="close emoji" v-on:click="clickActions(elemento.id)">✏️Editar</p>
+                <span class="close" v-on:click="deleteQuote(elemento.id)"><em
+                    class="fa fa-trash"></em></span>
+              </div>
+              <h6 class="card-title">{{elemento.nombre}}</h6>
+              <p class="card-text">fecha: {{elemento.fecha}}</p>
+              <p class="card-text">tamaño: {{elemento.tamano}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div id="myModal" class="modal">
+    </div>
+  </div>
 
   <footer id="footer" class="ftco-footer ftco-section">
   </footer>
@@ -184,6 +213,7 @@
   <script src="js/intro.js"></script>
   <script src="js/guiaTorta.js"></script>
   <script src="js/step.js"></script>
+  <script src="js/editor_display.js"></script>
 </body>
 
 </html>
