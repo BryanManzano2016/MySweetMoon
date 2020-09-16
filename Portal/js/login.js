@@ -1,5 +1,4 @@
-sessionStorage.setItem("usuario", null)
-sessionStorage.setItem("rol", null)
+reiniciarCredenciales()     
 
 $("#formularioLogin").submit(function (e) {
     e.preventDefault();
@@ -7,17 +6,17 @@ $("#formularioLogin").submit(function (e) {
         correo: $("#correoCampo").val(), password: $("#passwordCampo").val()
     }).then((res) => {
         if (res) { 
-            sessionStorage.setItem("usuario", res.nombre)
-            sessionStorage.setItem("rol", res.rolId)
-            if(res.rolId == "2") {
+            sessionStorage.setItem("usuario", res.user.nombre)
+            sessionStorage.setItem("rol", res.user.rolId)
+            sessionStorage.setItem("token", res.token)
+            if(res.user.rolId == "2") {
                 location.replace("index.html")
             } else {
                 location.replace("recursos.html")
             }
         } else {            
             Swal.fire('Credenciales erroneas')
-            sessionStorage.setItem("usuario", null)
-            sessionStorage.setItem("rol", null)
+            reiniciarCredenciales();      
         }
     })
 });
@@ -25,6 +24,12 @@ $("#formularioLogin").submit(function (e) {
 $("#enviarLogin").submit(function (e) {
     e.preventDefault(); 
 });
+
+function reiniciarCredenciales() {
+    sessionStorage.setItem("usuario", null);
+    sessionStorage.setItem("rol", null);
+    sessionStorage.setItem("token", null);
+}
 
 async function postFetch(url = "", objectoEnviar = {}) {
     let response = await fetch(

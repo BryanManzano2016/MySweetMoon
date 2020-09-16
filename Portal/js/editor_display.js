@@ -11,7 +11,7 @@ async function display_modal(tipo, id, isEdit) {
 
     if (isEdit) {
         let response = await fetch("http://localhost:3000/ingrediente/" + id, {
-            method: "GET"
+            method: "GET", headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }
         });
         var data = await response.json();
         name = "value='" + data[0].nombre + "'";

@@ -114,7 +114,7 @@ var recursosSeccion = new Vue({
 
 async function cargarContactosFetch() {
   let response = await fetch("http://localhost:3000/contacto/all", {
-    method: "GET",
+    method: "GET", headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }
   })
   var data = await response.text()
   return data
@@ -122,7 +122,7 @@ async function cargarContactosFetch() {
 
 async function cargarProductosFetch() {
   let response = await fetch("http://localhost:3000/product/all", {
-    method: "GET",
+    method: "GET", headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }
   })
   var data = await response.text()
   return data
@@ -130,7 +130,7 @@ async function cargarProductosFetch() {
 
 async function cargarNoticiasFetch() {
   let response = await fetch("http://localhost:3000/new/all", {
-    method: "GET",
+    method: "GET", headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }
   })
   var data = await response.text()
   return data
@@ -138,7 +138,7 @@ async function cargarNoticiasFetch() {
 
 async function cargarProductoDisponiblesFetch() {
   let response = await fetch("http://localhost:3000/quote/all", {
-    method: "GET",
+    method: "GET", headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }
   })
   var data = await response.text()
   return data
@@ -146,7 +146,7 @@ async function cargarProductoDisponiblesFetch() {
 
 async function cargarProductoHistorialFetch(id = "") {
   let response = await fetch("http://localhost:3000/quote/report/" + id, {
-    method: "GET",
+    method: "GET", headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }
   })
   var data = await response.text()
   return data

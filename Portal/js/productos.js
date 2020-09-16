@@ -17,7 +17,7 @@ var productosSeccion = new Vue({
 async function cargarProductosFetch() { 
   let response = await fetch(
     "http://localhost:3000/product/all",
-    { method: "GET" }
+    { method: "GET", headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }}
   );
   var data = await response.text();
   return data;

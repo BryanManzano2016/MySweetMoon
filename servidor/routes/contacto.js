@@ -8,11 +8,13 @@ var Contacto = require("../models/contact");
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
+const jwtSecurity = require('../configs/jwtAuth')
+
 router.get('/', async (req, res, next) => {
     res.render('contact');
 });
 
-router.get('/all', async (req, res, next) => {
+router.get('/all', jwtSecurity.authenticateJWT,  async (req, res, next) => {
     try {
         const contacts = await Contacto.findAll()
         res.json(contacts);
@@ -22,7 +24,7 @@ router.get('/all', async (req, res, next) => {
     }
 })
 
-router.post('/send', async(req, res, next) => {
+router.post('/send', jwtSecurity.authenticateJWT, async(req, res, next) => {
   const output = `
     <p>You have a new contact request</p>
     <h3>Información de contacto</h3>
@@ -62,7 +64,7 @@ transporter.sendMail(mailOptions, function(error, info){
   }
 });
 
-router.get('/todos', async (req, res, next) => {
+router.get('/todos', jwtSecurity.authenticateJWT, async (req, res, next) => {
     res.send({})
 });
 

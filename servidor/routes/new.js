@@ -1,13 +1,13 @@
-var express = require('express')
-var sequelize = require('../models/index')
-
+var express = require('express') 
 const NewModel = require("../models/new")
 const FigureModel = require("../models/Picture")
 const UserModel = require('../models/user');
 
+const jwtSecurity = require('../configs/jwtAuth')
+
 var router = express.Router()
 
-router.get('/all', async (req, res, next) => {
+router.get('/all', jwtSecurity.authenticateJWT, async (req, res, next) => {
     try {
         const news = await NewModel.findAll({ where: { estado: true }, include: [FigureModel] })
         res.json(news);
@@ -17,7 +17,7 @@ router.get('/all', async (req, res, next) => {
     }
 })
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', jwtSecurity.authenticateJWT, async (req, res, next) => {
     try {
         const news = await NewModel.findOne({
             where: { id: req.params.id, estado: true },
@@ -30,7 +30,7 @@ router.get('/:id', async (req, res, next) => {
     }
 })
 
-router.post('/save', async (req, res, next) => {
+router.post('/save', jwtSecurity.authenticateJWT, async (req, res, next) => {
     try {
         let requestBody = req.body
         delete requestBody.id
@@ -42,7 +42,7 @@ router.post('/save', async (req, res, next) => {
     }
 })
 
-router.put('/update', async (req, res, next) => {
+router.put('/update', jwtSecurity.authenticateJWT, async (req, res, next) => {
     try {
         let requestBody = req.body
         let objectNew = await NewModel.findOne({ where: { id: requestBody.id } })
@@ -57,7 +57,7 @@ router.put('/update', async (req, res, next) => {
     }
 })
 
-router.delete('/delete/:id', async (req, res, next) => {
+router.delete('/delete/:id', jwtSecurity.authenticateJWT, async (req, res, next) => {
     try {
         let objectNew = await NewModel.findOne({ where: { id: req.params.id } })
         objectNew.estado = false

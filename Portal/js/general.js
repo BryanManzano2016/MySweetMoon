@@ -81,7 +81,7 @@ async function getFetchObjeto(url = "", objeto = {}) {
     let query = Object.keys(parametros).map(k => encodeURIComponent(k) + '=' +
         encodeURIComponent(parametros[k])).join('&')
     let urlEnviar = url + '?' + query
-    let respuesta = await fetch(urlEnviar, { method: "GET" })
+    let respuesta = await fetch(urlEnviar, { method: "GET", headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }})
     var data = await respuesta.json()
     return data;
 }
@@ -92,7 +92,7 @@ async function storeFetch(url = "", objectoEnviar = {}) {
         {
             method: "POST",
             body: JSON.stringify(objectoEnviar),
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }
         }
     )
     var data = await response.json()
@@ -105,7 +105,7 @@ async function postFetch(url = "", objectoEnviar = {}) {
         {
             method: "POST",
             body: JSON.stringify(objectoEnviar),
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }
         }
     )
     var data = await response.json()
@@ -119,7 +119,7 @@ async function putFetch(url = "", objectoEnviar = {}) {
         {
             method: "PUT",
             body: JSON.stringify(objectoEnviar),
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }
         }
     )
     var data = await response.json()
@@ -132,7 +132,7 @@ async function deleteFetch(url = "", objectoEnviar = {}) {
         {
             method: "DELETE",
             body: JSON.stringify(objectoEnviar),
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json', token: sessionStorage.getItem("token") }
         }
     )
     var data = await response.json()

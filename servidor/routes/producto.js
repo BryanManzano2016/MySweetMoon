@@ -1,15 +1,16 @@
 const express = require('express') 
 var ProductModel = require("../models/product")
 const FigureModel = require("../models/Picture")
+const jwtSecurity = require('../configs/jwtAuth')
 
 var router = express.Router();
 
-router.get('/all', async (req, res, next) => {
+router.get('/all', jwtSecurity.authenticateJWT, async (req, res, next) => {
     const productos = await ProductModel.findAll({ include: [FigureModel] })
     res.send(productos)
 })
   
-router.post('/save', async (req, res, next) => {
+router.post('/save', jwtSecurity.authenticateJWT, async (req, res, next) => {
     try {
         let requestBody = req.body
         delete requestBody.id
@@ -21,7 +22,7 @@ router.post('/save', async (req, res, next) => {
     }
 })
 
-router.put('/update', async (req, res, next) => {
+router.put('/update', jwtSecurity.authenticateJWT, async (req, res, next) => {
     try {
         let requestBody = req.body
         let objectNew = await ProductModel.findOne({ where: { id: requestBody.id } })
@@ -35,7 +36,7 @@ router.put('/update', async (req, res, next) => {
     }
 })
 
-router.delete('/delete/:id', async (req, res, next) => {
+router.delete('/delete/:id', jwtSecurity.authenticateJWT, async (req, res, next) => {
     try {
 
         let objectNew = await ProductModel.findOne({ where: { id: req.params.id } })
