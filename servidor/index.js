@@ -6,6 +6,10 @@ const app = express()
 crearCors(app)
 
 var adminRouter = require('./routes/adminRouter')
+app.use("/admin", adminRouter)
+
+app.use(fileUpload())
+
 var userRouter = require('./routes/user')
 var productoRouter = require('./routes/producto')
 var contactoRouter = require('./routes/contacto')
@@ -16,10 +20,7 @@ var galeriaRouter = require('./routes/galeria')
 var imagenRouter = require('./routes/imagen')
 var quoteRouter = require('./routes/quote')
  
-app.use(fileUpload())
-
 app.use('/user', userRouter) 
-app.use("/admin", adminRouter)
 app.use('/product', productoRouter)
 app.use('/contacto', contactoRouter)
 app.use('/graph', graphRouter)

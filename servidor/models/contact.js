@@ -3,7 +3,7 @@ const db = require('./index');
 const User = require('./user');
 
 var contact = db.define('contact', {
-    id: { type: Sequelize.INTEGER, primaryKey: true },
+    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     nombre: Sequelize.STRING,
     apellido: Sequelize.STRING,
     celular: Sequelize.STRING,

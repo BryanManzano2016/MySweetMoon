@@ -4,7 +4,7 @@ const User = require('./user');
 const News = require('./new');
 
 var comment = db.define('comment', {
-    id: { type: Sequelize.INTEGER, primaryKey: true },
+    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     mensaje: Sequelize.STRING,
     fecha: Sequelize.DATE,
     userId: Sequelize.INTEGER,
