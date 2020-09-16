@@ -18,7 +18,7 @@ var quoteRouter = require('./routes/quote')
 var adminRouter = require('./routes/adminRouter')
 
 app.use("/admin", adminRouter)
-
+app.use(fileUpload())
 app.use('/product', productoRouter)
 app.use('/contacto', contactoRouter)
 app.use('/graph', graphRouter)
@@ -31,8 +31,6 @@ app.use('/new', newRouter)
 app.use('/ingrediente', ingredientRouter)
 
 app.use('/quote', quoteRouter)
-
-app.use(fileUpload())
 
 app.listen(PORT, () => console.log('Listening on port ' + PORT + '!'))
 

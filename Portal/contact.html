@@ -95,7 +95,7 @@
 
 					  <div class="col-md-1"></div>
 			<div id="pas2" class="col-md-6 ftco-animate">
-			  <form class="contact-form" id="contact" method="POST" action="send">
+			  <form class="contact-form" id="contact" @submit.prevent="processForm">
           <!-- @submit.prevent="processForm" eso va arriba -->
 				  <div class="row">
 					<div class="col-md-6 form-content">
@@ -128,7 +128,7 @@
 					</div>
 
 					<div class="col-md-12 form-content">
-					  <input type="submit" value="Enviar Mensaje" class="btn btn-primary py-3 px-5" id="contact-btn">
+					  <input  type="submit" value="Enviar Mensaje" class="btn btn-primary py-3 px-5" id="contact-btn">
 					</div>
 			  </div>
 			  </form>

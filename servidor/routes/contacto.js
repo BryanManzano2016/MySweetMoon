@@ -9,47 +9,48 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
 router.get('/', async (req, res, next) => {
-    res.render('contact');
+  res.render('contact');
 });
 
-router.post('/send', async(req, res, next) => {
-  const output = `
+router.post('/send', async (req, res, next) => {
+  console.log("POST /send");
+  let output = `
     <p>You have a new contact request</p>
     <h3>Información de contacto</h3>
     <ul>
       <li>Nombre: ${req.body.name}</li>
       <li>Apellido: ${req.body.lastname}</li>
-      <li>Celular: ${req.body.email}</li>
-      <li>Email: ${req.body.phone}</li>
+      <li>Email: ${req.body.email}</li>
+      <li>Teléfono: ${req.body.phone}</li>
       <li>Fecha de nacimiento: ${req.body.date}</li>
     </ul>
-    <h3>Message</h3>
+    <h3>Mensaje</h3>
     <p>${req.body.message}</p>
   `;
-});
 
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'correodepruebasMSM@gmail.com',
-    pass: 'correo16101998'
-  }
-});
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'joshmoon233@gmail.com',
+      pass: 'JmLg3699'
+    }
+  });
 
-var mailOptions = {
-  from: 'correodepruebasMSM@gmail.com',
-  to: 'correodepruebasMSM@gmail.com',
-  subject: 'Intento de contacto',
-  text: 'Espero que esto funcione',
-  //aqui deberia ir html: output pero no me funciona :(
-};
+  let mailOptions = {
+    from: 'joshmoon233@gmail.com',
+    to: 'joshmoon233@gmail.com',
+    subject: 'Intento de contacto',
+    html: output
+  };
 
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+  res.sendStatus(200);
 });
 
 router.get('/todos', async (req, res, next) => {

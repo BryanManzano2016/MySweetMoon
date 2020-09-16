@@ -15,7 +15,8 @@ router.post("/", async (req, res, next) =>{
     EDFile.mv(`./img/${EDFile.name}`,err => {
         if(err) return res.status(500).send({ message : err })
         return res.status(200).send({ message : 'File upload' })
-    })
+    }).catch((err)=>{
+        res.status(404).send({ message : 'File not upload' })});
 });
 
 module.exports = router;

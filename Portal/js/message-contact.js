@@ -18,8 +18,8 @@ const app = new Vue({
     processForm: function() {
       console.log('{"name":' + this.name)
       
-      axios.post('http://localhost:3000/contactos',
-      {nombre : this.name, apellido: this.lastname, telefono: this.phone, correo: this.email, fecha: this.date, mensaje: this.message})
+      axios.post('http://localhost:3000/contacto/send',
+      {name : this.name, lastname: this.lastname, phone: this.phone, email: this.email, date: this.date, message: this.message})
       .then(response => {
         alert('Mensaje Enviado!');
         this.eraseInformation();
